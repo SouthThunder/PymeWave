@@ -1,10 +1,10 @@
 // importar la base de datos
-import db from '../database/db';
+import db from '../database/db.js';
 // importar sequelize
-import { DataType, DataTypes } from 'sequelize';
+import { DataTypes } from 'sequelize';
 
 
-const UserModel = db.define('usuario', {
+const UserModel = db.define('usuarios', {
     correo: { type: DataTypes.STRING},
     nombre: { type: DataTypes.STRING},
     apellidos: { type: DataTypes.STRING},

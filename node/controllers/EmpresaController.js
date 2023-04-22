@@ -9,7 +9,9 @@ import EmpModel from "../models/EmpresaModel.js";
 export const getAllEmpres = async (req,res) => {
 
     try {
-        const  empres = await EmpModel.findAll();
+        const  empres = await EmpModel.findAll({
+            attributes: { exclude: ['id'] }
+        });
         res.json(empres);
     } catch (error) {
         res.json( {message: error.message});

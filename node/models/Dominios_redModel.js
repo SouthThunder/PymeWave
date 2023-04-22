@@ -1,7 +1,7 @@
 // importar la base de datos
-import db from '../database/db';
+import db from '../database/db.js';
 // importar sequelize
-import { DataType, DataTypes } from 'sequelize';
+import { DataTypes } from 'sequelize';
 
 
 const Dom_redModel = db.define('dominios_red', {
