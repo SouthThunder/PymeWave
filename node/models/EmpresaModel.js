@@ -13,7 +13,9 @@ const EmpModel = db.define('empresa', {
     calificacion: { type: DataTypes.DOUBLE},
     telefono: { type: DataTypes.STRING},
     contraseña: { type: DataTypes.STRING},
-    rut: { type: DataTypes.STRING}
+    rut: { type: DataTypes.STRING},
+    id_catalogo: { type: DataTypes.INTEGER},
+    id_categoria: { type: DataTypes.INTEGER}
 });
 
 export default EmpModel;
