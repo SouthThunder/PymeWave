@@ -9,7 +9,9 @@ import CateModel from "../models/CategoriaModel.js";
 export const getAllCates = async (req,res) => {
 
     try {
-        const  cates = await CateModel.findAll();
+        const  cates = await CateModel.findAll({
+            attributes: { exclude: ['id'] }
+        });
         res.json(cates);
     } catch (error) {
         res.json( {message: error.message});

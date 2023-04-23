@@ -9,7 +9,9 @@ import ProductModel from "../models/ProductoModel.js";
 export const getAllProducts = async (req,res) => {
 
     try {
-        const products = await ProductModel.findAll();
+        const  products = await ProductModel.findAll({
+            attributes: { exclude: ['id'] }
+        });
         res.json(products);
     } catch (error) {
         res.json( {message: error.message});

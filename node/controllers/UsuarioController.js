@@ -9,7 +9,9 @@ import UserModel from "../models/UsuarioModel.js";
 export const getAllUsers = async (req,res) => {
 
     try {
-        const users = await UserModel.findAll();
+        const  users = await UserModel.findAll({
+            attributes: { exclude: ['id'] }
+        });
         res.json(users);
     } catch (error) {
         res.json( {message: error.message});

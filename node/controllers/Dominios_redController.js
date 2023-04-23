@@ -9,7 +9,9 @@ import Dom_redModel from "../models/Dominios_redModel.js";
 export const getAllDoms = async (req,res) => {
 
     try {
-        const  doms = await Dom_redModel.findAll();
+        const  doms = await Dom_redModel.findAll({
+            attributes: { exclude: ['id'] }
+        });
         res.json(doms);
     } catch (error) {
         res.json( {message: error.message});

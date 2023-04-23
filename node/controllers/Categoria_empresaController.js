@@ -9,7 +9,9 @@ import Cate_emModel from "../models/Categoria_empresaModel.js";
 export const getAllCate_ems = async (req,res) => {
 
     try {
-        const  cate_ems = await Cate_emModel.findAll();
+        const  cate_ems = await Cate_emModel.findAll({
+            attributes: { exclude: ['id'] }
+        });
         res.json(cate_ems);
     } catch (error) {
         res.json( {message: error.message});

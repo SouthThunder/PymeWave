@@ -1,6 +1,6 @@
 // se importa el modelo de datos correspondiente al controlador
 
-import CatalModel from "../models/CatalogoModel";
+import CatalModel from "../models/CatalogoModel.js";
 
 // Metodos para CRUD
 
@@ -9,7 +9,9 @@ import CatalModel from "../models/CatalogoModel";
 export const getAllCatals = async (req,res) => {
 
     try {
-        const  catals = await CatalModel.findAll();
+        const  catals = await CatalModel.findAll({
+            attributes: { exclude: ['id'] }
+        });
         res.json(catals);
     } catch (error) {
         res.json( {message: error.message});

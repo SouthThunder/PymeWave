@@ -9,7 +9,9 @@ import CalifModel from "../models/CalificacionesModel.js";
 export const getAllCalifs = async (req,res) => {
 
     try {
-        const  califs = await CalifModel.findAll();
+        const  califs = await CalifModel.findAll({
+            attributes: { exclude: ['id'] }
+        });
         res.json(califs);
     } catch (error) {
         res.json( {message: error.message});

@@ -7,3 +7,5 @@ import { getAllUsers} from '../controllers/UsuarioController.js'
 const router = express.Router();
 
 router.get('/', getAllUsers);
+
+export default router;
