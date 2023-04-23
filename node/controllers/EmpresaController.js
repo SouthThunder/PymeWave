@@ -1,6 +1,8 @@
 // se importa el modelo de datos correspondiente al controlador
 
+import { Model } from "sequelize";
 import EmpModel from "../models/EmpresaModel.js";
+import UserModel from "../models/UsuarioModel.js";
 
 // Metodos para CRUD
 
@@ -12,6 +14,13 @@ export const getAllEmpres = async (req,res) => {
         const  empres = await EmpModel.findAll({
             attributes: { exclude: ['id'] }
         });
+
+        //forma de hacerlo con dos tablas
+        //const  users = await UserModel.findAll({ 
+        //    attributes: { exclude: ['id'] }
+        //});
+        //res.json({empres,users});
+        
         res.json(empres);
     } catch (error) {
         res.json( {message: error.message});

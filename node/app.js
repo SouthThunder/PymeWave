@@ -6,44 +6,33 @@ import cors from 'cors';
 //importar la conexion a la base de datos
 import db from './database/db.js';
 
-// importar el enrutador 
+// importar los enrutadores
 import homeRoutes from './routes/Home.routes.js';
-import usuarioRoutes from './routes/Usuario.routes.js';
-import catalagoRoutes from './routes/Catalogo.routes.js';
-import productoRoutes from './routes/Producto.routes.js';
-import dominioRedRoutes from './routes/DominiosRed.routes.js';
-import categoriaEmpRoutes from './routes/Categoria_empresa.routes.js';
-import calificacionesRoutes from './routes/Calificaciones.routes.js';
-import categoriaRoutes from './routes/Categoria.routes.js';
+import aboutUs from './routes/aboutUs.routes.js';
+import busqueda from './routes/busqueda.routes.js';
+import singIn from './routes/singIn.routes.js';
+import singInEmpresa from './routes/singInEmpresa.routes.js';
+import singInPersona from './routes/singInPersona.routes.js';
+import singUp from './routes/singUp.routes.js';
+import singUpEmpresa from './routes/singUpeEmpresa.routes.js';
+import singUpPersona from './routes/singInPersona.routes.js';
 
 const app = express();
 
 app.use( cors() );
 app.use(express.json());
 
-// utiliza la ruta /home como base a los controladores de ruta de Home.routes.js
-app.use('/Home', homeRoutes);
+//uso de rutas
+app.use('/Home', homeRoutes);// utiliza la ruta /home como base a los controladores de ruta de Home.routes.js
+app.use('/AboutUs',aboutUs);
+app.use('/Busqueda',busqueda);
+app.use('/SingIn',singIn);
+app.use('/SingIn/Empresa',singInEmpresa);
+app.use('/SingIn/Persona',singInPersona);
+app.use('/SingUp',singUp);
+app.use('/SingUp/Empresa',singUpEmpresa);
+app.use('/SingUp/Persona',singUpPersona);
 
-// utiliza la ruta /Usuario como base a los controladores de ruta de Usuario.routes.js
-app.use('/Usuario',usuarioRoutes);
-
-// utiliza la ruta /Catalogos como base a los controladores de ruta de Catalogo.routes.js
-app.use('/Catalogo', catalagoRoutes);
-
-
-app.use('/Producto',productoRoutes);
-
-
-app.use('/Domino_red', dominioRedRoutes);
-
-
-app.use('/Categoria_Emp', categoriaEmpRoutes);
-
-
-app.use('/Calificaciones', calificacionesRoutes);
-
-
-app.use('/Categoria', categoriaRoutes);
 
 // conexion
 
