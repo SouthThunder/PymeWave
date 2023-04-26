@@ -1,11 +1,12 @@
 
 .signup-component body{
-    /* background-image: url("./Fondo_signUp.jpg"); */
+    background-image: url("../../../public/images/Backgrounds/Fondo_signUp.jpg"); 
     background-color: whitesmoke;
     height: 100%;
     background-repeat: no-repeat;
     background-size:cover;
     background-position: 0 15%;
+    
     
 }
 
@@ -59,21 +60,23 @@
 }
 
 
-.signup-component .options picture{
+.signup-component main .container .options .choose-signup{
     position: relative;
     width: 225px;
-    border-radius: 50%;
+    
     height: 225px;
 }
 
-.signup-component .options picture a{
+.signup-component main .container .options .choose-signup a{
+    
     width: inherit;
     height: inherit;
 }
 
-.signup-component .options picture img{
+.signup-component main .container .options .choose-signup img{
     width: inherit;
     height: inherit;
+    border-radius: 50%;
 }
 
 .signup-component .txt{
