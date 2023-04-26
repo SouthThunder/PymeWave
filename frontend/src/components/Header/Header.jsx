@@ -1,4 +1,5 @@
 import React, { Component } from"react";
+import {Link} from 'react-router-dom';
 import './Header.css'
 
 
@@ -15,7 +16,7 @@ export class Header extends React.Component{
                             <li>Services</li>
                             <li>Products</li>
                             <li><a href="/signIn">Sign In</a></li>
-                            <li id="Sign_btns"><a href="/signUp">Sign Up</a> </li>
+                            <li id="Sign_btns"><Link to={`/SingUp`}>Sign Up</Link> </li>
                         </ul>
                     </div>
                 </nav>
