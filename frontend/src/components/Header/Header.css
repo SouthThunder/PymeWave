@@ -1,0 +1,85 @@
+:root{
+    --primaryColor: #202C3F;
+    --secondaryColor: #7DA9DB;
+    --tertiaryColor: white;
+}
+
+header{
+    width: 100vw;
+    height: 10vh;
+    overflow: auto;
+    clear: both;
+    background: var(--primaryColor);
+    position:fixed;
+}
+
+header >picture{
+    margin-left: 2rem;
+    display: flex;
+    justify-content: center;
+    float: left;
+    width: 20rem;
+    height: inherit;
+}
+
+picture > a{
+    height: inherit;
+    margin-right: 60%;
+}
+
+header >picture img{
+    overflow: visible;
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+}
+
+header >picture img:hover{
+    cursor: pointer;
+}
+
+header > nav{
+    float: right;
+    height: 100%;
+}
+.nav_box{
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+ul >li{
+    display: inline-block;
+    padding: 0 1rem 0 1rem;
+    color: var(--tertiaryColor);
+    list-style: none;
+    font-size: 1.4rem;
+}
+
+ul >li a{
+    text-decoration: none;
+    color: var(--tertiaryColor);
+}
+
+ul >li a:hover{
+    transition: all 0.4s ease;
+    color: var(--secondaryColor);
+}
+
+ul >li:hover{
+    cursor: pointer;
+    transition: all 0.4s ease-in;
+    color: var(--secondaryColor);
+}
+
+ul > li:nth-child(4){
+    border: 1px solid var(--tertiaryColor);
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+ul > li:nth-child(4):hover{
+    border: 1px solid var(--secondaryColor);
+}
