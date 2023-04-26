@@ -19,11 +19,12 @@ import singUpPersona from './routes/singInPersona.routes.js';
 
 const app = express();
 
+
 app.use( cors() );
 app.use(express.json());
 
 //uso de rutas
-app.use('/Home', homeRoutes);// utiliza la ruta /home como base a los controladores de ruta de Home.routes.js
+app.use('/', homeRoutes);// utiliza la ruta /home como base a los controladores de ruta de Home.routes.js
 app.use('/AboutUs',aboutUs);
 app.use('/Busqueda',busqueda);
 app.use('/SingIn',singIn);

@@ -3,8 +3,21 @@
 import { Model } from "sequelize";
 import EmpModel from "../models/EmpresaModel.js";
 import UserModel from "../models/UsuarioModel.js";
+import CatalModel from "../models/CatalogoModel.js";
 
 // Metodos para CRUD
+export const joinCatalsEmpre = async (req, res) =>{
+    try {
+        const empres = await EmpModel.findAll({
+            attributes: { exclude: ['id'] },
+            include: CatalModel // This is for left outer join 
+            //include: {model: CatalModel, required: true} -> This is for inner join
+        });
+        res.json(empres);
+    } catch (error) {
+        res.json({message: error.message});
+    }
+}
 
 //Mostrar todos los registros 
 

@@ -1,0 +1,441 @@
+/*Start Global CSS*/
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+
+body{
+    position: relative;
+    padding-bottom: 13vh;
+    min-height: 100vh;
+    background-color: white;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+    /*Take off x from input in Internet explorer*/
+    input[type=search]::-ms-check{
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    input[type=search]::-ms-reveal{
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    /*Remove x from input in chrome*/
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+/*End Global CSS*/
+
+
+/*Start Header CSS*/
+
+
+header{
+    width: 100vw;
+    height: 10vh;
+    overflow: auto;
+    clear: both;
+    background: #202C3F;
+    position:fixed;
+}
+
+header >picture{
+    display: flex;
+    justify-content: center;
+    float: left;
+    width: 35%;
+    height: inherit;
+}
+
+header >picture > img{
+    margin-right: 60%;
+    overflow: visible;
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+}
+
+header >picture > img:hover{
+    cursor: pointer;
+}
+
+header > nav{
+    float: right;
+    height: 100%;
+}
+
+.nav_box{
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+ul >li{
+    display: inline-block;
+    padding: 0 1rem 0 1rem;
+    color: white;
+    list-style: none;
+    font-size: 1.4rem;
+}
+
+ul >li a{
+    text-decoration: none;
+    color: white;
+}
+
+ul >li a:hover{
+    transition: all 0.4s ease;
+    color: #7DA9DB;
+}
+
+ul >li:hover{
+    cursor: pointer;
+    transition: all 0.4s ease-in;
+    color: #7DA9DB;
+}
+
+ul > li:nth-child(4){
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+ul > li:nth-child(4):hover{
+    border: 1px solid #7DA9DB;
+}
+
+/*End header CSS*/
+
+/*Start Main CSS*/
+
+main > picture{
+    height: 50vh;
+    width: 100vw;
+}
+
+main > picture >img{
+    width: inherit;
+    height: inherit;
+    object-fit:cover;
+    object-position: 0px 50%;
+    overflow: hidden;
+}
+
+.center{
+    Width: 70%;
+    Margin: 0 auto;
+}
+
+.search {
+    width: 650px;
+    height: 60px;
+    margin-top: 3rem;
+    background: #444;
+    background: rgba(0,0,0,0);
+    border-radius:  3px;
+    border: 1px solid #202C3F;
+}
+
+.input-container[data-error] input{
+    color: #202C3F;
+    width: 528px;
+    height: 59px;
+    padding: 11px 5px;
+    float: left;
+    background: transparent;
+    border: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.button-container{
+    width: inherit;
+    height: inherit;
+}
+    
+.search button {
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      height: 59px;
+      width: 120px;
+      color: white;
+      background: #202C3F;
+      border: 0 0 1px 0 solid #202C3F;
+      border-radius: 0 3px 3px 0;  
+}  
+
+.search button:hover{
+    background: #7DA9DB;
+    box-shadow: 1px 1px 1px 1px #202C3F;
+    transition: all 0.5s ease;
+    color: #202C3F;
+}
+ 
+
+#promt{
+    Width: 80%;
+    font-weight: 600;
+    font-size: 60px;
+    color: #202C3F;
+}
+
+.feed{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.arrow_left{
+    position: absolute;
+    margin-top: 22rem;
+    margin-left: 10rem;
+}
+
+.arrow_left button{
+    background:transparent;
+    border: none;
+}
+
+.arrow_left img{
+    width: 10rem;
+}
+
+.arrow_right{
+    position: absolute;
+    margin-top: 22.5rem;
+    margin-left: 90%;
+}
+
+.arrow_right button{
+    background: transparent;
+    border: none;
+}
+
+.arrow_right img{
+    width: 9rem;
+}
+
+.scrollport{
+    width: 70%;
+    height: 500px;
+    margin: 5rem auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+}
+
+.scrollport .indicators{
+    position: absolute;
+}
+
+.indicators h1,h2{
+    color:#202C3F;
+}
+
+.indicators h1{
+    font-size: 2.5rem;
+}
+
+.indicators h2{
+    font-size: 1.7rem;
+}
+
+.indicators .arrow_left{
+    position: sticky;
+}
+
+.container{
+    display:inline-flex;
+    border-radius: 15px;
+    border: 1px solid #202C3F;
+}
+.container:nth-child(n){
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    height: 400px;
+    margin: 8rem 10rem;
+}
+
+.holder{
+    width: inherit;
+    height: inherit;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.container picture{
+    width:298px;
+    height: 200px;
+}
+
+.container picture img{
+    width: inherit;
+    height: inherit;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.data{
+    width: 298px;
+    height: 198px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    word-wrap: break-word;
+}
+
+.data .title{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.title h1{
+    font-weight: bold;
+}
+
+.data .text{
+    width: 90%;
+    margin: 0 auto;
+    height: 138px;
+    white-space: normal;
+    word-wrap: break-word; 
+    text-align: justify;
+    overflow: hidden;
+}
+
+.text p{
+    font-size: 1.3rem;
+}
+
+.scrollport img{
+    scroll-snap-align: center;
+}
+
+/*End Main CSS*/
+
+/*Start Footer CSS*/
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 10vh;
+    background: #202C3F;
+    clear: both;
+    display: flex;
+}
+
+footer > .left{
+    float: left;
+    width: 50%;
+    padding-left: 15rem;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.left p{
+    display: inline-block;
+    padding: 1rem;
+    color: white;
+    font-size: 1.2rem;
+}
+
+
+
+.left p:nth-child(n+1) a{
+    text-decoration: none;  
+    color: whitesmoke;
+}
+
+.left p:nth-child(n+1) a:hover{
+    color:#7DA9DB;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    width: 50%;
+}
+
+.right img{
+    display: inline-block;
+    padding-left: 2rem;
+    height: 2.5rem;
+    color: white;
+}
+
+        /* Estilos aquí */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #popup label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #popup button {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .resultado {
+            margin-bottom: 10px;
+        }
+
+#open-popup-btn {
+
+    background-color: whitesmoke;
+    Margin: 0 auto;
+
+
+}
+
+#open-popup-btn img{
+
+    max-width: 30px;
+
+}
+
+/*End Footer CSS*/

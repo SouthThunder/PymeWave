@@ -2,7 +2,9 @@
 
 import CatalModel from "../models/CatalogoModel.js";
 
+
 // Metodos para CRUD
+
 
 //Mostrar todos los registros 
 
