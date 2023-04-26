@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {Link} from 'react-router-dom';
 import './AboutUs.css';
+import { Header } from "../../components/Header/Header";
+import { Footer } from "../../components/Footer/Footer";
 
 const URI = 'http://localhost:8000/AboutUs';
 
@@ -13,22 +15,8 @@ const CompAboutUs = () => {
     return(
 
         <div className="aboutus-component">
-            <header>
-                <picture>
-                    <Link to ={`/`} ><img src="/images/Logos/PymeWaveSinFondo(white).png" alt="logo"/></Link>
-                </picture>
-                <nav>
-                    <div className="nav_box">
-                        <ul>
-                            <li>Services</li>
-                            <li>Products</li>
-                            <li><a href="/SignIn">Sign In</a></li>
-                            <li id="Sign_btns"><Link to ={`/SingUp`} >Sign Up</Link> </li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
-            <main>
+           <Header/>
+            <div className="main-aboutus">
                 <picture>
             <img src="/images/Backgrounds/home_main_img.jpg" alt="main"/>
                 </picture>
@@ -74,20 +62,8 @@ const CompAboutUs = () => {
                 </section>
 
 
-            </main>
-            <footer>
-                <div className="left">
-                    <p>© 2023 PymeWave, Inc</p>
-                    <p><a href="">Terms</a></p>
-                    <p><a href="">Privacy</a></p>
-                </div>
-                <div className="right">
-                    <a href="https://www.facebook.com/" target="_blank"><img src="/images/Social-media/Facebook-icon.png" alt="Facebook"/></a>
-                    <a href="https://twitter.com/?lang=es" target="_blank"><img src="/images/Social-media/Twitter-icon.png" alt="Twitter"/></a>
-                    <a href="https://www.instagram.com/" target="_blank"><img src="/images/Social-media/Instagram-icon.png" alt="Instagram"/></a>
-                    <a href="https://discord.com/" target="_blank"><img src="/images/Social-media/Discord-icon.png" alt="Discord"/></a>
-                </div>
-            </footer>
+            </div>
+            <Footer/>
         </div>
 
     );

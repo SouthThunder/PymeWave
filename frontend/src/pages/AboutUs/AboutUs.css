@@ -3,14 +3,8 @@
     position: relative;
     padding-bottom: 13vh;
     min-height: 100vh;
-    background-color: white;
-}
-.aboutus-component header > picture{
-    margin-left: 4rem;
-}
-
-.aboutus-component header > picture >a{
-    margin-left: 12rem;
+    /* background-color: white; */
+    overflow-x: hidden;
 }
 
 /*Fin header*/
@@ -133,56 +127,3 @@ ol li{
 /*Footer*/
 
 
-.aboutus-component footer{
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
-    height: 10vh;
-    background: var(--primaryColor);
-    clear: both;
-    display: flex;
-}
-
-.aboutus-component footer > .left{
-    float: left;
-    width: 50%;
-    padding-left: 15rem;
-    display: flex;
-    height: 100%;
-    align-items: center;
-}
-
-.aboutus-component .left p{
-    display: inline-block;
-    padding: 1rem;
-    color: var(--tertiaryColor);
-    font-size: 1.2rem;
-}
-
-
-
-.aboutus-component .left p:nth-child(n+1) a{
-    text-decoration: none;  
-    color: var(--tertiaryColor);
-}
-
-.aboutus-component .left p:nth-child(n+1) a:hover{
-    color:var(--secondaryColor);
-    cursor: pointer;
-    transition: all 0.4s ease;
-}
-
-.aboutus-component .right{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    float: right;
-    width: 50%;
-}
-
-.aboutus-component .right img{
-    display: inline-block;
-    padding-left: 2rem;
-    height: 2.5rem;
-    color: var(--tertiaryColor);
-}
