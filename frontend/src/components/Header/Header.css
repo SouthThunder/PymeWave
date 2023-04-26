@@ -11,21 +11,17 @@ header{
     clear: both;
     background: var(--primaryColor);
     position:fixed;
+    margin: 0;
+    padding: 0;
 }
 
 header >picture{
-    margin-left: 2rem;
-    display: flex;
-    justify-content: center;
+    margin-left: -0rem;
     float: left;
     width: 20rem;
     height: inherit;
 }
 
-picture > a{
-    height: inherit;
-    margin-right: 60%;
-}
 
 header >picture img{
     overflow: visible;
@@ -44,10 +40,14 @@ header > nav{
 }
 .nav_box{
     margin-right: 1rem;
-    display: flex;
-    align-items: center;
     height: 100%;
     width: 100%;
+}
+
+ul{
+    height: inherit;
+    display: flex;
+    align-items: center;
 }
 
 ul >li{

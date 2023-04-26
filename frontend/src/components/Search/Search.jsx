@@ -1,6 +1,7 @@
 import './Search.css'
 import axios from 'axios';
 import {useState, useEffect} from 'react';
+import './Search.css';
 
 const URI = 'http://localhost:8000/';
 
@@ -46,7 +47,7 @@ export const CompShowEnterprises = () =>{
 
 export const Search = () =>{
     return(
-        <main>
+        <div className='search-component'>
         <picture>
             <img src="https://static.timesofisrael.com/blogs/uploads/2019/09/silas-baisch-ceITO2rlDgc-unsplash.jpg" alt="main"/>
         </picture>
@@ -78,6 +79,6 @@ export const Search = () =>{
             </div>
         </div>
         
-    </main>
+    </div>
     )
 }

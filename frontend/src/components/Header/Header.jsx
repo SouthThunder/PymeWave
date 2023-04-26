@@ -11,7 +11,7 @@ export class Header extends React.Component{
                     <img src="/images/Logos/PymeWaveSinFondo(white).png" alt="logo"/>
                 </picture>
                 <nav>
-                    <div class="nav_box">
+                    <div className="nav_box">
                         <ul>
                             <li>Services</li>
                             <li>Products</li>

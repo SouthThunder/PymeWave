@@ -1,5 +1,11 @@
 /*Start Global CSS*/
 
+:root{
+    --primary-color: #202C3F;
+    --secondary-color: #7DA9DB;
+    --tertiary-color: white;
+}
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -18,7 +24,7 @@ body{
     position: relative;
     padding-bottom: 13vh;
     min-height: 100vh;
-    background-color: white;
+    background-color: var(--tertiary-color);
 }
 
 ::-webkit-scrollbar{
@@ -50,95 +56,14 @@ button:hover{
 /*End Global CSS*/
 
 
-/*Start Header CSS*/
-
-
-header{
-    width: 100vw;
-    height: 10vh;
-    overflow: auto;
-    clear: both;
-    background: #202C3F;
-    position:fixed;
-}
-
-header >picture{
-    display: flex;
-    justify-content: center;
-    float: left;
-    width: 35%;
-    height: inherit;
-}
-
-header >picture > img{
-    margin-right: 60%;
-    overflow: visible;
-    width: inherit;
-    height: inherit;
-    object-fit: cover;
-}
-
-header >picture > img:hover{
-    cursor: pointer;
-}
-
-header > nav{
-    float: right;
-    height: 100%;
-}
-
-.nav_box{
-    margin-right: 1rem;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-}
-
-ul >li{
-    display: inline-block;
-    padding: 0 1rem 0 1rem;
-    color: white;
-    list-style: none;
-    font-size: 1.4rem;
-}
-
-ul >li a{
-    text-decoration: none;
-    color: white;
-}
-
-ul >li a:hover{
-    transition: all 0.4s ease;
-    color: #7DA9DB;
-}
-
-ul >li:hover{
-    cursor: pointer;
-    transition: all 0.4s ease-in;
-    color: #7DA9DB;
-}
-
-ul > li:nth-child(4){
-    border: 1px solid whitesmoke;
-    border-radius: 5px;
-    padding: 1rem;
-}
-
-ul > li:nth-child(4):hover{
-    border: 1px solid #7DA9DB;
-}
-
-/*End header CSS*/
-
 /*Start Main CSS*/
 
-main > picture{
+.search-component picture{
     height: 50vh;
     width: 100vw;
 }
 
-main > picture >img{
+.search-component  > picture >img{
     width: inherit;
     height: inherit;
     object-fit:cover;
@@ -175,6 +100,7 @@ main > picture >img{
 .button-container{
     width: inherit;
     height: inherit;
+    border: 1px solid #202C3F;
 }
     
 .search button {
@@ -340,102 +266,3 @@ main > picture >img{
 
 /*End Main CSS*/
 
-/*Start Footer CSS*/
-
-
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
-    height: 10vh;
-    background: #202C3F;
-    clear: both;
-    display: flex;
-}
-
-footer > .left{
-    float: left;
-    width: 50%;
-    padding-left: 15rem;
-    display: flex;
-    height: 100%;
-    align-items: center;
-}
-
-.left p{
-    display: inline-block;
-    padding: 1rem;
-    color: white;
-    font-size: 1.2rem;
-}
-
-
-
-.left p:nth-child(n+1) a{
-    text-decoration: none;  
-    color: whitesmoke;
-}
-
-.left p:nth-child(n+1) a:hover{
-    color:#7DA9DB;
-    cursor: pointer;
-    transition: all 0.4s ease;
-}
-
-.right{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    float: right;
-    width: 50%;
-}
-
-.right img{
-    display: inline-block;
-    padding-left: 2rem;
-    height: 2.5rem;
-    color: white;
-}
-
-        /* Estilos aquí */
-        #popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 400px;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-
-        #popup label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        #popup button {
-            display: block;
-            margin-top: 10px;
-        }
-
-        .resultado {
-            margin-bottom: 10px;
-        }
-
-#open-popup-btn {
-
-    background-color: whitesmoke;
-    Margin: 0 auto;
-
-
-}
-
-#open-popup-btn img{
-
-    max-width: 30px;
-
-}
-
-/*End Footer CSS*/

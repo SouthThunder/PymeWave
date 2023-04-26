@@ -9,10 +9,6 @@ const URI = 'http://localhost:8000/AboutUs';
 
 
 const CompAboutUs = () => {
-
-
-        var perro
-
     
     return(
 
