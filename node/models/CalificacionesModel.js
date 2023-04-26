@@ -4,12 +4,32 @@ import db from '../database/db.js';
 import { DataTypes } from 'sequelize';
 
 
-const CalifModel = db.define('calificaciones', {
-    num_estrellas: { type: DataTypes.INTEGER},
-    resena: { type: DataTypes.STRING},
-    id_calificacion: { type: DataTypes.INTEGER},
-    id_empresa: { type: DataTypes.INTEGER},
-    correo: { type: DataTypes.INTEGER}, 
+const CalificacionesModel = db.define('calificaciones', {
+    num_estrellas: { 
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    reseña: { 
+        type: DataTypes.STRING,
+        allowNull:true
+    },
+    id_calificacion: { 
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        allowNull: false
+    },
+    id_empresa: { 
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    id_usuario: {
+        type: DataTypes.INTEGER,
+        allowNull:false
+    },
+    id_producto: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    }
 });
 
-export default CalifModel;
+export default CalificacionesModel;

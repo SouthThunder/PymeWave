@@ -2,17 +2,44 @@
 import db from '../database/db.js';
 // importar sequelize
 import { DataTypes } from 'sequelize';
+// importar relaciones 
+import CalificacionesModel from './CalificacionesModel.js'
 
 
-const UserModel = db.define('usuarios', {
-    correo: { type: DataTypes.STRING},
-    nombre: { type: DataTypes.STRING},
-    apellidos: { type: DataTypes.STRING},
-    telefono: { type: DataTypes.STRING},
-    username: { type: DataTypes.STRING},
-    contraseña: { type: DataTypes.STRING},
+const UsusarioModel = db.define('usuarios', {
+    id_usuario: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+    },
+    correo: {
+         type: DataTypes.STRING,
+         unique: true,
+         allowNull: false
+        },
+    nombre: { 
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    apellidos: { 
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    telefono: { 
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false
+    },
+    contraseña: { 
+        type: DataTypes.STRING,
+        allowNull: false
+    },
 });
 
-export default UserModel;
+UsusarioModel.hasMany(CalificacionesModel, {
+    foreignKey: 'id_usuario'
+});
+CalificacionesModel.belongsTo(UsusarioModel, {
+    foreignKey: 'id_usuario'
+});
 
-
+export default UsusarioModel;

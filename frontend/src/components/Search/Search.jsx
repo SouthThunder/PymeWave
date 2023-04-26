@@ -5,10 +5,10 @@ import {useState, useEffect} from 'react';
 const URI = 'http://localhost:8000/';
 
 export const CompShowEnterprises = () =>{
-    const [enterprise, setEnterprise] = useState();
+    const [enterprise, setEnterprise] = useState([]);
     useEffect(() =>{
         getEnterprises()
-    });
+    }, []);
 
     const getEnterprises = async () =>{
         const res = await axios.get(URI);

@@ -4,10 +4,16 @@ import db from '../database/db.js';
 import { DataTypes } from 'sequelize';
 
 
-const CatalModel = db.define('catalogo', {
-    id_empresa: { type: DataTypes.INTEGER}, //checked
-    descripcion_empresa: { type: DataTypes.STRING}, //checked
-    id_catalogo: { type: DataTypes.INTEGER, primaryKey: true}, //checked
+const CatalogoModel = db.define('catalogo', {
+    id_empresa_catalogo: { 
+        type: DataTypes.INTEGER,
+        primaryKey:true,
+        allowNull:false
+    }, //checked
+    descripcion_empresa: { 
+        type: DataTypes.STRING,
+        allowNull: true
+    } //checked
 });
 
-export default CatalModel;
+export default CatalogoModel;
