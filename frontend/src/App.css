@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+:root{
+  --primaryColor: #202C3F;
+  --secondaryColor: #7DA9DB;
+  --tertiaryColor: white;
+} 
+/*Start Global CSS*/
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* overflow: hidden; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    position: relative;
+    padding-bottom: 13vh;
+    min-height: 100vh;
+    background-color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar{
+    display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 15vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button:hover{
+    cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
+    /*Take off x from input in Internet explorer*/
+    input[type=search]::-ms-check{
+        display: none;
+        width: 0;
+        height: 0;
+    }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+    input[type=search]::-ms-reveal{
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    /*Remove x from input in chrome*/
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+/*End Global CSS*/
+

@@ -1,42 +1,35 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    overflow: hidden;   
-    color: whitesmoke;
-}
 
-body{
+.signup-component body{
     /* background-image: url("./Fondo_signUp.jpg"); */
-    background-color: #202C3F;
+    background-color: whitesmoke;
     height: 100%;
     background-repeat: no-repeat;
     background-size:cover;
     background-position: 0 15%;
+    
 }
 
-header > picture{
+.signup-component header > picture{
     height: 150px;
     width: 350px;
 }
 
-header > picture > a{
+.signup-component header > picture > a{
     height: inherit;
     width: inherit;
 }
 
-header > picture > a > img{
+.signup-component header > picture > a > img{
     height: inherit;
     width: inherit;
 }
 
-main{
+.signup-component main{
     height: 80vh;
     width: 100vw;
 }
 
-.container{
+.signup-component .container{
     margin: 0 auto;
     width: 40%;
     height: 80%;
@@ -45,18 +38,18 @@ main{
     border-radius: 3rem;
 }
 
-.title{
+.signup-component .title{
     display: flex;
     justify-content: center;
     margin-top: 1rem;
 }
 
-.title h1{
+.signup-component .title h1{
     color: whitesmoke;
 }
 
 
-.options{
+.signup-component .options{
     margin-top: 6rem;
     width: 100%;
     height: 230px;
@@ -66,24 +59,24 @@ main{
 }
 
 
-.options picture{
+.signup-component .options picture{
     position: relative;
     width: 225px;
     border-radius: 50%;
     height: 225px;
 }
 
-.options picture a{
+.signup-component .options picture a{
     width: inherit;
     height: inherit;
 }
 
-.options picture img{
+.signup-component .options picture img{
     width: inherit;
     height: inherit;
 }
 
-.txt{
+.signup-component .txt{
     margin-top: 1rem;
     width: 100%;
     display: flex;
@@ -91,24 +84,24 @@ main{
     font-size: 1.3rem;
 }
 
-.left{
+.signup-component .left{
     float: left;
     display:flex;
     width: 50%;
     justify-content: center;
 }
 
-.left p{
+.signup-component .left p{
     margin-left: 8%;
 }
 
-.right{
+.signup-component .right{
     float: right;
     display: flex;
     width: 50%;
     justify-content: center;
 }
 
-.right p{
+.signup-component .right p{
     margin-right: 8%;
 }

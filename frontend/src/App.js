@@ -1,6 +1,7 @@
 //se importan los componentes
 import Home from "./pages/Home/Home";
 import CompAboutUs from './pages/AboutUs/AboutUs';
+import "./App.css";
 import CompSingUp from './pages/SingUp/Singup';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 

@@ -46,7 +46,7 @@ export const CompShowEnterprises = () =>{
 
 export const Search = () =>{
     return(
-        <main>
+        <div className='search-component'>
         <picture>
             <img src="https://static.timesofisrael.com/blogs/uploads/2019/09/silas-baisch-ceITO2rlDgc-unsplash.jpg" alt="main"/>
         </picture>
@@ -78,6 +78,6 @@ export const Search = () =>{
             </div>
         </div>
         
-    </main>
+    </div>
     )
 }

@@ -9,14 +9,10 @@ const URI = 'http://localhost:8000/AboutUs';
 
 
 const CompAboutUs = () => {
-
-
-        var perro
-
     
     return(
 
-        <div>
+        <div className="aboutus-component">
             <header>
                 <picture>
                     <Link to ={`/`} ><img src="/images/Logos/PymeWaveSinFondo(white).png" alt="logo"/></Link>
