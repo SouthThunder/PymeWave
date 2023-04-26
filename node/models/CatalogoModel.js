@@ -2,6 +2,8 @@
 import db from '../database/db.js';
 // importar sequelize
 import { DataTypes } from 'sequelize';
+// importar relaciones
+import ProductoModel from './ProductoModel.js';
 
 
 const CatalogoModel = db.define('catalogo', {
@@ -15,5 +17,14 @@ const CatalogoModel = db.define('catalogo', {
         allowNull: true
     } //checked
 });
+
+//relaciones 
+    // relación Catalogo - Producto
+        CatalogoModel.hasMany(ProductoModel, {
+            foreignKey: 'id_catalogo'
+        });
+        ProductoModel.belongsTo(CatalogoModel, {
+            foreignKey: 'id_catalogo'
+        });
 
 export default CatalogoModel;

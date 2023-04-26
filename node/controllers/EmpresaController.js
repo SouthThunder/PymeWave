@@ -1,16 +1,16 @@
 // se importa el modelo de datos correspondiente al controlador
 
 import { Model } from "sequelize";
-import EmpModel from "../models/EmpresaModel.js";
+import EmpresaModel from "../models/EmpresaModel.js";
 import UserModel from "../models/UsuarioModel.js";
-import CatalModel from "../models/CatalogoModel.js";
+import CatalogoModel from "../models/CatalogoModel.js";
 
 // Metodos para CRUD
 export const joinCatalsEmpre = async (req, res) =>{
     try {
-        const empres = await EmpModel.findAll({
+        const empres = await EmpresaModel.findAll({
             attributes: { exclude: ['id'] },
-            include: CatalModel // This is for left outer join 
+            include: CatalogoModel // This is for left outer join 
             //include: {model: CatalModel, required: true} -> This is for inner join
         });
         res.json(empres);

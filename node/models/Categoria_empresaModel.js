@@ -4,9 +4,15 @@ import db from '../database/db.js';
 import { DataTypes } from 'sequelize';
 
 
-const Cate_emModel = db.define('categoria_empresa', {
-    id_empresa: { type: DataTypes.INTEGER},
-    id_categoria: { type: DataTypes.INTEGER},
+const Categoria_empresaModel = db.define('categoria_empresa', {
+    id_empresa: { 
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    id_categoria: { 
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
 });
 
-export default Cate_emModel;
+export default Categoria_empresaModel;

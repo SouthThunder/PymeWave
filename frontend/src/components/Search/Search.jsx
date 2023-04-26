@@ -5,37 +5,42 @@ import {useState, useEffect} from 'react';
 const URI = 'http://localhost:8000/';
 
 export const CompShowEnterprises = () =>{
-    const [enterprise, setEnterprise] = useState([]);
+    const [enterprise, setEnterprise] = useState();
     useEffect(() =>{
         getEnterprises()
-    }, []);
+    });
 
     const getEnterprises = async () =>{
         const res = await axios.get(URI);
         setEnterprise(res.data);
     }
 
-
-    return (
-        enterprise?.map((enter)=>{
-            return(
-                <div className="container" key={enter.id}>
-                    <div className="holder">
-                        <picture>
-                            <img src="//placehold.it/300x200"/>
-                        </picture>
-                        <div className="data">
-                            <div className="title">
-                                <h1>{enter.nombre_empresa}</h1>
-                            </div>
-                            <div className="text">
-                                <p>{enter.catalogo?.descripcion_empresa}</p>
+    function cardHolders (){
+        return(
+            enterprise?.map((enter)=>{
+                return(
+                    <div className="container" key={enter.id}>
+                        <div className="holder">
+                            <picture>
+                                <img src="//placehold.it/300x200"/>
+                            </picture>
+                            <div className="data">
+                                <div className="title">
+                                    <h1>{enter.nombre_empresa}</h1>
+                                </div>
+                                <div className="text">
+                                    <p>{enter.catalogo?.descripcion_empresa}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            )
-        })
+                )
+            })
+        )
+    }
+
+    return (
+        cardHolders()
     )
 }
 
