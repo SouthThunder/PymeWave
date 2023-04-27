@@ -3,7 +3,7 @@ import './SignIn.css';
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-const CryptoJS = require('crypto-js');
+import { useNavigate } from 'react-router-dom';
 
 
 const URI='http://localhost:8000/SignIn';
@@ -12,6 +12,7 @@ const CompSignIn = () =>{
     const [user, setUser] = useState(); //usuarios de la DB
     const [localuser, setLocaluser] = useState();
     const [localpassword, setLocalpassword] =useState();
+    const navigate= useNavigate();
     useEffect(() =>{
         getUsers()
     }, []);
@@ -22,16 +23,24 @@ const CompSignIn = () =>{
     }
 
     function shaAlgorithm (string ){
+        const CryptoJS = require('crypto-js');
         const hash = CryptoJS.SHA256(string);
          return hash.toString(CryptoJS.enc.HEX);
     }
 
-    const testing = () => {
+    const post = async(e) =>{
+        //e.preventDefault();
+        //await axios.get(URI, {localuser:localuser, localpassword: localpassword});
+        navigate('/');
+    }
+
+    const testing = async(e) => {
         user?.map((enter) =>{
             if(enter.correo===localuser && enter.contraseña === shaAlgorithm(localpassword)){
-                alert('sucess');
+                alert('inicio de sesión verificado, bienvenido');
+                post();
             }else{
-                alert(enter.contraseña);
+                alert('Contraseña o usuario incorrectos');
             }
         })
       };
@@ -45,7 +54,7 @@ const CompSignIn = () =>{
                         <Link to={'/'}><img src="../images/Logos/PymeWaveSinFondo.png"/></Link>
                     </picture>
                 </div>
-                <form >
+                <form onSubmit={testing}>
                     <div className='title'>   
                         <h1>Iniciar sesion</h1>
                     </div>
@@ -60,7 +69,7 @@ const CompSignIn = () =>{
                         <label>Contraseña</label>
                     </div>
                     <div className="enter">
-                        <button onClick={testing} type="submit">Ingresar</button>
+                        <button type="submit">Ingresar</button>
                     </div>
                     <div className="not-account">
                         <p>¿No tienes una cuenta?  <Link to={'/SingUp'}>Registrate</Link></p>
