@@ -12,6 +12,8 @@ create table usuario(
     CONSTRAINT usuario_UQ UNIQUE (correo, telefono)
 );
 
+insert into usuario (correo,nombre,apellidos,telefono,contraseña) values ('alejandrovemo@gmail.com', 'Luis', 'Vera', '3166293291', '458e904aff929451660a450f40550b66519ee9e612dbc09b6bd36a9e1edde1f6');
+select * from usuario;
 
 create table empresa(
 	nombre_empresa varchar(30) not NULL,

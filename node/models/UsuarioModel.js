@@ -6,7 +6,7 @@ import { DataTypes } from 'sequelize';
 import CalificacionesModel from './CalificacionesModel.js'
 
 
-const UsusarioModel = db.define('usuarios', {
+const UsusarioModel = db.define('usuario', {
     id_usuario: {
         type: DataTypes.INTEGER,
         primaryKey: true,

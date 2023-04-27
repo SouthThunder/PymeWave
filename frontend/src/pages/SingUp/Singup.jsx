@@ -1,13 +1,10 @@
 import {Link} from 'react-router-dom';
-
 import './SingUp.css';
 
 
 const CompSingUp = () => {
-
     return(
         <div className='signup-component'>
-
             <body>
                 <header>
                     <picture>
@@ -22,10 +19,10 @@ const CompSingUp = () => {
                         </div>
                         <div className="options">
                             <picture className='choose-signup'>
-                                <a href="/signUp/empresa"><img src="/images/Logos/Empresa_logo.jpg"/></a>
+                                <img src="/images/Logos/Empresa_logo.jpg"/>
                             </picture>
                             <picture className='choose-signup'>
-                                <a href="/signUp/usuario"><img src="/images/Logos/Persona_natural_logo.jpg"/></a>
+                                <img src="/images/Logos/Persona_natural_logo.jpg"/>
                             </picture>
                         </div>
                         <div className="txt">

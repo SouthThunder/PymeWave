@@ -192,13 +192,10 @@
     justify-content: center;
 }
 
-.search-component .title h1{
-    font-weight: bold;
-}
-
 .search-component .data .text{
     width: 90%;
     margin: 0 auto;
+    margin-top: 8px;
     height: 180px;
     white-space: normal;
     word-wrap: break-word; 

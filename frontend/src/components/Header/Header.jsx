@@ -8,14 +8,14 @@ export class Header extends React.Component{
         return(
             <div className="header-component">  
                 <picture>
-                    <img src="/images/Logos/PymeWaveSinFondo(white).png" alt="logo"/>
+                    <Link to={'/'}><img src="/images/Logos/PymeWaveSinFondo(white).png" alt="logo"/></Link>
                 </picture>
                 <nav>
                     <div className="nav_box">
                         <ul>
                             <li>Services</li>
                             <li>Products</li>
-                            <li><a href="/signIn">Sign In</a></li>
+                            <li><Link to={'/SignIn'}>Sign In</Link></li>
                             <li id="Sign_btns"><Link to={`/SingUp`}>Sign Up</Link> </li>
                         </ul>
                     </div>

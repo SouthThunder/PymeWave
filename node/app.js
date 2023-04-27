@@ -27,7 +27,7 @@ app.use(express.json());
 app.use('/', homeRoutes);// utiliza la ruta /home como base a los controladores de ruta de Home.routes.js
 app.use('/AboutUs',aboutUs);
 app.use('/Busqueda',busqueda);
-app.use('/SingIn',singIn);
+app.use('/SignIn',singIn);
 app.use('/SingIn/Empresa',singInEmpresa);
 app.use('/SingIn/Persona',singInPersona);
 app.use('/SingUp',singUp);

@@ -9,7 +9,7 @@ export const CompShowEnterprises = () =>{
     const [enterprise, setEnterprise] = useState();
     useEffect(() =>{
         getEnterprises()
-    });
+    }, []);
 
     const getEnterprises = async () =>{
         const res = await axios.get(URI);
