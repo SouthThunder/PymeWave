@@ -1,2 +1,4 @@
 node_modules
 *.pack
+
+node/database/db.js
