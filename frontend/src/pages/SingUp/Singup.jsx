@@ -21,10 +21,10 @@ const CompSingUp = () => {
                             <h1>¿Cómo quieres navegar con nosotros?</h1>
                         </div>
                         <div className="options">
-                            <picture>
+                            <picture className='choose-signup'>
                                 <a href="/signUp/empresa"><img src="/images/Logos/Empresa_logo.jpg"/></a>
                             </picture>
-                            <picture>
+                            <picture className='choose-signup'>
                                 <a href="/signUp/usuario"><img src="/images/Logos/Persona_natural_logo.jpg"/></a>
                             </picture>
                         </div>
