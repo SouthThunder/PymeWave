@@ -78,7 +78,7 @@
     color: #202C3F;
 }
 
-.search-component .feed{
+.feed-component{
     width: 100%;
     height: 100%;
     margin: 0 auto;
@@ -86,37 +86,37 @@
     margin-top: 3rem;
 }
 
-.search-component .arrow_left{
+.feed-component .arrow_left{
     position: absolute;
     margin-top: 22rem;
     margin-left: 10rem;
 }
 
-.search-component .arrow_left button{
+.feed-component .arrow_left button{
     background:transparent;
     border: none;
 }
 
-.search-component .arrow_left img{
+.feed-component .arrow_left img{
     width: 10rem;
 }
 
-.search-component .arrow_right{
+.feed-component .arrow_right{
     position: absolute;
     margin-top: 22.5rem;
     margin-left: 90%;
 }
 
-.search-component .arrow_right button{
+.feed-component .arrow_right button{
     background: transparent;
     border: none;
 }
 
-.search-component .arrow_right img{
+.feed-component .arrow_right img{
     width: 9rem;
 }
 
-.search-component .scrollport{
+.feed-component .scrollport{
     width: 70%;
     margin: 0 auto;
     overflow-x: auto;
@@ -125,32 +125,32 @@
     scroll-snap-type: x mandatory;
 }
 
-.search-component .scrollport .indicators{
+.feed-component .scrollport .indicators{
     position: absolute;
 }
 
-.search-component .indicators h1,h2{
+.feed-component .indicators h1,h2{
     color:#202C3F;
 }
 
-.search-component .indicators h1{
+.feed-component .indicators h1{
     font-size: 2.5rem;
 }
 
-.search-component .indicators h2{
+.feed-component .indicators h2{
     font-size: 1.7rem;
 }
 
-.search-component .indicators .arrow_left{
+.feed-component .indicators .arrow_left{
     position: sticky;
 }
 
-.search-component .container{
+.feed-component .container{
     display:inline-flex;
     border-radius: 15px;
     border: 1px solid #202C3F;
 }
-.search-component .container:nth-child(n){
+.feed-component .container:nth-child(n){
     margin: 0;
     padding: 0;
     width: 300px;
@@ -158,7 +158,7 @@
     margin: 8rem 10rem;
 }
 
-.search-component .holder{
+.feed-component .holder{
     width: inherit;
     height: inherit;
     padding: 0;
@@ -166,19 +166,19 @@
     position: relative;
 }
 
-.search-component .container picture{
+.feed-component .container picture{
     width:298px;
     height: 200px;
 }
 
-.search-component .container picture img{
+.feed-component .container picture img{
     width: inherit;
     height: inherit;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
 
-.search-component .data{
+.feed-component .data{
     width: 298px;
     height: 238px;
     border-bottom-left-radius: 15px;
@@ -186,13 +186,13 @@
     word-wrap: break-word;
 }
 
-.search-component .data .title{
+.feed-component .data .title{
     margin-top: 0.5rem;
     display: flex;
     justify-content: center;
 }
 
-.search-component .data .text{
+.feed-component .data .text{
     width: 90%;
     margin: 0 auto;
     margin-top: 8px;
@@ -203,11 +203,11 @@
     overflow-x: hidden;
 }
 
-.search-component .text p{
+.feed-component .text p{
     font-size: 1.3rem;
 }
 
-.search-component .scrollport img{
+.feed-component .scrollport img{
     scroll-snap-align: center;
 }
 

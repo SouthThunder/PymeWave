@@ -6,7 +6,7 @@ import './Search.css';
 const URI = 'http://localhost:8000/';
 
 export const CompShowEnterprises = () =>{
-    const [enterprise, setEnterprise] = useState();
+    const [enterprise, setEnterprise] = useState([]);
     useEffect(() =>{
         getEnterprises()
     }, []);
@@ -17,6 +17,11 @@ export const CompShowEnterprises = () =>{
     }
 
     function cardHolders (){
+        /*const copyItems=1;
+        alert(enterprise?.length)
+        for(let i=0;i<enterprise?.length;i++){
+            alert(enterprise[i].correo);
+        }*/
         return(
             enterprise?.map((enter)=>{
                 return(
@@ -39,9 +44,28 @@ export const CompShowEnterprises = () =>{
             })
         )
     }
-
     return (
         cardHolders()
+    )
+}
+
+export const Feed = () =>{
+    return(
+        <div className="feed-component">
+            <div className="arrow_left">
+                <button><img src="https://cdn-icons-png.flaticon.com/512/4028/4028550.png"/></button>
+            </div>
+            <div className="arrow_right">
+                <button><img src="https://cdn-icons-png.flaticon.com/512/1549/1549612.png"/></button>
+            </div>
+            <div className="scrollport">
+                <div className="indicators">
+                    <h1>¿No estás seguro de lo que buscas?</h1>
+                    <h2>Surfea en nuestro mar de opciones</h2>
+                </div>
+                <CompShowEnterprises/>
+            </div>
+        </div>
     )
 }
 
@@ -62,23 +86,6 @@ export const Search = () =>{
                 </div>
               </form>   
         </div>
-
-        <div className="feed">
-            <div className="arrow_left">
-                <button><img src="https://cdn-icons-png.flaticon.com/512/4028/4028550.png"/></button>
-            </div>
-            <div className="arrow_right">
-                <button><img src="https://cdn-icons-png.flaticon.com/512/1549/1549612.png"/></button>
-            </div>
-            <div className="scrollport">
-                <div className="indicators">
-                    <h1>¿No estás seguro de lo que buscas?</h1>
-                    <h2>Surfea en nuestro mar de opciones</h2>
-                </div>
-                <CompShowEnterprises/>
-            </div>
-        </div>
-        
     </div>
     )
 }
