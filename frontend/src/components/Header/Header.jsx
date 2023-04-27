@@ -6,7 +6,7 @@ import './Header.css'
 export class Header extends React.Component{
     render(){
         return(
-            <header>  
+            <div className="header-component">  
                 <picture>
                     <img src="/images/Logos/PymeWaveSinFondo(white).png" alt="logo"/>
                 </picture>
@@ -20,7 +20,8 @@ export class Header extends React.Component{
                         </ul>
                     </div>
                 </nav>
-            </header>
+            </div>
+            
         )
     }
 

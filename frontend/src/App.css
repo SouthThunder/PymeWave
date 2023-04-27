@@ -1,0 +1,51 @@
+:root{
+  --primaryColor: #202C3F;
+  --secondaryColor: #7DA9DB;
+  --tertiaryColor: white;
+} 
+/*Start Global CSS*/
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+    
+}
+
+body{
+    position: relative;
+    padding-bottom: 13vh;
+    min-height: 100vh;
+    background-color: white;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+    /*Take off x from input in Internet explorer*/
+    input[type=search]::-ms-check{
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    input[type=search]::-ms-reveal{
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    /*Remove x from input in chrome*/
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+/*End Global CSS*/
+

@@ -1,17 +1,22 @@
-:root{
-    --primaryColor: #202C3F;
-    --secondaryColor: #7DA9DB;
-    --tertiaryColor: white;
-} 
+body{
+    height: 100vh;
+}
+
+.aboutus-component{
+    position: relative;
+    height: 100%;
+    /* background-color: white; */
+    overflow-x: hidden;
+}
 
 /*Fin header*/
 
-main > picture{
+.main-aboutus > picture{
     height: 50vh;
     width: 100vw;
 }
 
-main > picture >img{
+.main-aboutus > picture > img{
     width: inherit;
     height: inherit;
     object-fit:cover;
@@ -19,26 +24,26 @@ main > picture >img{
     overflow: hidden;
 }
 
-.center{
+.aboutus-component .center{
     Width: 60%;
     Margin: 2rem auto;
     text-align: center;
 }
 
-.center > h1{
+.aboutus-component .center > h1{
     font-weight: 600;
     font-size: 60px;
     color: var(--primaryColor);
 }
 
-.center > h1 + p{
+.aboutus-component .center > h1 + p{
     margin-top: 2rem;
     font-size: 2.2rem;
 }
 
 /*Start Mision && vision*/
 
-.objetivos{
+.aboutus-component .objetivos{
    padding-top: 2rem;
     Width: 90% ;
     margin: 0 auto;
@@ -47,31 +52,31 @@ main > picture >img{
     padding-bottom: 3rem;
 }
 
-.objetivos div:nth-child(1){
+.aboutus-component .objetivos div:nth-child(1){
     width: 100%;
     text-align: center;
     border-right: 1px solid var(--primaryColor);
 }
 
-.objetivos div h1{
+.aboutus-component .objetivos div h1{
     padding: 1rem;
     color: var(--primaryColor);
     font-size: 4rem;
 }
 
-.objetivos div p{
+.aboutus-component .objetivos div p{
     color: var(--primaryColor);
     font-size: 2rem;
     padding: 0 2rem 2rem 2rem;
 }
 
-.objetivos div:nth-child(2){
+.aboutus-component .objetivos div:nth-child(2){
     border-left: 1px solid var(--primaryColor);
     width: 100%;
     text-align: center;
 }
 
-.objetivos div:nth-child(2) > p{
+.aboutus-component .objetivos div:nth-child(2) > p{
     color: var(--primaryColor);
 }
 
@@ -93,11 +98,11 @@ main > picture >img{
 }
 
 #global-info picture{
-    width: 110rem;
+    width: 70rem;
     margin: 1rem auto;
 }
 
-#global-info picture img{
+#global-info picture > img{
     width: inherit;
     height: inherit;
 }
@@ -121,4 +126,4 @@ ol li{
     margin: 2rem 0 2rem 0;
 }
 
-/*Footer*/
+

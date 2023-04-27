@@ -4,33 +4,28 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {Link} from 'react-router-dom';
 import './AboutUs.css';
+import { Header } from "../../components/Header/Header";
+import { Footer } from "../../components/Footer/Footer";
 
 const URI = 'http://localhost:8000/AboutUs';
 
+const AboutUs = () =>{
+    return (
+        <div className="aboutus">
+            <Header/>
+                <CompAboutUs/>
+            <Footer/>
+        </div>
+    )
+}
+
 
 const CompAboutUs = () => {
-    
     return(
-
-        <div>
-            <header>
+        <div className="aboutus-component">
+            <div className="main-aboutus">
                 <picture>
-                    <Link to ={`/`} ><img src="/images/Logos/PymeWaveSinFondo(white).png" alt="logo"/></Link>
-                </picture>
-                <nav>
-                    <div className="nav_box">
-                        <ul>
-                            <li>Services</li>
-                            <li>Products</li>
-                            <li><a href="/SignIn">Sign In</a></li>
-                            <li id="Sign_btns"><Link to ={`/SingUp`} >Sign Up</Link> </li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
-            <main>
-                <picture>
-            <img src="/images/Backgrounds/home_main_img.jpg" alt="main"/>
+                    <img src="/images/Backgrounds/home_main_img.jpg" alt="main"/>
                 </picture>
                 <div className="center">
                     <h1>¿Quiénes Somos?</h1>
@@ -72,30 +67,11 @@ const CompAboutUs = () => {
                     </ol>
                     <p>Analizando estos puntos, se logra evidenciar un escenario desalentador cuando casi todos los puntos son cíclicos y codependientes, unos de los otros, en donde se logra encontrar un común denominador para lleva a cabo la mayoría de estos desafíos, el capital. 5 de estos puntos hacen referencia al renombre del emprendimiento ante el público, siendo su renombre imperativo para poder vender, sin esparcimiento al público, no tendrían ventas, por ende, no podrían hacer ninguno de los puntos subrayados en rojo.</p>
                 </section>
-
-
-            </main>
-            <footer>
-                <div className="left">
-                    <p>© 2023 PymeWave, Inc</p>
-                    <p><a href="">Terms</a></p>
-                    <p><a href="">Privacy</a></p>
-                </div>
-                <div className="right">
-                    <a href="https://www.facebook.com/" target="_blank"><img src="/images/Social-media/Facebook-icon.png" alt="Facebook"/></a>
-                    <a href="https://twitter.com/?lang=es" target="_blank"><img src="/images/Social-media/Twitter-icon.png" alt="Twitter"/></a>
-                    <a href="https://www.instagram.com/" target="_blank"><img src="/images/Social-media/Instagram-icon.png" alt="Instagram"/></a>
-                    <a href="https://discord.com/" target="_blank"><img src="/images/Social-media/Discord-icon.png" alt="Discord"/></a>
-                </div>
-            </footer>
+            </div>
         </div>
 
     );
-
-
 }
 
 
-export default CompAboutUs;
-
-
+export default AboutUs;

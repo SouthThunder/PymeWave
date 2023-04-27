@@ -1,69 +1,17 @@
-/*Start Global CSS*/
-
-:root{
-    --primary-color: #202C3F;
-    --secondary-color: #7DA9DB;
-    --tertiary-color: white;
-}
-
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-html{
-    font-size: 62.5%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: relative;
-}
-
-body{
-    position: relative;
-    padding-bottom: 13vh;
-    min-height: 100vh;
-    background-color: var(--tertiary-color);
-}
-
-::-webkit-scrollbar{
-    display: none;
-}
-
-button:hover{
-    cursor: pointer;
-}
-
-    /*Take off x from input in Internet explorer*/
-    input[type=search]::-ms-check{
-        display: none;
-        width: 0;
-        height: 0;
-    }
-
-    input[type=search]::-ms-reveal{
-        display: none;
-        width: 0;
-        height: 0;
-    }
-    /*Remove x from input in chrome*/
-    input[type="search"]::-webkit-search-decoration,
-    input[type="search"]::-webkit-search-cancel-button,
-    input[type="search"]::-webkit-search-results-button,
-    input[type="search"]::-webkit-search-results-decoration { display: none; }
-
-/*End Global CSS*/
-
-
 /*Start Main CSS*/
 
-.search-component picture{
+.search-component{
+    position: relative;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.search-component > picture{
     height: 50vh;
     width: 100vw;
 }
 
-.search-component  > picture >img{
+.search-component > picture >img{
     width: inherit;
     height: inherit;
     object-fit:cover;
@@ -71,12 +19,12 @@ button:hover{
     overflow: hidden;
 }
 
-.center{
+.search-component .center{
     Width: 70%;
     Margin: 0 auto;
 }
 
-.search {
+.search-component .search {
     width: 650px;
     height: 60px;
     margin-top: 3rem;
@@ -86,7 +34,7 @@ button:hover{
     border: 1px solid #202C3F;
 }
 
-.input-container[data-error] input{
+.search-component .input-container[data-error] input{
     color: #202C3F;
     width: 528px;
     height: 59px;
@@ -97,13 +45,13 @@ button:hover{
     border-radius: 3px 0 0 3px;
 }
 
-.button-container{
+.search-component .button-container{
     width: inherit;
     height: inherit;
     border: 1px solid #202C3F;
 }
     
-.search button {
+.search-component .search button {
       border: 0;
       padding: 0;
       cursor: pointer;
@@ -115,7 +63,7 @@ button:hover{
       border-radius: 0 3px 3px 0;  
 }  
 
-.search button:hover{
+.search-component .search button:hover{
     background: #7DA9DB;
     box-shadow: 1px 1px 1px 1px #202C3F;
     transition: all 0.5s ease;
@@ -130,85 +78,87 @@ button:hover{
     color: #202C3F;
 }
 
-.feed{
+.search-component .feed{
     width: 100%;
+    height: 100%;
     margin: 0 auto;
+    overflow: hidden;
+    margin-top: 3rem;
 }
 
-.arrow_left{
+.search-component .arrow_left{
     position: absolute;
     margin-top: 22rem;
     margin-left: 10rem;
 }
 
-.arrow_left button{
+.search-component .arrow_left button{
     background:transparent;
     border: none;
 }
 
-.arrow_left img{
+.search-component .arrow_left img{
     width: 10rem;
 }
 
-.arrow_right{
+.search-component .arrow_right{
     position: absolute;
     margin-top: 22.5rem;
     margin-left: 90%;
 }
 
-.arrow_right button{
+.search-component .arrow_right button{
     background: transparent;
     border: none;
 }
 
-.arrow_right img{
+.search-component .arrow_right img{
     width: 9rem;
 }
 
-.scrollport{
+.search-component .scrollport{
     width: 70%;
-    height: 500px;
-    margin: 5rem auto;
+    margin: 0 auto;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
     scroll-snap-type: x mandatory;
 }
 
-.scrollport .indicators{
+.search-component .scrollport .indicators{
     position: absolute;
 }
 
-.indicators h1,h2{
+.search-component .indicators h1,h2{
     color:#202C3F;
 }
 
-.indicators h1{
+.search-component .indicators h1{
     font-size: 2.5rem;
 }
 
-.indicators h2{
+.search-component .indicators h2{
     font-size: 1.7rem;
 }
 
-.indicators .arrow_left{
+.search-component .indicators .arrow_left{
     position: sticky;
 }
 
-.container{
+.search-component .container{
     display:inline-flex;
     border-radius: 15px;
     border: 1px solid #202C3F;
 }
-.container:nth-child(n){
+.search-component .container:nth-child(n){
     margin: 0;
     padding: 0;
     width: 300px;
-    height: 400px;
+    height: 450px;
     margin: 8rem 10rem;
 }
 
-.holder{
+.search-component .holder{
     width: inherit;
     height: inherit;
     padding: 0;
@@ -216,51 +166,51 @@ button:hover{
     position: relative;
 }
 
-.container picture{
+.search-component .container picture{
     width:298px;
     height: 200px;
 }
 
-.container picture img{
+.search-component .container picture img{
     width: inherit;
     height: inherit;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
 
-.data{
+.search-component .data{
     width: 298px;
-    height: 198px;
+    height: 238px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     word-wrap: break-word;
 }
 
-.data .title{
+.search-component .data .title{
     margin-top: 0.5rem;
     display: flex;
     justify-content: center;
 }
 
-.title h1{
+.search-component .title h1{
     font-weight: bold;
 }
 
-.data .text{
+.search-component .data .text{
     width: 90%;
     margin: 0 auto;
-    height: 138px;
+    height: 180px;
     white-space: normal;
     word-wrap: break-word; 
     text-align: justify;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
-.text p{
+.search-component .text p{
     font-size: 1.3rem;
 }
 
-.scrollport img{
+.search-component .scrollport img{
     scroll-snap-align: center;
 }
 

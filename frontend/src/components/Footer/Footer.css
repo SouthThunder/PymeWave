@@ -1,6 +1,6 @@
-footer{
+
+.footer-component{
     position: absolute;
-    bottom: 0;
     width: 100vw;
     height: 10vh;
     background: #202C3F;
@@ -8,7 +8,7 @@ footer{
     display: flex;
 }
 
-footer > .left{
+.footer-component > .left{
     float: left;
     width: 50%;
     padding-left: 15rem;
@@ -17,25 +17,25 @@ footer > .left{
     align-items: center;
 }
 
-.left p{
+.footer-component .left p{
     display: inline-block;
     padding: 1rem;
     color: white;
     font-size: 1.2rem;
 }
 
-.left p:nth-child(n+1) a{
+.footer-component .left p:nth-child(n+1) a{
     text-decoration: none;  
     color: whitesmoke;
 }
 
-.left p:nth-child(n+1) a:hover{
+.footer-component .left p:nth-child(n+1) a:hover{
     color:#7DA9DB;
     cursor: pointer;
     transition: all 0.4s ease;
 }
 
-.right{
+.footer-component .right{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,7 +43,7 @@ footer > .left{
     width: 50%;
 }
 
-.right img{
+.footer-component .right img{
     display: inline-block;
     padding-left: 2rem;
     height: 2.5rem;

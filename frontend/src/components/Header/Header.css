@@ -1,10 +1,5 @@
-:root{
-    --primaryColor: #202C3F;
-    --secondaryColor: #7DA9DB;
-    --tertiaryColor: white;
-}
 
-header{
+.header-component{
     width: 100vw;
     height: 10vh;
     overflow: auto;
@@ -13,44 +8,51 @@ header{
     position:fixed;
     margin: 0;
     padding: 0;
+    z-index: 1;
 }
 
-header >picture{
-    margin-left: -0rem;
+.header-component >picture{
+    margin-left: 2rem;
+    display: flex;
+    justify-content: center;
     float: left;
-    width: 20rem;
+    width: 15rem;
     height: inherit;
 }
 
+.header-component picture > a{
+    height: inherit;
+    margin-right: 60%;
+}
 
-header >picture img{
+.header-component >picture img{
     overflow: visible;
     width: inherit;
     height: inherit;
     object-fit: cover;
 }
 
-header >picture img:hover{
+.header-component >picture img:hover{
     cursor: pointer;
 }
 
-header > nav{
+.header-component > nav{
     float: right;
     height: 100%;
 }
-.nav_box{
+.header-component .nav_box{
     margin-right: 1rem;
     height: 100%;
     width: 100%;
 }
 
-ul{
-    height: inherit;
+.header-component .nav_box ul{
+    height: 100%;
     display: flex;
     align-items: center;
 }
 
-ul >li{
+.header-component ul >li{
     display: inline-block;
     padding: 0 1rem 0 1rem;
     color: var(--tertiaryColor);
@@ -58,28 +60,28 @@ ul >li{
     font-size: 1.4rem;
 }
 
-ul >li a{
+.header-component ul >li a{
     text-decoration: none;
     color: var(--tertiaryColor);
 }
 
-ul >li a:hover{
+.header-component ul >li a:hover{
     transition: all 0.4s ease;
     color: var(--secondaryColor);
 }
 
-ul >li:hover{
+.header-component ul >li:hover{
     cursor: pointer;
     transition: all 0.4s ease-in;
     color: var(--secondaryColor);
 }
 
-ul > li:nth-child(4){
+.header-component ul > li:nth-child(4){
     border: 1px solid var(--tertiaryColor);
     border-radius: 5px;
     padding: 1rem;
 }
 
-ul > li:nth-child(4):hover{
+.header-component ul > li:nth-child(4):hover{
     border: 1px solid var(--secondaryColor);
 }

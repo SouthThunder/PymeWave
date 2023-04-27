@@ -6,7 +6,7 @@ import './SingUp.css';
 const CompSingUp = () => {
 
     return(
-        <div>
+        <div className='signup-component'>
 
             <body>
                 <header>
