@@ -1,0 +1,172 @@
+/* texto modificar datos
+position: absolute;
+width: 1056px;
+height: 80px;
+left: 29px;
+top: 149px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 61px;
+
+color: #000000;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+*/
+
+/*Imagen rectangulo 
+box-sizing: border-box;
+
+position: absolute;
+width: 363px;
+height: 281px;
+left: 29px;
+top: 267px;
+
+background: url(image.png);
+border: 2px solid #000000;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+*/
+.modificarDatosEmp .container .dividor  {
+    padding-top: 2rem;
+    Width: 90% ;
+    margin: 0 auto;
+    display: flex;
+    text-align: left;
+    padding-bottom: 3rem;
+}
+.modificarDatosEmp .container .dividor .izquierda {
+    width: 25%;
+    text-align: center;
+    
+}
+.modificarDatosEmp .container .dividor .derecha {
+    border-left: 1px solid var(--primaryColor);
+    width: 100%;
+    text-align: center;
+}
+.modificarDatosEmp .container .dividor .derecha form{
+    margin-top: 1rem;
+    margin-left: 2rem;
+    
+}
+.modificarDatosEmp .container .dividor .izquierda picture{
+    padding-right: 10rem;
+}
+.modificarDatosEmp .container .dividor .izquierda h4{
+    margin-right: 8rem;
+    margin-top: 2rem;
+}
+
+.texto{
+    Color:whitesmoke;
+}
+.modificarDatosEmp .container .dividor .derecha form .inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    top: 20px;
+    color:var(--primaryColor);
+   
+}
+.modificarDatosEmp .container .dividor .derecha form .inputbox{
+    position: relative;
+    width: 85%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    border-bottom: 2px solid var(--primaryColor);
+}
+
+.modificarDatosEmp .container .dividor .derecha form .inputbox label{
+    position: absolute;
+    top: 30%;
+    left: 5px;
+    color: var(--primaryColor);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.modificarDatosEmp .container .dividor .derecha form .inputbox h5{
+    position: absolute;
+    top: -5%;
+    left: 5px;
+    
+    color: var(--primaryColor);
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.modificarDatosEmp .container .dividor .derecha form .inputbox input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 15px 5px 0 5px;
+}
+
+.modificarDatosEmp .container .dividor .derecha form .inputbox small{
+    color: #FFA500;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+}
+
+.modificarDatosEmp .container .dividor .derecha form .inputbox .error small{
+    visibility: visible;
+}
+.modificarDatosEmp .container .dividor .derecha form .inputbox .sucess small{
+    visibility: hidden;
+}
+
+.modificarDatosEmp .container .dividor .derecha form .inputbox input:focus ~ label,
+.modificarDatosEmp .container .dividor .derecha form .inputbox input:valid ~ label,
+.modificarDatosEmp .container .dividor .derecha form .inputbox input:invalid ~ label{
+    top: -4px;
+}
+
+
+.modificarDatosEmp .container .dividor .derecha form .enter{
+    display: flex;
+    justify-content: center;
+}
+
+.modificarDatosEmp .container .dividor .derecha form .enter > button{
+    margin-right: 2rem;
+    background-color: var(--primaryColor);
+    color: var(--tertiaryColor);
+    border-radius: 50px;
+    border: 0px;
+    width: 10rem;
+    height: 2.5rem;
+    font-size: 1rem;
+}
+
+.modificarDatosEmp .container .dividor .derecha form .enter > button:hover{
+    border: 1px solid #202C3F;
+    background-color: #7DA9DB;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+}
+.modificarDatosEmp .container .dividor .derecha form .options{
+    margin-top: 6rem;
+    width: 100%;
+    height: 230px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.modificarDatosEmp .container h1{
+    
+    padding-top: 8rem;
+    text-align: center;
+}
+
+
