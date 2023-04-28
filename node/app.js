@@ -34,7 +34,7 @@ app.use('/SingIn/Persona',singInPersona);
 app.use('/SingUp',singUp);
 app.use('/SingUp/Empresa',singUpEmpresa);
 app.use('/SingUp/Persona',singUpPersona);
-app.use('/Cates',cates);
+app.use('/Cate/gorias',cates);
 
 
 // conexion

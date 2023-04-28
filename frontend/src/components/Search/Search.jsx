@@ -8,7 +8,7 @@ import {QueryResults} from '../Querys-results/Querys-results';
 
 
 const URI = 'http://localhost:8000/';
-const URI2 = 'http://localhost:8000/Cates';
+const URI2 = 'http://localhost:8000/Cate/gorias';
 
 export const CompShowEnterprises = () =>{
     const [enterprise, setEnterprise] = useState([]);
