@@ -4,6 +4,7 @@ import {useState, useEffect} from 'react';
 import './Search.css';
 
 const URI = 'http://localhost:8000/';
+const URI2 = 'http://localhost:8000/Cates';
 
 export const CompShowEnterprises = () =>{
     const [enterprise, setEnterprise] = useState([]);
@@ -25,7 +26,7 @@ export const CompShowEnterprises = () =>{
         return(
             enterprise?.map((enter)=>{
                 return(
-                    <div className="container" key={enter.id}>
+                    <div className="container" >
                         <div className="holder">
                             <picture>
                                 <img src="//placehold.it/300x200"/>
@@ -44,6 +45,8 @@ export const CompShowEnterprises = () =>{
             })
         )
     }
+
+    
     return (
         cardHolders()
     )
@@ -69,23 +72,59 @@ export const Feed = () =>{
     )
 }
 
-export const Search = () =>{
-    return(
-        <div className='search-component'>
+export const Search = () => {
+
+    const [cates, setCates] = useState([]);
+
+    useEffect(() => {
+        getCates();
+    },[]);
+
+    const getCates = async () => {
+        const res = await axios.get(URI2);
+        setCates(res.data);
+    }
+
+    const [showPopup, setShowPopup] = useState(false); // state para controlar el popup
+  
+    const togglePopup = () => {
+      setShowPopup(!showPopup); // función para alternar el estado del popup
+    }
+  
+    return (
+      <div className='search-component'>
         <picture>
-            <img src="https://static.timesofisrael.com/blogs/uploads/2019/09/silas-baisch-ceITO2rlDgc-unsplash.jpg" alt="main"/>
+          <img src="https://static.timesofisrael.com/blogs/uploads/2019/09/silas-baisch-ceITO2rlDgc-unsplash.jpg" alt="main"/>
         </picture>
         <div className="center">
-            <h1 id="promt">Join The Magic</h1>
-            <form className="search" id="form-search">
-                <div className="input-container"  data-error="Please do not leave this blank">
-                    <input type="search" placeholder="Search here..." id="input-search"/>
-                </div>
-                <div className="button-container">
-                    <button type="button">Search</button>
-                </div>
-              </form>   
+          <h1 id="promt">Join The Magic</h1>
+          <form className="search" id="form-search">
+            <div className="input-container"  data-error="Please do not leave this blank">
+              <input type="search" placeholder="Search here..." id="input-search"/>
+            </div>
+            <div className="button-containerpop">
+            <button type="button" onClick={togglePopup}><img className="button-imagepop" src="/images/Logos/Filtro2.png"/></button> {/* Agregar el botón para abrir el popup */}
+            </div>
+            <div className="button-container">
+              <button type="button">Search</button>
+            </div>
+          </form> 
+          {showPopup && (
+            <div className="popup">
+                <p>Selecciona tus categorías:</p>
+                <label className='checkbox'>
+                    {cates.map((cate) => (
+                        <label className='checkbox-container' key={cate.id}>
+                            <input  type="checkbox" value={cate.nombre} />
+                            {cate.nombre}
+                            <br/>
+                        </label>
+                    ))}
+                </label>
+                <button type="button" onClick={togglePopup}>Cerrar</button>
+            </div>
+            )} 
         </div>
-    </div>
+      </div>
     )
-}
+  }

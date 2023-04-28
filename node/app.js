@@ -16,6 +16,7 @@ import singInPersona from './routes/singInPersona.routes.js';
 import singUp from './routes/singUp.routes.js';
 import singUpEmpresa from './routes/singUpeEmpresa.routes.js';
 import singUpPersona from './routes/singInPersona.routes.js';
+import cates from './routes/categorias.routes.js';
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use('/SingIn/Persona',singInPersona);
 app.use('/SingUp',singUp);
 app.use('/SingUp/Empresa',singUpEmpresa);
 app.use('/SingUp/Persona',singUpPersona);
+app.use('/Cates',cates);
 
 
 // conexion
