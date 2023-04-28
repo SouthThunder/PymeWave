@@ -1,10 +1,10 @@
 import {Link} from 'react-router-dom';
-//import './SingUpEmp.css';
+import './SingUpEmp.css';
 
 
 const CompSingUpEmp = () => {
     return(
-        <div>
+        <div className='signupempr-component'>
 
             <header>
                 <picture>
