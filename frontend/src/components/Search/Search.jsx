@@ -144,6 +144,7 @@ export const Search = () => {
             <div>
                 <QueryResults
                     nombre_empresa = {searchValue}
+                    disabled={true}
                 />
             </div>
         </div>

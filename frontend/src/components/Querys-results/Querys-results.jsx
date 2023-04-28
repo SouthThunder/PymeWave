@@ -32,25 +32,23 @@ export const Testing = (props) =>{
     function cardHolders (){
 
         return(
-
-            <div>
-               {empres
-                    .filter((empre) => empre.nombre_empresa === props.nombre_empresa)
-                    .map((empre) => (
-                        <div className="dataHolder">
-                             <picture>
-                                 <img src="//placehold.it/300x400"/>
-                             </picture>
-                             <div className="dataoutput">
-                                 <h1>{empre.nombre_empresa}</h1>
-                                 <p>{empre.catalogo?.descripcion_empresa}</p>
-                                 <button>Leer mas</button>
-                             </div>
-                        </div>
-                    ))
-                }
+            <div className='container'>
+                    {empres
+                        .filter((empre) => empre.nombre_empresa === props.nombre_empresa)
+                        .map((empre) => (
+                            <div className="dataHolder">
+                                <picture>
+                                    <img src="//placehold.it/300x400"/>
+                                </picture>
+                                <div className="dataoutput">
+                                    <h1>{empre.nombre_empresa}</h1>
+                                    <p>{empre.catalogo?.descripcion_empresa}</p>
+                                    <button>Leer mas</button>
+                                </div>
+                            </div>
+                        ))
+                    }
             </div>
-            
         )
     }
 
@@ -60,13 +58,15 @@ export const Testing = (props) =>{
     )
 }
 
-export const QueryResults = (props) =>{
+export const QueryResults = (props, {disable}) =>{
         return(
+            !disable && (
             <div className="queryResultsComp">
                 <Testing 
                     nombre_empresa = {props.nombre_empresa}
                 />
             </div>
+            )
         );
     
 }
