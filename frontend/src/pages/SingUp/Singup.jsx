@@ -19,10 +19,10 @@ const CompSingUp = () => {
                         </div>
                         <div className="options">
                             <picture className='choose-signup'>
-                                <img src="/images/Logos/Empresa_logo.jpg"/>
+                                <Link to={`/SignUp/Empresa`}><img src="/images/Logos/Empresa_logo.jpg"/></Link>
                             </picture>
                             <picture className='choose-signup'>
-                                <img src="/images/Logos/Persona_natural_logo.jpg"/>
+                                <Link to={`/SignUp/Persona`} ><img src="/images/Logos/Persona_natural_logo.jpg"/></Link>
                             </picture>
                         </div>
                         <div className="txt">

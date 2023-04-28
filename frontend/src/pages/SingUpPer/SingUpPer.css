@@ -1,0 +1,193 @@
+.singUpPer-component *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    overflow: hidden;   
+    color: whitesmoke;
+}
+
+.singUpPer-component body{
+    background-image: url("../../../public/images/Backgrounds/Fondo_signUp.jpg");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 15%;
+}
+
+.singUpPer-component header > picture{
+    height: 150px;
+    width: 350px;
+}
+
+.singUpPer-component header > picture > a{
+    height: inherit;
+    width: inherit;
+}
+
+.singUpPer-component header > picture > a > img{
+    height: inherit;
+    width: inherit;
+}
+
+.singUpPer-component main{
+    height: 80vh;
+    width: 100vw;
+}
+
+.singUpPer-component .container{
+    margin: 0 auto;
+    width: 40%;
+    height: 90%;
+    background-color: #202C3F;
+    opacity: 0.9;
+    border-radius: 3rem;
+}
+.singUpPer-component .container h1{
+    color: whitesmoke;  
+    display: flex;
+    justify-content: center;
+}
+
+
+ 
+.singUpPer-component form{
+    margin-top: 1rem;
+    margin-left: 2rem;
+    
+}
+
+.texto{
+    Color:whitesmoke;
+}
+.inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    top: 20px;
+    color:whitesmoke;
+   
+}
+.inputbox{
+    position: relative;
+    width: 85%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    border-bottom: 2px solid whitesmoke;
+}
+
+.inputbox label{
+    position: absolute;
+    top: 30%;
+    left: 5px;
+    color: whitesmoke;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.inputbox input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 15px 5px 0 5px;
+}
+.inputbox small{
+    color: #FFA500;
+    position: absolute;
+    top: 5;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.inputbox.error small{
+    visibility: visible;
+}
+.inputbox.sucess small{
+    visibility: hidden;
+}
+input:focus ~ label,
+input:valid ~ label,
+input:invalid ~ label{
+    top: -4px;
+}
+
+
+.enter{
+    display: flex;
+    justify-content: center;
+}
+
+.enter > button{
+    margin-right: 2rem;
+    background-color: whitesmoke;
+    color: #202C3F;
+    border-radius: 50px;
+    border: 0px;
+    width: 10rem;
+    height: 2.5rem;
+    font-size: 1rem;
+}
+
+.enter > button:hover{
+    border: 1px solid #202C3F;
+    background-color: #7DA9DB;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+}
+.options{
+    margin-top: 6rem;
+    width: 100%;
+    height: 230px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+
+.txt{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    clear: both;
+    font-size: 1.3rem;
+}
+
+.left{
+    float: left;
+    display:flex;
+    width: 50%;
+    justify-content: center;
+}
+
+.left p{
+    margin-left: 8%;
+}
+
+.right{
+    float: right;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+
+.right p{
+    margin-right: 8%;
+}
+.errores{
+    padding-left: 4.7rem;
+    padding-bottom: 2.2rem;
+  }
+  .erroresContrasenia{
+    padding-left: 5.3rem;
+    padding-bottom: 2.2rem;
+  }
+  .erroresCorreo{
+    padding-left: 8.5rem;
+    padding-bottom: 2.2rem;
+  }

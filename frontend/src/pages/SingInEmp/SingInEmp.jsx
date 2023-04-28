@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import './SignIn.css';
+import './SingInEmp.css';
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 const URI='http://localhost:8000/SignIn';
 
-const CompSignIn = () =>{
+const CompSignInEmp = () =>{
     const [user, setUser] = useState(); //usuarios de la DB
     const [localuser, setLocaluser] = useState();
     const [localpassword, setLocalpassword] =useState();
@@ -72,11 +72,10 @@ const CompSignIn = () =>{
                         <button type="submit">Ingresar</button>
                     </div>
                     <div className="not-account">
-                        <p>¿No tienes una cuenta?  <Link to={'/SignUp/Persona'}>Registrate</Link></p>
-                        
+                        <p>¿No tienes una cuenta?  <Link to={'/SignUp/Empresa'}>Registrate</Link></p>
                     </div>
                     <div>
-                        <p>¿Eres Empresa? <Link to={'/SignIn/Empresa'}>Registrate</Link></p>
+                        <p>¿Eres Persona Natural? <Link to={'/SignIn'}>Registrate</Link></p>
                     </div>
                 </form>
             </div>
@@ -84,4 +83,4 @@ const CompSignIn = () =>{
     )
 }
 
-export default CompSignIn;
+export default CompSignInEmp;

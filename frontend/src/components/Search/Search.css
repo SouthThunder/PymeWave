@@ -20,7 +20,7 @@
 }
 
 .search-component .center{
-    Width: 70%;
+    Width: 80%;
     Margin: 0 auto;
 }
 
@@ -32,6 +32,7 @@
     background: rgba(0,0,0,0);
     border-radius:  3px;
     border: 1px solid #202C3F;
+    display: flex;
 }
 
 .search-component .input-container[data-error] input{
@@ -43,12 +44,64 @@
     background: transparent;
     border: 0;
     border-radius: 3px 0 0 3px;
+    display: inline-block;
 }
 
+.search-component .checkbox-container {
+    margin: 10px; /* Agrega un margen inferior de 10px */
+}
+
+.search-component input[type=checkbox] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+    top: 3px;
+    margin-right: 10px;
+    border-radius: 50%; /* Hace que el borde del checkbox sea circular */
+    overflow: hidden; /* Oculta cualquier contenido que desborde del checkbox circular */
+  }
+
+.search-component input[type=checkbox]:checked {
+    background-color: #202C3F; /* Rellena el checkbox con un color */
+}
+
+.search-component input[type=checkbox]:checked::before {
+    content: '\2713';
+    font-size: 14px;
+     color: #202C3F; 
+    position: absolute;
+    top: -1px;
+    left: 2px;
+    border-radius: 50%; /* Hace que el checkmark sea circular */
+
+  }
+  
+  
+
+.search-component .button-containerpop{
+    border: 1px solid #202C3F;
+    height: auto;
+    display: inline-flex;
+    
+}
+
+.search-component .button-containerpop .button-imagepop {
+    height: 100%;
+    width: auto;
+  }
+
 .search-component .button-container{
-    width: inherit;
     height: inherit;
     border: 1px solid #202C3F;
+    display: inline-block;
+    float: left;
 }
     
 .search-component .search button {
@@ -69,7 +122,12 @@
     transition: all 0.5s ease;
     color: #202C3F;
 }
- 
+
+.popup {
+    display: flex;
+    flex-direction: column;
+}
+
 
 #promt{
     Width: 80%;
@@ -210,6 +268,7 @@
 .feed-component .scrollport img{
     scroll-snap-align: center;
 }
+
 
 /*End Main CSS*/
 
