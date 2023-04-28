@@ -19,12 +19,12 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path='/' element={<Home />}/>
+            <Route path="/results" element={<Test/>}></Route>
             <Route path='/AboutUs' element={<AboutUs />}/>
             <Route path='/SingUp' element={<CompSingUp />}/>
             <Route path='/SignUp/Persona' element={<CompSingUpPer/>}/>
             <Route path='/SignUp/Empresa' element={<CompSingUpEmp/>}/>
             <Route path='/SignIn' element={<CompSignIn/>}/>
-
             <Route path='/SignIn/Empresa' element={<CompSignInEmp/>}/>
             <Route path='/Empresa/ModificarDatos' element={<ModificarDatEmp/>}/>
             <Route path='/Persona/ModificarDatos' element={<ModificarDatPers/>}/>

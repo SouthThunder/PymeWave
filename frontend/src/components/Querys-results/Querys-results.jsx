@@ -2,22 +2,9 @@ import {React, useEffect, useState} from 'react';
 import axios from 'axios';
 import './Querys-results.css';
 
-const URI = 'http://localhost:8000/';
+const URI = 'http://localhost:8000/'; 
 
-/*
-export const CompShowEnterprises = () =>{
-    const [enterprise, setEnterprise] = useState([]);
-    useEffect(() =>{
-        getEnterprises()
-    }, []);
-
-    const getEnterprises = async () =>{
-        const res = await axios.get(URI);
-        setEnterprise(res.data);
-    }
-*/ 
-
-export const Testing = () =>{
+export const Testing = (props) =>{
     const [enterprise, setEnterprise] = useState([]);
     useEffect(() =>{
         getEnterprises()
@@ -63,7 +50,7 @@ export const Testing = () =>{
 export const QueryResults = () =>{
         return(
             <div className="queryResultsComp">
-                <Testing/>
+                <Testing />
             </div>
         );
     

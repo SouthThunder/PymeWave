@@ -2,6 +2,9 @@ import './Search.css'
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 import './Search.css';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const URI = 'http://localhost:8000/';
 const URI2 = 'http://localhost:8000/Cates';
@@ -75,6 +78,9 @@ export const Feed = () =>{
 export const Search = () => {
 
     const [cates, setCates] = useState([]);
+    const [queryE, setQueryE] = useState([]);
+    const navigate= useNavigate();
+
 
     useEffect(() => {
         getCates();
@@ -90,6 +96,12 @@ export const Search = () => {
     const togglePopup = () => {
       setShowPopup(!showPopup); // función para alternar el estado del popup
     }
+
+
+    function specificWord (){
+        navigate(`/results`);
+    }
+
   
     return (
       <div className='search-component'>
@@ -98,15 +110,15 @@ export const Search = () => {
         </picture>
         <div className="center">
           <h1 id="promt">Join The Magic</h1>
-          <form className="search" id="form-search">
+          <form className="search">
             <div className="input-container"  data-error="Please do not leave this blank">
-              <input type="search" placeholder="Search here..." id="input-search"/>
+              <input type="search" placeholder="Search here..." id="input-search"  onChange={(e)=> setQueryE(e.target.value)}/>
             </div>
             <div className="button-containerpop">
             <button type="button" onClick={togglePopup}><img className="button-imagepop" src="/images/Logos/Filtro2.png"/></button> {/* Agregar el botón para abrir el popup */}
             </div>
             <div className="button-container">
-              <button type="button">Search</button>
+              <button onClick={specificWord} type="button">Search</button>
             </div>
           </form> 
           {showPopup && (

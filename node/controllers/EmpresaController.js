@@ -24,7 +24,7 @@ export const joinCatalsEmpre = async (req, res) =>{
 export const getAllEmpres = async (req,res) => {
 
     try {
-        const  empres = await EmpModel.findAll({
+        const  empres = await EmpresaModel.findAll({
             attributes: { exclude: ['id'] }
         });
 
@@ -46,8 +46,8 @@ export const getAllEmpres = async (req,res) => {
 export const getEmp = async (req,res) => {
 
     try {
-        const emp = await EmpModel.findAll({
-            where:{id:req.params.id}
+        const emp = await EmpresaModel.findAll({
+            where:{nombre_empresa:req.params.nombre_empresa}
         });
         res.json(emp);
     } catch (error) {
@@ -61,7 +61,7 @@ export const getEmp = async (req,res) => {
 export const createEmp = async (req,res) => {
 
     try {
-        await EmpModel.create(req.body);
+        await EmpresaModel.create(req.body);
         res.json({
             "message":" !Registro creado correctamente"
         });
@@ -76,7 +76,7 @@ export const createEmp = async (req,res) => {
 export const updateEmp = async (req,res) =>{
 
     try {
-        await EmpModel.update(req.body, {
+        await EmpresaModel.update(req.body, {
             where: {id: req.params.id}
         });
         res.json({
@@ -93,7 +93,7 @@ export const updateEmp = async (req,res) =>{
 export const deleteEmp = async (req,res) =>{
 
     try {
-        await EmpModel.destroy({
+        await EmpresaModel.destroy({
             where: { id: req.params.id} 
         });
         res.json({
