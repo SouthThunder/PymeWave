@@ -29,7 +29,7 @@ background: url(image.png);
 border: 2px solid #000000;
 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 */
-.modificarDatosEmp .container .dividor  {
+.modificardatosper .container .dividor  {
     padding-top: 2rem;
     Width: 90% ;
     margin: 0 auto;
@@ -37,40 +37,45 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     text-align: left;
     padding-bottom: 3rem;
 }
-.modificarDatosEmp .container .dividor .izquierda {
+.modificardatosper .container .dividor .izquierda {
     width: 25%;
     text-align: center;
     
 }
-.modificarDatosEmp .container .dividor .derecha {
+.modificardatosper .container .dividor .derecha {
     border-left: 1px solid var(--primaryColor);
     width: 100%;
     text-align: center;
 }
-.modificarDatosEmp .container .dividor .derecha form{
+.modificardatosper .container .dividor .derecha form{
     margin-top: 1rem;
     margin-left: 2rem;
     
 }
-.modificarDatosEmp .container .dividor .izquierda picture{
+.modificardatosper .container .dividor .izquierda picture{
     padding-right: 10rem;
 }
-.modificarDatosEmp .container .dividor .izquierda h4{
+.modificardatosper .container .dividor .izquierda h4{
     margin-right: 8rem;
     margin-top: 2rem;
+}
+.modificardatosper .container h1{
+    
+    padding-top: 8rem;
+    text-align: center;
 }
 
 .texto{
     Color:whitesmoke;
 }
-.modificarDatosEmp .container .dividor .derecha form .inputbox ion-icon{
+.modificardatosper .container .dividor .derecha form .inputbox ion-icon{
     position: absolute;
     right: 8px;
     top: 20px;
     color:var(--primaryColor);
    
 }
-.modificarDatosEmp .container .dividor .derecha form .inputbox{
+.modificardatosper .container .dividor .derecha form .inputbox{
     position: relative;
     width: 85%;
     margin-top: 1rem;
@@ -78,7 +83,7 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-bottom: 2px solid var(--primaryColor);
 }
 
-.modificarDatosEmp .container .dividor .derecha form .inputbox label{
+.modificardatosper .container .dividor .derecha form .inputbox label{
     position: absolute;
     top: 30%;
     left: 5px;
@@ -87,7 +92,7 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     pointer-events: none;
     transition: 0.5s;
 }
-.modificarDatosEmp .container .dividor .derecha form .inputbox h5{
+.modificardatosper .container .dividor .derecha form .inputbox h5{
     position: absolute;
     top: -5%;
     left: 5px;
@@ -98,7 +103,7 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     transition: 0.5s;
 }
 
-.modificarDatosEmp .container .dividor .derecha form .inputbox input{
+.modificardatosper .container .dividor .derecha form .inputbox input{
     width: 100%;
     height: 50px;
     background: transparent;
@@ -108,7 +113,7 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     padding: 15px 5px 0 5px;
 }
 
-.modificarDatosEmp .container .dividor .derecha form .inputbox small{
+.modificardatosper .container .dividor .derecha form .inputbox small{
     color: #FFA500;
     position: absolute;
     bottom: 0;
@@ -117,26 +122,26 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     visibility: hidden;
 }
 
-.modificarDatosEmp .container .dividor .derecha form .inputbox .error small{
+.modificardatosper .container .dividor .derecha form .inputbox .error small{
     visibility: visible;
 }
-.modificarDatosEmp .container .dividor .derecha form .inputbox .sucess small{
+.modificardatosper .container .dividor .derecha form .inputbox .sucess small{
     visibility: hidden;
 }
 
-.modificarDatosEmp .container .dividor .derecha form .inputbox input:focus ~ label,
-.modificarDatosEmp .container .dividor .derecha form .inputbox input:valid ~ label,
-.modificarDatosEmp .container .dividor .derecha form .inputbox input:invalid ~ label{
+.modificardatosper .container .dividor .derecha form .inputbox input:focus ~ label,
+.modificardatosper .container .dividor .derecha form .inputbox input:valid ~ label,
+.modificardatosper .container .dividor .derecha form .inputbox input:invalid ~ label{
     top: -4px;
 }
 
 
-.modificarDatosEmp .container .dividor .derecha form .enter{
+.modificardatosper .container .dividor .derecha form .enter{
     display: flex;
     justify-content: center;
 }
 
-.modificarDatosEmp .container .dividor .derecha form .enter > button{
+.modificardatosper .container .dividor .derecha form .enter > button{
     margin-right: 2rem;
     background-color: var(--primaryColor);
     color: var(--tertiaryColor);
@@ -147,13 +152,13 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     font-size: 1rem;
 }
 
-.modificarDatosEmp .container .dividor .derecha form .enter > button:hover{
+.modificardatosper .container .dividor .derecha form .enter > button:hover{
     border: 1px solid #202C3F;
     background-color: #7DA9DB;
     cursor: pointer;
     transition: all 0.4s ease-out;
 }
-.modificarDatosEmp .container .dividor .derecha form .options{
+.modificardatosper .container .dividor .derecha form .options{
     margin-top: 6rem;
     width: 100%;
     height: 230px;
@@ -162,11 +167,5 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     align-items: center;
 }
 
-
-.modificarDatosEmp .container h1{
-    
-    padding-top: 8rem;
-    text-align: center;
-}
 
 
