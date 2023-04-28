@@ -25,7 +25,7 @@ export const CompShowEnterprises = () =>{
         return(
             enterprise?.map((enter)=>{
                 return(
-                    <div className="container" key={enter.id}>
+                    <div className="container" >
                         <div className="holder">
                             <picture>
                                 <img src="//placehold.it/300x200"/>
@@ -44,6 +44,8 @@ export const CompShowEnterprises = () =>{
             })
         )
     }
+
+    
     return (
         cardHolders()
     )
