@@ -1,45 +1,33 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    overflow: hidden;   
-    color: whitesmoke;
-}
 
-::-webkit-scrollbar{
-    display: none;
-}
-
-body{
-    background-image: url("/images/backgrounds/Fondo_signUp.jpg");
+.signupempr-component{
+    background-image: url("Fondo_signUp.jpg"); 
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 15%;
 }
 
-header > picture{
+.signupempr-component header > picture{
     height: 150px;
     width: 350px;
 }
 
-header > picture > a{
+.signupempr-component header > picture > a{
     height: inherit;
     width: inherit;
 }
 
-header > picture > a > img{
+.signupempr-component header > picture > a > img{
     height: inherit;
     width: inherit;
 }
 
-main{
+.signupempr-component main{
     height: 80vh;
     width: 100vw;
 }
 
-.container{
+.signupempr-component main .container{
     
     margin: 0 auto;
     width: 40%;
@@ -48,7 +36,7 @@ main{
     opacity: 0.95;
     border-radius: 3rem;
 }
-.container h1{
+.signupempr-component main .container h1{
     color: whitesmoke;  
     display: flex;
     justify-content: center;
@@ -56,7 +44,7 @@ main{
 
 
  
-form{
+.signupempr-component main .container form{
     margin-top: 1rem;
     margin-left: 2rem;
     
@@ -65,14 +53,14 @@ form{
 .texto{
     Color:whitesmoke;
 }
-.inputbox ion-icon{
+.signupempr-component main .container form .inputbox ion-icon{
     position: absolute;
     right: 8px;
     top: 20px;
     color:whitesmoke;
    
 }
-.inputbox{
+.signupempr-component main .container form .inputbox{
     position: relative;
     width: 85%;
     margin-top: 1rem;
@@ -80,7 +68,7 @@ form{
     border-bottom: 2px solid whitesmoke;
 }
 
-.inputbox label{
+.signupempr-component main .container form .inputbox label{
     position: absolute;
     top: 30%;
     left: 5px;
@@ -89,7 +77,7 @@ form{
     pointer-events: none;
     transition: 0.5s;
 }
-.inputbox h5{
+.signupempr-component main .container form .inputbox h5{
     position: absolute;
     top: -5%;
     left: 5px;
@@ -100,7 +88,7 @@ form{
     transition: 0.5s;
 }
 
-.inputbox input{
+.signupempr-component main .container form .inputbox input{
     width: 100%;
     height: 50px;
     background: transparent;
@@ -110,7 +98,7 @@ form{
     padding: 15px 5px 0 5px;
 }
 
-.inputbox small{
+.signupempr-component main .container form .inputbox small{
     color: #FFA500;
     position: absolute;
     bottom: 0;
@@ -119,26 +107,26 @@ form{
     visibility: hidden;
 }
 
-.inputbox.error small{
+.signupempr-component main .container form .inputbox .error small{
     visibility: visible;
 }
-.inputbox.sucess small{
+.signupempr-component main .container form .inputbox .sucess small{
     visibility: hidden;
 }
 
-input:focus ~ label,
-input:valid ~ label,
-input:invalid ~ label{
+.signupempr-component main .container form .inputbox input:focus ~ label,
+.signupempr-component main .container form .inputbox input:valid ~ label,
+.signupempr-component main .container form .inputbox input:invalid ~ label{
     top: -4px;
 }
 
 
-.enter{
+.signupempr-component main .container form .enter{
     display: flex;
     justify-content: center;
 }
 
-.enter > button{
+.signupempr-component main .container form .enter > button{
     margin-right: 2rem;
     background-color: whitesmoke;
     color: #202C3F;
@@ -149,13 +137,13 @@ input:invalid ~ label{
     font-size: 1rem;
 }
 
-.enter > button:hover{
+.signupempr-component main .container form .enter > button:hover{
     border: 1px solid #202C3F;
     background-color: #7DA9DB;
     cursor: pointer;
     transition: all 0.4s ease-out;
 }
-.options{
+.signupempr-component main .container form .options{
     margin-top: 6rem;
     width: 100%;
     height: 230px;
@@ -197,7 +185,7 @@ input:invalid ~ label{
     margin-right: 8%;
 }
 
-.inputbox select {
+.signupempr-component main .container form .inputbox select {
     margin-bottom: 10px;
     margin-top: 4%;
     font-family: cursive, sans-serif;
@@ -211,19 +199,19 @@ input:invalid ~ label{
     overflow-x: hidden;
     overflow-y: visible;
   }
-  .errores{
+  .signupempr-component main .container form .inputbox .errores{
     padding-left: 4.7rem;
     padding-bottom: 2.2rem;
   }
-  .erroresContrasenia{
+  .signupempr-component main .container form .inputbox .erroresContrasenia{
     padding-left: 5.3rem;
     padding-bottom: 2.2rem;
   }
-  .erroresCorreo{
+  .signupempr-component main .container form .inputbox .erroresCorreo{
     padding-left: 8.5rem;
     padding-bottom: 2.2rem;
   }
-  .erroresNomE{
+  .signupempr-component main .container form .inputbox .erroresNomE{
     padding-left: 10.4rem;
     padding-bottom: 2.2rem;
   }
