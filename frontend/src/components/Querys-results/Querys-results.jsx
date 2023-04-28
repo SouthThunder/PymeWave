@@ -28,34 +28,48 @@ export const Testing = (props) =>{
         setempres(res.data);
     }
 
+    console.log(props.selectedCategories);
 
     function cardHolders (){
 
         return(
-            <div className='container'>
-                    {empres
-                        .filter((empre) => empre.nombre_empresa === props.nombre_empresa)
+           <div>
+                {empres
+                    .filter((empre) => empre.nombre_empresa === props.nombre_empresa)
                         .map((empre) => (
-                            <div className="dataHolder">
-                                <picture>
-                                    <img src="//placehold.it/300x400"/>
-                                </picture>
-                                <div className="dataoutput">
-                                    <h1>{empre.nombre_empresa}</h1>
-                                    <p>{empre.catalogo?.descripcion_empresa}</p>
-                                    <button>Leer mas</button>
+                            <div className='container'>
+                                <div className="dataHolder">
+                                    <picture>
+                                        <img src="//placehold.it/300x400"/>
+                                    </picture>
+                                    <div className="dataoutput">
+                                        <h1>{empre.nombre_empresa}</h1>
+                                        <p>{empre.catalogo?.descripcion_empresa}</p>
+                                        <button>Leer mas</button>
+                                    </div>
                                 </div>
                             </div>
                         ))
                     }
-            </div>
+           </div>
+                    
+            
         )
     }
 
     
-    return (
-        cardHolders()
-    )
+
+    if(props.selectedCategories.length === 0 ){
+        console.log("");
+        return (
+            cardHolders()
+        );
+    }else{
+        console.log("llenito");
+    }
+
+    
+    
 }
 
 export const QueryResults = (props, {disable}) =>{
@@ -64,6 +78,7 @@ export const QueryResults = (props, {disable}) =>{
             <div className="queryResultsComp">
                 <Testing 
                     nombre_empresa = {props.nombre_empresa}
+                    selectedCategories = {props.selectedCategories}
                 />
             </div>
             )

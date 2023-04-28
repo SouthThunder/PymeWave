@@ -76,78 +76,172 @@ export const Feed = () =>{
     )
 }
 
-export const Search = () => {
+export const Search = () => { 
 
-    const [cates, setCates] = useState([]);
-    const [queryE, setQueryE] = useState([]);
-    const navigate= useNavigate();
-    const [searchValue, setSearchValue] = useState("");
-
-
-    useEffect(() => {
-        getCates();
-    },[]);
-
-    const getCates = async () => {
-        const res = await axios.get(URI2);
-        setCates(res.data);
-    }
-
-    const [showPopup, setShowPopup] = useState(false); // state para controlar el popup
-  
-    const togglePopup = () => {
-      setShowPopup(!showPopup); // función para alternar el estado del popup
-    }
-
-    const handleSearch = (event) => {
-        event.preventDefault();
-        const inputSearch = document.getElementById("input-search");
-        setSearchValue(inputSearch.value); // guardar el valor del input en la variable de estado searchValue
-        console.log(searchValue);
-      };
-
-  
-    return (
-      <div className='search-component'>
-        <picture>
-          <img src="https://static.timesofisrael.com/blogs/uploads/2019/09/silas-baisch-ceITO2rlDgc-unsplash.jpg" alt="main"/>
-        </picture>
-        <div className="center">
-          <h1 id="promt">Join The Magic</h1>
-          <form className="search">
-            <div className="input-container"  data-error="Please do not leave this blank">
-              <input type="search" placeholder="Search here..." id="input-search" />
-            </div>
-            <div className="button-containerpop">
-            <button type="button" onClick={togglePopup}><img className="button-imagepop" src="/images/Logos/Filtro2.png"/></button> {/* Agregar el botón para abrir el popup */}
-            </div>
-            <div className="button-container">
-              <button type="button" onClick={handleSearch}>Search</button>
-            </div>
-          </form>
  
-          {showPopup && (
-            <div className="popup">
-                <p>Selecciona tus categorías:</p>
-                <label className='checkbox'>
-                    {cates.map((cate) => (
-                        <label className='checkbox-container' key={cate.id}>
-                            <input  type="checkbox" value={cate.nombre} />
-                            {cate.nombre}
-                            <br/>
-                        </label>
-                    ))}
-                </label>
-                <button type="button" onClick={togglePopup}>Cerrar</button>
-            </div>
-            )}
-            <div>
-                <QueryResults
-                    nombre_empresa = {searchValue}
-                    disabled={true}
-                />
-            </div>
-        </div>
-      </div>
-    )
-  }
+ 
+
+    const [cates, setCates] = useState([]); 
+
+    const [queryE, setQueryE] = useState([]); 
+
+    const navigate= useNavigate(); 
+
+    const [searchValue, setSearchValue] = useState(""); 
+
+    const [selectedCategories, setSelectedCategories] = useState([]); 
+
+ 
+ 
+ 
+
+    useEffect(() => { 
+
+        getCates(); 
+
+    },[]); 
+
+ 
+ 
+
+    const getCates = async () => { 
+
+        const res = await axios.get(URI2); 
+
+        setCates(res.data); 
+
+    } 
+
+ 
+ 
+
+    const [showPopup, setShowPopup] = useState(false); // state para controlar el popup 
+
+   
+
+    const togglePopup = () => { 
+
+      setShowPopup(!showPopup); // función para alternar el estado del popup 
+
+    } 
+
+ 
+ 
+
+    const handleSearch = (event) => { 
+
+        event.preventDefault(); 
+
+        const inputSearch = document.getElementById("input-search"); 
+
+        setSearchValue(inputSearch.value); // guardar el valor del input en la variable de estado searchValue 
+
+        console.log(searchValue); 
+
+      }; 
+
+ 
+ 
+
+   
+
+    return ( 
+
+      <div className='search-component'> 
+
+        <picture> 
+
+          <img src="https://static.timesofisrael.com/blogs/uploads/2019/09/silas-baisch-ceITO2rlDgc-unsplash.jpg" alt="main"/> 
+
+        </picture> 
+
+        <div className="center"> 
+
+          <h1 id="promt">Join The Magic</h1> 
+
+          <form className="search"> 
+
+            <div className="input-container"  data-error="Please do not leave this blank"> 
+
+              <input type="search" placeholder="Search here..." id="input-search" /> 
+
+            </div> 
+
+            <div className="button-containerpop"> 
+
+            <button type="button" onClick={togglePopup}><img className="button-imagepop" src="/images/Logos/Filtro2.png"/></button> {/* Agregar el botón para abrir el popup */} 
+
+            </div> 
+
+            <div className="button-container"> 
+
+              <button type="button" onClick={handleSearch}>Search</button> 
+
+            </div> 
+
+          </form> 
+
+  
+
+          {showPopup && ( 
+
+            <div className="popup"> 
+
+                <p>Selecciona tus categorías:</p> 
+
+                <label className='checkbox'> 
+
+                    {cates.map((cate) => ( 
+
+                        <label className='checkbox-container' key={cate.id}> 
+
+                            <input  type="checkbox" value={cate.nombre} onChange={(e) => { 
+
+                                if (e.target.checked) { 
+
+                                    setSelectedCategories([...selectedCategories, e.target.value]); 
+
+                                } else { 
+
+                                    setSelectedCategories(selectedCategories.filter(category => category !== e.target.value)); 
+
+                                } 
+
+
+                            }} /> 
+
+                            {cate.nombre} 
+
+                            <br/> 
+
+                        </label> 
+
+                    ))} 
+
+                </label> 
+
+                <button type="button" onClick={togglePopup}>Cerrar</button> 
+
+            </div> 
+
+            )} 
+
+            <div> 
+
+                <QueryResults 
+
+                    nombre_empresa = {searchValue} 
+
+                    selectedCategories={selectedCategories} 
+
+                /> 
+
+            </div> 
+
+        </div> 
+
+      </div> 
+
+    ) 
+
+  } 

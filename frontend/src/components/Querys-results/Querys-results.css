@@ -5,7 +5,7 @@
     margin-top: 5rem;
 }
 
-.queryResultsComp > .container{
+.queryResultsComp  .container{
     width: 60%;
     margin: 0 auto;
     border: 2px solid var(--primaryColor);
@@ -16,14 +16,14 @@
     margin-top: 2rem;
 }
 
-.queryResultsComp > .container > .dataHolder{
+.queryResultsComp  .container > .dataHolder{
     width: 100%;
     height: 80%;
     display: flex;
     align-items: center;
 }
 
-.queryResultsComp > .container > .dataHolder > picture{
+.queryResultsComp  .container > .dataHolder > picture{
     height: 100%;
     display: flex;
     align-items: center;
@@ -31,21 +31,21 @@
     right: 5rem;
 }
 
-.queryResultsComp > .container > .dataHolder > picture > img{
+.queryResultsComp  .container > .dataHolder > picture > img{
     border-radius: 20px;
 }
 
-.queryResultsComp > .container > .dataHolder > picture + .dataoutput{
+.queryResultsComp  .container > .dataHolder > picture + .dataoutput{
     height: 60%;
     width: 60%;
 }
 
-.queryResultsComp > .container > .dataHolder > picture + .dataoutput p{
+.queryResultsComp  .container > .dataHolder > picture + .dataoutput p{
     margin-top: 1rem;
     text-align: justify;
 }
 
-.queryResultsComp > .container > .dataHolder > picture + .dataoutput button{
+.queryResultsComp  .container > .dataHolder > picture + .dataoutput button{
     margin-top: 1rem;
     border: 0;
     padding: 0;
@@ -58,7 +58,7 @@
     border-radius: 30px;  
 }
 
-.queryResultsComp > .container > .dataHolder > picture + .dataoutput button:hover{
+.queryResultsComp  .container > .dataHolder > picture + .dataoutput button:hover{
     background: var(--secondaryColor);
     transition: all 0.3s ease-in;
     border: 1px solid var(--primaryColor);
