@@ -3,6 +3,7 @@ import axios from 'axios';
 import {useState, useEffect} from 'react';
 import './Search.css';
 import { useNavigate } from 'react-router-dom';
+import {QueryResults} from '../Querys-results/Querys-results';
 
 
 
@@ -80,6 +81,7 @@ export const Search = () => {
     const [cates, setCates] = useState([]);
     const [queryE, setQueryE] = useState([]);
     const navigate= useNavigate();
+    const [searchValue, setSearchValue] = useState("");
 
 
     useEffect(() => {
@@ -97,10 +99,12 @@ export const Search = () => {
       setShowPopup(!showPopup); // función para alternar el estado del popup
     }
 
-
-    function specificWord (){
-        navigate(`/results`);
-    }
+    const handleSearch = (event) => {
+        event.preventDefault();
+        const inputSearch = document.getElementById("input-search");
+        setSearchValue(inputSearch.value); // guardar el valor del input en la variable de estado searchValue
+        console.log(searchValue);
+      };
 
   
     return (
@@ -112,15 +116,16 @@ export const Search = () => {
           <h1 id="promt">Join The Magic</h1>
           <form className="search">
             <div className="input-container"  data-error="Please do not leave this blank">
-              <input type="search" placeholder="Search here..." id="input-search"  onChange={(e)=> setQueryE(e.target.value)}/>
+              <input type="search" placeholder="Search here..." id="input-search" />
             </div>
             <div className="button-containerpop">
             <button type="button" onClick={togglePopup}><img className="button-imagepop" src="/images/Logos/Filtro2.png"/></button> {/* Agregar el botón para abrir el popup */}
             </div>
             <div className="button-container">
-              <button onClick={specificWord} type="button">Search</button>
+              <button type="button" onClick={handleSearch}>Search</button>
             </div>
-          </form> 
+          </form>
+ 
           {showPopup && (
             <div className="popup">
                 <p>Selecciona tus categorías:</p>
@@ -135,7 +140,12 @@ export const Search = () => {
                 </label>
                 <button type="button" onClick={togglePopup}>Cerrar</button>
             </div>
-            )} 
+            )}
+            <div>
+                <QueryResults
+                    nombre_empresa = {searchValue}
+                />
+            </div>
         </div>
       </div>
     )

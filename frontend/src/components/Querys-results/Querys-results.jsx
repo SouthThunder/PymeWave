@@ -1,6 +1,7 @@
 import {React, useEffect, useState} from 'react';
 import axios from 'axios';
 import './Querys-results.css';
+import {useNavigate, useParams} from 'react-router-dom'; 
 
 const URI = 'http://localhost:8000/'; 
 
@@ -15,29 +16,41 @@ export const Testing = (props) =>{
         setEnterprise(res.data);
     }
 
+
+   const [empres, setempres] = useState([]);
+
+    useEffect(() => {
+        getempres();
+    },[]);
+
+    const getempres = async () => {
+        const res = await axios.get(`${URI}?nombre_empresa=${props.nombre_empresa}`);
+        setempres(res.data);
+    }
+
+
     function cardHolders (){
-        /*const copyItems=1;
-        alert(enterprise?.length)
-        for(let i=0;i<enterprise?.length;i++){
-            alert(enterprise[i].correo);
-        }*/
+
         return(
-            enterprise?.map((enter)=>{
-                return(
-                    <div className="container">
+
+            <div>
+               {empres
+                    .filter((empre) => empre.nombre_empresa === props.nombre_empresa)
+                    .map((empre) => (
                         <div className="dataHolder">
-                            <picture>
-                                <img src="//placehold.it/300x400"/>
-                            </picture>
-                            <div className="dataoutput">
-                                <h1>{enter.nombre_empresa}</h1>
-                                <p>{enter.catalogo?.descripcion_empresa}</p>
-                                <button>Leer mas</button>
-                            </div>
-                        </div>   
-                    </div>
-                )
-            })
+                             <picture>
+                                 <img src="//placehold.it/300x400"/>
+                             </picture>
+                             <div className="dataoutput">
+                                 <h1>{empre.nombre_empresa}</h1>
+                                 <p>{empre.catalogo?.descripcion_empresa}</p>
+                                 <button>Leer mas</button>
+                             </div>
+                        </div>
+                    ))
+                }
+            </div>
+            
         )
     }
 
@@ -47,10 +60,12 @@ export const Testing = (props) =>{
     )
 }
 
-export const QueryResults = () =>{
+export const QueryResults = (props) =>{
         return(
             <div className="queryResultsComp">
-                <Testing />
+                <Testing 
+                    nombre_empresa = {props.nombre_empresa}
+                />
             </div>
         );
     
