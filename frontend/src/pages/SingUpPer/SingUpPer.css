@@ -1,4 +1,4 @@
-*{
+.singUpPer-component *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,35 +7,35 @@
     color: whitesmoke;
 }
 
-body{
-    background-image: url("/images/Backgrounds/Fondo_signUp.jpg");
+.singUpPer-component body{
+    background-image: url("../../../public/images/Backgrounds/Fondo_signUp.jpg");
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 15%;
 }
 
-header > picture{
+.singUpPer-component header > picture{
     height: 150px;
     width: 350px;
 }
 
-header > picture > a{
+.singUpPer-component header > picture > a{
     height: inherit;
     width: inherit;
 }
 
-header > picture > a > img{
+.singUpPer-component header > picture > a > img{
     height: inherit;
     width: inherit;
 }
 
-main{
+.singUpPer-component main{
     height: 80vh;
     width: 100vw;
 }
 
-.container{
+.singUpPer-component .container{
     margin: 0 auto;
     width: 40%;
     height: 90%;
@@ -43,7 +43,7 @@ main{
     opacity: 0.9;
     border-radius: 3rem;
 }
-.container h1{
+.singUpPer-component .container h1{
     color: whitesmoke;  
     display: flex;
     justify-content: center;
@@ -51,7 +51,7 @@ main{
 
 
  
-form{
+.singUpPer-component form{
     margin-top: 1rem;
     margin-left: 2rem;
     
