@@ -1,9 +1,54 @@
 // se importa el modelo de datos correspondiente al controlador
 
 import { Model } from "sequelize";
+import { Op } from 'sequelize';
+import Sequelize from 'sequelize';
 import EmpresaModel from "../models/EmpresaModel.js";
 import UserModel from "../models/UsuarioModel.js";
 import CatalogoModel from "../models/CatalogoModel.js";
+import CategoriaModel from "../models/CategoriaModel.js";
+import Categoria_empresaModel from "../models/Categoria_empresaModel.js";
+
+
+export const obtenerEmpresasDeBelleza = async (req, res) =>{
+    try {
+        const empresas = await EmpresaModel.findAll({
+            attributes: [
+                ['nombre_empresa', 'nombre_empresa'], 
+                [Sequelize.col('catalogo.descripcion_empresa'), 'descripcion_empresa']
+            ],
+            include: [
+                {
+                    model: CatalogoModel,
+                    attributes: [],
+                    where: {
+                        id_empresa_catalogo: Sequelize.col('empresa.id_empresa')
+                    }
+                },
+                {
+                    model: Categoria_empresaModel,
+                    attributes: [],
+                    where: {
+                        id_empresa: Sequelize.col('empresa.id_empresa')
+                    },
+                    include: [
+                        {
+                            model: CategoriaModel,
+                            attributes: [],
+                            where: {
+                                nombre: req.params.categoria
+                            }
+                        }
+                    ]
+                }
+            ]
+        });
+        res.json(empresas);
+    } catch (error) {
+        res.json({message: error.message});
+    }
+}
+
 
 // Metodos para CRUD
 export const joinCatalsEmpre = async (req, res) =>{
@@ -55,6 +100,10 @@ export const getEmp = async (req,res) => {
     }
 
 };
+
+
+
+
 
 //Crear un registro
 

@@ -7,6 +7,7 @@ import CatalogoModel from './CatalogoModel.js';
 import Dominios_redModel from './Dominios_redModel.js';
 import Categoria_empresaModel from './Categoria_empresaModel.js';
 import CalificacionesModel from './CalificacionesModel.js';
+import CategoriaModel from './CategoriaModel.js'
 
 const EmpresaModel = db.define('empresa', {
     nombre_empresa: { 
@@ -50,6 +51,7 @@ const EmpresaModel = db.define('empresa', {
         allowNull:false
     }, //checked
 });
+
 
 //relaciones
     // relación Empresa - Catalogo
