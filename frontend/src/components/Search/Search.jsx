@@ -56,27 +56,35 @@ export const CompShowEnterprises = () =>{
     )
 }
 
-export const Feed = () =>{
+export const Feed = (props) =>{
     return(
-        <div className="feed-component">
-            <div className="arrow_left">
-                <button><img src="https://cdn-icons-png.flaticon.com/512/4028/4028550.png"/></button>
-            </div>
-            <div className="arrow_right">
-                <button><img src="https://cdn-icons-png.flaticon.com/512/1549/1549612.png"/></button>
-            </div>
-            <div className="scrollport">
-                <div className="indicators">
-                    <h1>¿No estás seguro de lo que buscas?</h1>
-                    <h2>Surfea en nuestro mar de opciones</h2>
-                </div>
-                <CompShowEnterprises/>
-            </div>
+        <div>
+            {
+                !props.disable && (
+                    <div className="feed-component">
+                            <div className="arrow_left">
+                            <button><img src="https://cdn-icons-png.flaticon.com/512/4028/4028550.png"/></button>
+                        </div>
+                        <div className="arrow_right">
+                            <button><img src="https://cdn-icons-png.flaticon.com/512/1549/1549612.png"/></button>
+                        </div>
+                        <div className="scrollport">
+                            <div className="indicators">
+                                <h1>¿No estás seguro de lo que buscas?</h1>
+                                <h2>Surfea en nuestro mar de opciones</h2>
+                            </div>
+                            {!props.disable &&(
+                                <CompShowEnterprises/>
+                            )}
+                        </div>
+                    </div>
+                )
+            }
         </div>
     )
 }
 
-export const Search = () => { 
+export const Search = (props) => { 
 
  
  
@@ -87,7 +95,7 @@ export const Search = () => {
 
     const navigate= useNavigate(); 
 
-    const [searchValue, setSearchValue] = useState(""); 
+    const [searchValue, setSearchValue] = useState(); 
 
     const [selectedCategories, setSelectedCategories] = useState([]); 
 
@@ -129,19 +137,10 @@ export const Search = () => {
  
 
     const handleSearch = (event) => { 
-
         event.preventDefault(); 
-
-        const inputSearch = document.getElementById("input-search"); 
-
-        setSearchValue(inputSearch.value); // guardar el valor del input en la variable de estado searchValue 
-
-        console.log(searchValue); 
-
+        props.changeVis(false);
       }; 
 
- 
- 
 
    
 
@@ -163,7 +162,7 @@ export const Search = () => {
 
             <div className="input-container"  data-error="Please do not leave this blank"> 
 
-              <input type="search" placeholder="Search here..." id="input-search" /> 
+              <input type="search" placeholder="Search here..." id="input-search" onChange={(e)=> setSearchValue(e.target.value)}/> 
 
             </div> 
 
@@ -224,19 +223,21 @@ export const Search = () => {
 
             </div> 
 
-            )} 
+            )}
 
-            <div> 
+            {!props.disable && (
+                <div> 
+                    <QueryResults 
 
-                <QueryResults 
+                        nombre_empresa = {searchValue} 
 
-                    nombre_empresa = {searchValue} 
+                        selectedCategories={selectedCategories} 
 
-                    selectedCategories={selectedCategories} 
+                    /> 
+                </div>
+            )}
 
-                /> 
-
-            </div> 
+             
 
         </div> 
 

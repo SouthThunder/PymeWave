@@ -6,6 +6,7 @@
     background: #202C3F;
     clear: both;
     display: flex;
+    margin-top: 7rem;
 }
 
 .footer-component > .left{

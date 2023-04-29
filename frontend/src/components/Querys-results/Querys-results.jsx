@@ -17,12 +17,13 @@ export const Testing = (props) =>{
 
     useEffect(() => {
         getempres();
-    },[]);
+    }, []);
 
     const getempres = async () => {
-        //const res = await axios.get(`${URI}?nombre_empresa=${props.nombre_empresa}`);
-        const res = await axios.get(URI+props.nombre_empresa);
-        setempres(res.data);    
+        const res = await axios.get(`${URI}?nombre_empresa=${props.nombre_empresa}`);
+        //const res = await axios.get(URI+props.nombre_empresa);
+        setempres(res.data);
+        //alert(empres.nombre_empresa);    
     }
 
     const [categorias, setCategorias] = useState([]);
@@ -57,11 +58,9 @@ export const Testing = (props) =>{
     console.log(props.selectedCategories);
 
     function cardHolders (){
-
         return(
            <div>
-                {empres
-                    .filter((empre) => empre.nombre_empresa === props.nombre_empresa)
+                {empres.filter((empre) => empre.nombre_empresa === props.nombre_empresa)
                         .map((empre) => (
                             <div className='container'>
                                 <div className="dataHolder">
@@ -121,21 +120,17 @@ export const Testing = (props) =>{
             );
         }  
     }
-
-    
-    
 }
 
-export const QueryResults = (props, {disable}) =>{
+
+export const QueryResults = (props) =>{
         return(
-            !disable && (
             <div className="queryResultsComp">
                 <Testing 
                     nombre_empresa = {props.nombre_empresa}
                     selectedCategories = {props.selectedCategories}
                 />
             </div>
-            )
         );
     
 }

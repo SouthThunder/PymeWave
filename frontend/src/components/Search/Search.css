@@ -142,6 +142,7 @@
     margin: 0 auto;
     overflow: hidden;
     margin-top: 3rem;
+    margin-bottom: -7rem;
 }
 
 .feed-component .arrow_left{
