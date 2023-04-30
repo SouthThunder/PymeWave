@@ -14,6 +14,7 @@ export const obtenerEmpresasDeBelleza = async (req, res) =>{
     try {
         const empresas = await EmpresaModel.findAll({
             attributes: [
+                ['id_empresa', 'id_empresa'],
                 ['nombre_empresa', 'nombre_empresa'], 
                 [Sequelize.col('catalogo.descripcion_empresa'), 'descripcion_empresa']
             ],

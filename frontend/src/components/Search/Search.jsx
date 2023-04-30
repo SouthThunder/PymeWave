@@ -2,7 +2,7 @@ import './Search.css'
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 import './Search.css';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 import {QueryResults} from '../Querys-results/Querys-results';
 
 
@@ -29,25 +29,25 @@ export const CompShowEnterprises = () =>{
         }*/
         return(
             enterprise?.map((enter)=>{
-                return(
-                    <div className="container" >
-                        <div className="holder">
-                            <picture>
-                                <img src="//placehold.it/300x200"/>
-                            </picture>
-                            <div className="data">
-                                <div className="title">
-                                    <h1>{enter.nombre_empresa}</h1>
-                                </div>
-                                <div className="text">
-                                    <p>{enter.catalogo?.descripcion_empresa}</p>
-                                </div>
-                            </div>
-                        </div>
+              return(
+                <div className="container" key={enter.id_empresa}>
+                  <div className="holder">
+                    <picture>
+                      <img alt="" src="//placehold.it/300x200"/>
+                    </picture>
+                    <div className="data">
+                      <div className="title">
+                        <h1>{enter.nombre_empresa}</h1>
+                      </div>
+                      <div className="text">
+                        <p>{enter.catalogo?.descripcion_empresa}</p>
+                      </div>
                     </div>
-                )
+                  </div>
+                </div>
+              )
             })
-        )
+          )
     }
 
     
@@ -63,10 +63,10 @@ export const Feed = (props) =>{
                 !props.disable && (
                     <div className="feed-component">
                             <div className="arrow_left">
-                            <button><img src="https://cdn-icons-png.flaticon.com/512/4028/4028550.png"/></button>
+                            <button><img src="https://cdn-icons-png.flaticon.com/512/4028/4028550.png" alt=""/></button>
                         </div>
                         <div className="arrow_right">
-                            <button><img src="https://cdn-icons-png.flaticon.com/512/1549/1549612.png"/></button>
+                            <button><img src="https://cdn-icons-png.flaticon.com/512/1549/1549612.png" alt=""/></button>
                         </div>
                         <div className="scrollport">
                             <div className="indicators">
@@ -86,22 +86,13 @@ export const Feed = (props) =>{
 
 export const Search = (props) => { 
 
- 
- 
-
     const [cates, setCates] = useState([]); 
 
-    const [queryE, setQueryE] = useState([]); 
 
-    const navigate= useNavigate(); 
 
     const [searchValue, setSearchValue] = useState(); 
 
     const [selectedCategories, setSelectedCategories] = useState([]); 
-
- 
- 
- 
 
     useEffect(() => { 
 
@@ -129,8 +120,8 @@ export const Search = (props) => {
 
     const togglePopup = () => { 
 
-      setShowPopup(!showPopup); // función para alternar el estado del popup 
-
+      setShowPopup(!showPopup); // función para alternar el estado del popup
+      
     } 
 
  
@@ -168,7 +159,7 @@ export const Search = (props) => {
 
             <div className="button-containerpop"> 
 
-            <button type="button" onClick={togglePopup}><img className="button-imagepop" src="/images/Logos/Filtro2.png"/></button> {/* Agregar el botón para abrir el popup */} 
+            <button type="button" onClick={togglePopup}><img className="button-imagepop" src="/images/Logos/Filtro2.png" alt=""/></button> {/* Agregar el botón para abrir el popup */} 
 
             </div> 
 
@@ -182,48 +173,28 @@ export const Search = (props) => {
 
   
 
-          {showPopup && ( 
-
-            <div className="popup"> 
-
+        {showPopup && ( 
+            <div className='popup-cont-cont'>
+            <div className="popup animate__animated animate__fadeInDown"> 
                 <p>Selecciona tus categorías:</p> 
-
                 <label className='checkbox'> 
-
                     {cates.map((cate) => ( 
-
-                        <label className='checkbox-container' key={cate.id}> 
-
+                        <label className='checkbox-container' key={cate.id_categoria}> 
                             <input  type="checkbox" value={cate.nombre} onChange={(e) => { 
-
                                 if (e.target.checked) { 
-
                                     setSelectedCategories([...selectedCategories, e.target.value]); 
-
                                 } else { 
-
                                     setSelectedCategories(selectedCategories.filter(category => category !== e.target.value)); 
-
                                 } 
-
-
                             }} /> 
-
                             {cate.nombre} 
-
-                            <br/> 
-
                         </label> 
-
-                    ))} 
-
+                    ))}
                 </label> 
-
-                <button type="button" onClick={togglePopup}>Cerrar</button> 
-
+                <button type="button" className='boton-salir' onClick={togglePopup}>Cerrar</button> 
             </div> 
-
-            )}
+            </div> 
+        )}
 
             {!props.disable && (
                 <div> 

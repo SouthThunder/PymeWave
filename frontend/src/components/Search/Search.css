@@ -47,9 +47,7 @@
     display: inline-block;
 }
 
-.search-component .checkbox-container {
-    margin: 10px; /* Agrega un margen inferior de 10px */
-}
+
 
 .search-component input[type=checkbox] {
     appearance: none;
@@ -83,7 +81,63 @@
 
   }
   
+
+
+  .boton-salir {
+    background-color: #202C3F;
+    color: #FFFFFF;
+    font-size: 0.75em;
+    padding: 0.375em 0.75em;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    width: 50%;
+  }
   
+
+  .popup-cont-container {
+    position: relative;
+  }
+  
+  .popup {
+    border: 1px solid #202C3F;
+    padding: 20px;
+    border-radius: 5px;
+    width: 44.5%;
+    top: -200px; /* ajustar este valor según sea necesario */
+    left: 0;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .checkbox {
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .checkbox-container {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .checkbox-container input {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  
+  .boton-salir:hover {
+    background-color: #7DA9DB;
+    transition: background-color 0.5s ease;
+}
+
+
+  .popup.animate__fadeInDown {
+    transform: translateY(0); /* Desplazar el popup hacia arriba */
+    opacity: 1; /* Aumentar la opacidad para que aparezca */
+  }
+
 
 .search-component .button-containerpop{
     border: 1px solid #202C3F;
@@ -123,10 +177,7 @@
     color: #202C3F;
 }
 
-.popup {
-    display: flex;
-    flex-direction: column;
-}
+
 
 
 #promt{
