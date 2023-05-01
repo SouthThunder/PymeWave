@@ -180,7 +180,7 @@
       background: #202C3F;
       border: 0 0 1px 0 solid #202C3F;
       border-radius: 0 3px 3px 0;  
-}  
+}   
 
 .search-component .search button:hover{
     background: #7DA9DB;
@@ -201,6 +201,13 @@
     margin-top: 10px;
     margin-bottom: 10px;
   }
+
+.popup-cont-cont .popup button:hover {
+    background: #7DA9DB;
+    box-shadow: 1px 1px 1px 1px #202C3F;
+    transition: all 0.5s ease;
+    color: #202C3F;
+} 
 
 
 
