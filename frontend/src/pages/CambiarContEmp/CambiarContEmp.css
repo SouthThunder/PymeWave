@@ -1,0 +1,49 @@
+.cont-cambiocon .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .cont-cambiocon .input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .cont-cambiocon .label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .cont-cambiocon .input-field {
+    border: 1px solid #202C3F;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: #202C3F;
+    width: 300px;
+  }
+  
+  .cont-cambiocon .toggle-password {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .cont-cambiocon .submit-button {
+    background-color: #202C3F;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.cont-cambiocon .submit-button:hover {
+    background-color: #7DA9DB;
+    color: #202C3F;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}

@@ -126,9 +126,13 @@ export const createEmp = async (req,res) => {
 export const updateEmp = async (req,res) =>{
 
     try {
-        await EmpresaModel.update(req.body, {
-            where: {id: req.params.id}
+        const { contraseña } = req.body;
+        const updateObject = { contraseña };
+        
+        await EmpresaModel.update(updateObject, {
+            where: {id_empresa: req.params.id_empresa}
         });
+        console.log(req.params.id_empresa);
         res.json({
             "message":" !Registro actualizado correctamente"
         });
