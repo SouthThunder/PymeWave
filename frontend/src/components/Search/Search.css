@@ -98,6 +98,18 @@
   .popup-cont-container {
     position: relative;
   }
+
+  .popup-cont-cont .popup button.active {
+    background-color: #202C3F;
+    color: whitesmoke;
+  }
+
+  .popup-cont-cont .popup button.inactive {
+    background-color: #7DA9DB;
+    color: whitesmoke;
+  }
+
+  
   
   .popup {
     border: 1px solid #202C3F;
@@ -177,6 +189,18 @@
     color: #202C3F;
 }
 
+.popup-cont-cont .popup button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
 
 

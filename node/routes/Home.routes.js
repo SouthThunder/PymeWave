@@ -14,9 +14,7 @@ const router = express.Router();
 router.get('/', joinCatalsEmpre);
 router.get('/:nombre_empresa', getEmp);
 
-router.get('/categoria/', obtenerEmpresasDeBelleza);
-//router.get('/c/:categoria', getEmpByCat);
-//router.get('/empresas/:nombre_categoria', EmpresaController.getEmpByCat);
+
 
 
 

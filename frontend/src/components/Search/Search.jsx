@@ -88,8 +88,6 @@ export const Search = (props) => {
 
     const [cates, setCates] = useState([]); 
 
-
-
     const [searchValue, setSearchValue] = useState(); 
 
     const [selectedCategories, setSelectedCategories] = useState([]); 
@@ -115,7 +113,7 @@ export const Search = (props) => {
  
 
     const [showPopup, setShowPopup] = useState(false); // state para controlar el popup 
-
+    const [filterBy, setFilterBy] = useState('category');
    
 
     const togglePopup = () => { 
@@ -124,8 +122,6 @@ export const Search = (props) => {
       
     } 
 
- 
- 
 
     const handleSearch = (event) => { 
         event.preventDefault(); 
@@ -133,7 +129,16 @@ export const Search = (props) => {
       }; 
 
 
-   
+      const handleCategoryClick = () => {
+        setFilterBy('category');
+       //setSelectedRating(null);
+      }
+      
+      const handleRatingClick = () => {
+        setFilterBy('rating');
+        //setSelectedCategory(null);
+      }
+
 
     return ( 
 
@@ -173,28 +178,128 @@ export const Search = (props) => {
 
   
 
-        {showPopup && ( 
-            <div className='popup-cont-cont'>
-            <div className="popup animate__animated animate__fadeInDown"> 
-                <p>Selecciona tus categorías:</p> 
-                <label className='checkbox'> 
-                    {cates.map((cate) => ( 
-                        <label className='checkbox-container' key={cate.id_categoria}> 
-                            <input  type="checkbox" value={cate.nombre} onChange={(e) => { 
-                                if (e.target.checked) { 
-                                    setSelectedCategories([...selectedCategories, e.target.value]); 
-                                } else { 
-                                    setSelectedCategories(selectedCategories.filter(category => category !== e.target.value)); 
-                                } 
-                            }} /> 
-                            {cate.nombre} 
-                        </label> 
-                    ))}
-                </label> 
-                <button type="button" className='boton-salir' onClick={togglePopup}>Cerrar</button> 
-            </div> 
-            </div> 
-        )}
+          {showPopup && (
+  <div className='popup-cont-cont'>
+    <div className="popup animate__animated animate__fadeInDown"> 
+      <p>Selecciona cómo filtrar:</p>
+      <div>
+      <button
+    className={filterBy === 'category' ? 'active' : 'inactive'}
+    onClick={handleCategoryClick}
+  >
+    Por categorías
+  </button>
+  <button
+    className={filterBy === 'rating' ? 'active' : 'inactive'}
+    onClick={handleRatingClick}
+  >
+    Por calificaciones
+  </button>
+      </div>
+      {filterBy === 'category' && (
+        <div>
+          <p>Selecciona tus categorías:</p>
+          <label className='checkbox'> 
+            {cates.map((cate) => ( 
+              <label className='checkbox-container' key={cate.id_categoria}> 
+                <input
+                  type="checkbox"
+                  value={cate.nombre}
+                  onChange={(e) => { 
+                    if (e.target.checked) { 
+                      setSelectedCategories([...selectedCategories, e.target.value]); 
+                    } else { 
+                      setSelectedCategories(selectedCategories.filter(category => category !== e.target.value)); 
+                    } 
+                  }}
+                /> 
+                {cate.nombre} 
+              </label> 
+            ))}
+          </label>
+        </div>
+      )}
+      {filterBy === 'rating' && (
+        <div>
+          <p>Selecciona tus calificaciones:</p>
+          <label className='checkbox'> 
+            <label className='checkbox-container'> 
+              <input
+                type="checkbox"
+                value="1"
+                onChange={(e) => { 
+                  if (e.target.checked) { 
+                    // handle selecting rating of 1
+                  } else { 
+                    // handle unselecting rating of 1
+                  } 
+                }}
+              /> 
+              0-1 estrellas
+            </label> 
+            <label className='checkbox-container'> 
+              <input
+                type="checkbox"
+                value="2"
+                onChange={(e) => { 
+                  if (e.target.checked) { 
+                    // handle selecting rating of 2
+                  } else { 
+                    // handle unselecting rating of 2
+                  } 
+                }}
+              /> 
+              1-2 estrellas
+            </label>
+            <label className='checkbox-container'> 
+              <input
+                type="checkbox"
+                value="2"
+                onChange={(e) => { 
+                  if (e.target.checked) { 
+                    // handle selecting rating of 2
+                  } else { 
+                    // handle unselecting rating of 2
+                  } 
+                }}
+              /> 
+              2-3 estrellas
+            </label>
+            <label className='checkbox-container'> 
+              <input
+                type="checkbox"
+                value="2"
+                onChange={(e) => { 
+                  if (e.target.checked) { 
+                    // handle selecting rating of 2
+                  } else { 
+                    // handle unselecting rating of 2
+                  } 
+                }}
+              /> 
+              3-4 estrellas
+            </label>
+            <label className='checkbox-container'> 
+              <input
+                type="checkbox"
+                value="2"
+                onChange={(e) => { 
+                  if (e.target.checked) { 
+                    // handle selecting rating of 2
+                  } else { 
+                    // handle unselecting rating of 2
+                  } 
+                }}
+              /> 
+              4-5 estrellas
+            </label>
+          </label>
+        </div>
+      )}
+      <button type="button" className='boton-salir' onClick={togglePopup}>Cerrar</button> 
+    </div> 
+  </div> 
+)}
 
             {!props.disable && (
                 <div> 
@@ -216,4 +321,4 @@ export const Search = (props) => {
 
     ) 
 
-  } 
+} 

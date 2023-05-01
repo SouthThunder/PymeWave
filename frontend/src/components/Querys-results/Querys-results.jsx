@@ -62,6 +62,30 @@ export const Testing = (props) =>{
         )
     }
 
+    function cardHolderCalificacion (){
+        return(
+           <div>
+                {empres.filter((empre) => empre.calificacion === props.nombre_empresa)
+                        .map((empre) => (
+                            <div className='container' key={empre.id_empresa}>
+                                <div className="dataHolder">
+                                    <picture>
+                                        <img src="//placehold.it/300x400" alt='' />
+                                    </picture>
+                                    <div className="dataoutput">
+                                        <h1>{empre.nombre_empresa}</h1>
+                                        <p>{empre.catalogo?.descripcion_empresa}</p>
+                                        <button>Leer mas</button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+           </div>
+                    
+            
+        )
+    }
 
     function cardHolderCate (){
         return(
