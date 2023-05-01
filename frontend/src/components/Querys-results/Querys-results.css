@@ -3,6 +3,7 @@
     overflow-x: hidden;
     min-height: 30vh;
     margin-top: 5rem;
+    
 }
 
 .queryResultsComp  .container{
@@ -29,6 +30,22 @@
     align-items: center;
     position: relative;
     right: 5rem;
+    
+}
+.queryResultsComp .sinresultados{
+    width: 25%;
+    padding-left: 30%;
+    
+}
+.queryResultsComp .sinresultados img{
+    width: inherit;
+    height: inherit;
+    
+}
+.queryResultsComp .noresult h1{
+    
+    padding-left: 25%;
+    
 }
 
 .queryResultsComp  .container > .dataHolder > picture > img{

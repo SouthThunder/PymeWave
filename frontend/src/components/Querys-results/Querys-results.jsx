@@ -38,28 +38,38 @@ export const Testing = (props) =>{
 
 
     function cardHolders (){
-        return(
-           <div>
-                {empres.filter((empre) => empre.nombre_empresa === props.nombre_empresa)
-                        .map((empre) => (
-                            <div className='container' key={empre.id_empresa}>
-                                <div className="dataHolder">
-                                    <picture>
-                                        <img src="//placehold.it/300x400" alt='' />
-                                    </picture>
-                                    <div className="dataoutput">
-                                        <h1>{empre.nombre_empresa}</h1>
-                                        <p>{empre.catalogo?.descripcion_empresa}</p>
-                                        <button>Leer mas</button>
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                    }
-           </div>
-                    
+        const resultados = empres
+        .filter((empre) => empre.nombre_empresa === props.nombre_empresa)
+        .map((empre) => {
             
-        )
+            return (
+                <div className='container' key={empre.id_empresa}>
+                <div className="dataHolder">
+                    <picture>
+                        <img src="//placehold.it/300x400"/>
+                    </picture>
+                    <div className="dataoutput">
+                        <h1>{empre.nombre_empresa}</h1>
+                        <p>{empre.catalogo?.descripcion_empresa}</p>
+                        <button>Leer mas</button>
+                    </div>
+                </div>
+                </div>
+            );
+        });
+
+    if (resultados.length === 0) {
+        return (
+            <div className="noresult">
+                <picture className='sinresultados'>
+                    <img src="/images/Logos/6134065.png" alt="" />
+                </picture>
+                <h1>No se han encontrado resultados</h1>
+            </div>
+        );
+    }
+    return resultados;
+
     }
 
     function cardHolderCalificacion (){
