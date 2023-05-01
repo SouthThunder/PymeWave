@@ -6,6 +6,8 @@ import './Querys-results.css';
 const URI = 'http://localhost:8000/'; 
 const URI2 = 'http://localhost:8000/Busq/cate/';
 
+
+
 export const Testing = (props) =>{
 
    const [empres, setempres] = useState([]);
@@ -34,7 +36,6 @@ export const Testing = (props) =>{
         const res = await axios.get(URIUCAT);
         setCategorias(res.data); 
     }
-
 
 
     function cardHolders (){
@@ -73,28 +74,31 @@ export const Testing = (props) =>{
     }
 
     function cardHolderCalificacion (){
-        return(
-           <div>
-                {empres.filter((empre) => empre.calificacion === props.nombre_empresa)
-                        .map((empre) => (
-                            <div className='container' key={empre.id_empresa}>
-                                <div className="dataHolder">
-                                    <picture>
-                                        <img src="//placehold.it/300x400" alt='' />
-                                    </picture>
-                                    <div className="dataoutput">
-                                        <h1>{empre.nombre_empresa}</h1>
-                                        <p>{empre.catalogo?.descripcion_empresa}</p>
-                                        <button>Leer mas</button>
-                                    </div>
-                                </div>
+        const [califInicio, califFin] = props.selectedCalificacion[0].split('-').map(parseFloat);
+        console.log(califInicio);
+        console.log(califFin);
+        
+        return (
+            <div>
+                {empres.filter((empre) => {
+                    const calif = parseFloat(empre.calificacion);
+                    return calif >= califInicio && calif <= califFin;
+                }).map((empre) => (
+                    <div className='container' key={empre.id_empresa}>
+                        <div className="dataHolder">
+                            <picture>
+                                <img src="//placehold.it/300x400" alt='' />
+                            </picture>
+                            <div className="dataoutput">
+                                <h1>{empre.nombre_empresa}</h1>
+                                <p>{empre.catalogo?.descripcion_empresa}</p>
+                                <button>Leer mas</button>
                             </div>
-                        ))
-                    }
-           </div>
-                    
-            
-        )
+                        </div>
+                    </div>
+                ))}
+            </div>
+        );
     }
 
     function cardHolderCate (){
@@ -118,30 +122,35 @@ export const Testing = (props) =>{
         )
       }
     
-
-    if(props.selectedCategories.length === 0 ){
+    if(props.selectedCalificacion.length === 1){
+        console.log("llenito")
+        return(
+            cardHolderCalificacion ()
+        );    
+    }  
+    else if(props.selectedCategories.length === 0 ){
         console.log("");
         return (
             cardHolders()
         );
-    }else{
+    }else if(props.selectedCategories.length === 1){
         //console.log("llenito");
-
-        if (props.selectedCategories.length === 1) {
-            return (
-                cardHolderCate()
-            );
-        }  
+        return (
+            cardHolderCate()
+        );
     }
+    
 }
 
 
 export const QueryResults = (props) =>{
+    console.log(props.calificacion);
         return(
             <div className="queryResultsComp">
                 <Testing 
                     nombre_empresa = {props.nombre_empresa}
                     selectedCategories = {props.selectedCategories}
+                    selectedCalificacion={props.selectedCalificacion}
                 />
             </div>
         );
