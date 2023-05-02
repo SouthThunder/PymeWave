@@ -9,6 +9,7 @@ import CompSignInEmp from './pages/SingInEmp/SingInEmp';
 import ModificarDatEmp from "./pages/ModificarDatEmp/ModificarDatEmp";
 import ModificarDatPers from "./pages/ModificarDatPers/ModificarPersona";
 import CompCambiarconEmp from './pages/CambiarContEmp/CambiarContEmp';
+import CompCambiarconPer from './pages/CambiarContPer/CambiarContPer'
 import {QueryResults} from './components/Querys-results/Querys-results';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import "./App.css";
@@ -31,6 +32,7 @@ function App() {
             <Route path='/Empresa/ModificarDatos' element={<ModificarDatEmp/>}/>
             <Route path='/Persona/ModificarDatos' element={<ModificarDatPers/>}/>
             <Route path='/Persona/CambiaContraseña/Empresa' element={<CompCambiarconEmp/>}/>
+            <Route path='/Persona/CambiaContraseña/Persona' element={<CompCambiarconPer/>}/>
             {/* <Route path='/resuls' element={<QueryResults/>}/> */}
             
 
