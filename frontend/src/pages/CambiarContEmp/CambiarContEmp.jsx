@@ -2,7 +2,7 @@ import axios from "axios";
 import {React, useEffect, useState} from 'react';
 import './CambiarContEmp.css';
 
-const URI = 'http://localhost:8000/';
+const URI = 'http://localhost:8000/CambioCon/empresa/';
 
 const CompCambiarconEmp = () => {
   const [password, setPassword] = useState('');
