@@ -1,9 +1,20 @@
 import axios from "axios";
 import {React, useEffect, useState} from 'react';
 import './CambiarContEmp.css';
+import { Header } from "../../components/Header/Header";
+import { Footer } from "../../components/Footer/Footer";
 
 const URI = 'http://localhost:8000/CambioCon/empresa/';
 
+const cambiocontraemp = () =>{
+    return (
+        <div className="cambioclaveem">
+            <Header/>
+                <CompCambiarconEmp/>
+            <Footer/>
+        </div>
+    )
+  }
 const CompCambiarconEmp = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -54,8 +65,8 @@ const CompCambiarconEmp = () => {
   return (
     <div className="cont-cambiocon">
         <form className="form" onSubmit={handleSubmit}>
-            <div className="input-container">
-                <label htmlFor="password">Contraseña:</label>
+            <div className="input-container1">
+                <label className="lb" htmlFor="password">Contraseña:</label>
                 <input
                     type={showPassword ? 'text' : 'password'}
                     id="password"
@@ -70,8 +81,8 @@ const CompCambiarconEmp = () => {
                     className="toggle-password"
                 />
             </div>
-            <div className="input-container">
-                <label htmlFor="confirm-password">Confirmar contraseña:</label>
+            <div className="input-container2">
+                <label className="lb" htmlFor="confirm-password">Confirmar contraseña:</label>
                 <input
                     type={showConfirmPassword ? 'text' : 'password'}
                     id="confirm-password"
@@ -92,4 +103,4 @@ const CompCambiarconEmp = () => {
   );
 }
 
-export default CompCambiarconEmp;
+export default cambiocontraemp;

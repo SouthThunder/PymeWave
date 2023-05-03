@@ -3,12 +3,51 @@
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
+    
   }
-  
-  .cont-cambiocon-per .input-container {
+  .cont-cambiocon-per{
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-bottom: -10rem;
+  }
+  .cambioclavepr{
+    height: 100vh;
+    
+    
+    padding-top: 0.01rem;
+    position: relative;
+  }
+  .cont-cambiocon-per .toggle-password{
+    margin-left: 0.8rem;
+  }
+ 
+  body{
+    margin: 0;
+    padding: 0;
+  }
+  .cont-cambiocon-per .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cont-cambiocon-per .lb {
+   margin-right: 3rem;
+  }
+  .cont-cambiocon-per .input-container1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-left: 4.6rem;
+  }
+  .cont-cambiocon-per .input-container2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
   }
   
   .cont-cambiocon-per .label {

@@ -31,8 +31,8 @@ function App() {
             <Route path='/SignIn/Empresa' element={<CompSignInEmp/>}/>
             <Route path='/Empresa/ModificarDatos' element={<ModificarDatEmp/>}/>
             <Route path='/Persona/ModificarDatos' element={<ModificarDatPers/>}/>
-            <Route path='/Persona/CambiaContraseña/Empresa' element={<CompCambiarconEmp/>}/>
-            <Route path='/Persona/CambiaContraseña/Persona' element={<CompCambiarconPer/>}/>
+            <Route path='/Empresa/CambiaContraseña' element={<CompCambiarconEmp/>}/>
+            <Route path='/Persona/CambiaContraseña' element={<CompCambiarconPer/>}/>
             {/* <Route path='/resuls' element={<QueryResults/>}/> */}
             
 

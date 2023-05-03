@@ -1,8 +1,20 @@
 import axios from "axios";
 import { React, useEffect, useState } from 'react';
 import './CambiarContPer.css';
+import { Header } from "../../components/Header/Header";
+import { Footer } from "../../components/Footer/Footer";
 
 const URI = 'http://localhost:8000/CambioCon/persona/';
+
+const cambiocontraper = () =>{
+  return (
+      <div className="cambioclavepr">
+          <Header/>
+              <CompCambiarconPer/>
+          <Footer/>
+      </div>
+  )
+}
 
 const CompCambiarconPer = () => {
   const [password, setPassword] = useState('');
@@ -50,10 +62,12 @@ const CompCambiarconPer = () => {
 
 
   return (
+    
     <div className="cont-cambiocon-per">
+        
         <form className="form" onSubmit={handleSubmit}>
-            <div className="input-container">
-                <label htmlFor="password">Contraseña:</label>
+            <div className="input-container1">
+                <label className="lb" htmlFor="password">Contraseña:</label>
                 <input
                     type={showPassword ? 'text' : 'password'}
                     id="password"
@@ -68,8 +82,8 @@ const CompCambiarconPer = () => {
                     className="toggle-password"
                 />
             </div>
-            <div className="input-container">
-                <label htmlFor="confirm-password">Confirmar contraseña:</label>
+            <div className="input-container2">
+                <label className="lb" htmlFor="confirm-password">Confirmar contraseña:</label>
                 <input
                     type={showConfirmPassword ? 'text' : 'password'}
                     id="confirm-password"
@@ -87,7 +101,8 @@ const CompCambiarconPer = () => {
             <button type="submit" className="submit-button">Cambiar contraseña</button>
         </form>
     </div>
+
   );
 }
 
-export default CompCambiarconPer;
+export default cambiocontraper;
