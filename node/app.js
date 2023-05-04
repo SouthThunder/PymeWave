@@ -30,8 +30,8 @@ app.use('/', homeRoutes);// utiliza la ruta /home como base a los controladores 
 app.use('/AboutUs',aboutUs);
 app.use('/Busqueda',busqueda);
 app.use('/SignIn',singIn);
-app.use('/SingIn/Empresa',singInEmpresa);
-app.use('/SingIn/Persona',singInPersona);
+//app.use('/SingIn/Empresa',singInEmpresa);
+//app.use('/SingIn/Persona',singInPersona);
 app.use('/SingUp',singUp);
 app.use('/SingUp/Empresa',singUpEmpresa);
 app.use('/SingUp/Persona',singUpPersona);

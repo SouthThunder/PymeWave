@@ -5,7 +5,6 @@ import { DataTypes } from 'sequelize';
 // importar relaciones 
 import CalificacionesModel from './CalificacionesModel.js'
 
-
 const UsusarioModel = db.define('usuario', {
     id_usuario: {
         type: DataTypes.INTEGER,

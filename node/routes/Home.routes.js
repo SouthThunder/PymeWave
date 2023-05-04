@@ -12,8 +12,8 @@ const router = express.Router();
 
 // ruta a la que va ha hacer referencia , metodo
 router.get('/', joinCatalsEmpre);
-router.get('/:nombre_empresa', getEmp);
-router.put('/:id_empresa',updateEmp);
+//router.get('/:nombre_empresa', getEmp);
+//router.put('/:id_empresa',updateEmp);
 
 
 

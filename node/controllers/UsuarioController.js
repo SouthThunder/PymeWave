@@ -1,15 +1,15 @@
 // se importa el modelo de datos correspondiente al controlador
 
-import UserModel from "../models/UsuarioModel.js";
+import UsusarioModel from "../models/UsuarioModel.js";
+import CalificacionesModel from '../models/CalificacionesModel.js';
 
 // Metodos para CRUD
 
 //Mostrar todos los registros 
 
 export const getAllUsers = async (req,res) => {
-
     try {
-        const  users = await UserModel.findAll({
+        const  users = await UsusarioModel.findAll({
             attributes: { exclude: ['id'] }
         });
         res.json(users);
@@ -24,7 +24,7 @@ export const getAllUsers = async (req,res) => {
 export const getUser = async (req,res) => {
 
     try {
-        const user = await UserModel.findAll({
+        const user = await UsusarioModel.findAll({
             where:{id:req.params.id}
         });
         res.json(user);
@@ -39,7 +39,7 @@ export const getUser = async (req,res) => {
 export const createUser = async (req,res) => {
 
     try {
-        await UserModel.create(req.body);
+        await UsusarioModel.create(req.body);
         res.json({
             "message":" !Registro creado correctamente"
         });
@@ -54,7 +54,7 @@ export const createUser = async (req,res) => {
 export const updateUser = async (req,res) =>{
 
     try {
-        await UserModel.update(req.body, {
+        await UsusarioModel.update(req.body, {
             where: {id: req.params.id}
         });
         res.json({
@@ -71,7 +71,7 @@ export const updateUser = async (req,res) =>{
 export const deleteUser = async (req,res) =>{
 
     try {
-        await UserModel.destroy({
+        await UsusarioModel.destroy({
             where: { id: req.params.id} 
         });
         res.json({
