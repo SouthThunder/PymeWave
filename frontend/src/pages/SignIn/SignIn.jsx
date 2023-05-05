@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const URI='http://localhost:8000/SignIn';
 
 const CompSignIn = () =>{
-    const [user, setUser] = useState(); //usuarios de la DB
+    const [users, setUsers] = useState(); //usuarios de la DB
     const [localuser, setLocaluser] = useState();
     const [localpassword, setLocalpassword] =useState();
     const navigate= useNavigate();
@@ -19,7 +19,7 @@ const CompSignIn = () =>{
 
     const getUsers = async () =>{
         const res = await axios.get(URI);
-        setUser(res.data);
+        setUsers(res.data);
     }
 
     function shaAlgorithm (string ){
@@ -28,19 +28,18 @@ const CompSignIn = () =>{
          return hash.toString(CryptoJS.enc.HEX);
     }
 
-    const post = async(e) =>{
-        //e.preventDefault();
-        //await axios.get(URI, {localuser:localuser, localpassword: localpassword});
+    function post(data){
+        localStorage.setItem('user', data.id_usuario);
         navigate('/');
     }
 
     const testing = async(e) => {
-        user?.map((enter) =>{
+        users.map((enter) =>{
             if(enter.correo===localuser && enter.contraseña === shaAlgorithm(localpassword)){
                 alert('inicio de sesión verificado, bienvenido');
-                post();
+                post(enter)
             }else{
-                alert('Contraseña o usuario incorrectos');
+                console.log('Contraseña o usuario incorrectos');
             }
         })
       };
@@ -69,7 +68,7 @@ const CompSignIn = () =>{
                         <label>Contraseña</label>
                     </div>
                     <div className="enter">
-                        <button type="submit">Ingresar</button>
+                        <button>Ingresar</button>
                     </div>
                     <div className="not-account">
                         <p>¿No tienes una cuenta?  <Link to={'/SignUp/Persona'}>Registrate</Link></p>

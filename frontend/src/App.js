@@ -22,7 +22,6 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path='/' element={<Home />}/>
-            <Route path="/results" element={<Test/>}></Route>
             <Route path='/AboutUs' element={<AboutUs />}/>
             <Route path='/SingUp' element={<CompSingUp />}/>
             <Route path='/SignUp/Persona' element={<CompSingUpPer/>}/>
