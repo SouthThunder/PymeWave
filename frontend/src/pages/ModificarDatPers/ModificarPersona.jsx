@@ -3,22 +3,12 @@ import './ModificarPersona.css';
 import axios from 'axios';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
-const URI = 'http://localhost:8000/';
+import { React, useEffect, useState } from 'react';
+
+const URI = 'http://localhost:8000/Cambiodat/Persona/';
 
 
-/*
-export const otherComp = ()=>{
-    function testing(){
-        const number=5;
-        return(
-            number
-        )
-    }
 
-    return(
-        <h1>{testing}</h1>
-    )
-}*/
 
 const ModificarDatPer = () =>{
     return (
@@ -29,18 +19,42 @@ const ModificarDatPer = () =>{
          </div>
     )
 }
+
+
 const CompModiPer = () => {
-    // const [empresas, setempresas] = useState([]);
 
-    // useEffect(() => {
-    //     getempresas();
-    // },[]);
+    const [personas, setPersonas] = useState([]);
+    const [idPersona, setIdPersona] = useState(null);
 
-    // const getempresas = async () => {
-    //     const res = await axios.get(URI);
-    //     setempresas(res.data);
-    // }
+    useEffect(() => {
+        getPersonas();
+      }, []);
+    
+      const getPersonas = async () => {
+        const res = await axios.get(URI+'usuario2@example.com');
+        setPersonas(res.data);
+        // Extraer el id_persona del primer objeto del array personas
+        if (res.data.length > 0) {
+          setIdPersona(res.data[0].id_usuario);
+        }
+      }
 
+      const handleActualizar = async () => {
+        try {
+          const correo = document.getElementById("Correo").value;
+          const nombre = document.getElementById("nombre").value;
+          const apellidos = document.getElementById("apellidos").value;
+          const telefono = document.getElementById("Telefono").value;
+          console.log(correo, nombre, apellidos, telefono);// <-- Agrega esto para verificar los valores\
+          const persona = { correo, nombre, apellidos, telefono };
+          await axios.put(`${URI}${idPersona}`, persona);
+          alert("Los datos se actualizaron correctamente");
+          window.location.href = '/';
+        } catch (error) {
+          console.error(error);
+          alert("Error al actualizar los datos");
+        }
+      };
 
     return(
 
@@ -54,9 +68,10 @@ const CompModiPer = () => {
                             <img  title="Logo sin fondo" src="../images/Logos/UsuarioLogo.jpg"/>
                             </picture>  
                             <h4>Cambio Imagen</h4>
+                            <h4><Link to={'/Persona/CambiaContraseña'} >Cambiar contraseña</Link></h4>
                         </div>
                         <div className='derecha'>
-                        <form id="form" method="post" action="/signUp/usuario/add">
+                        <form id="form" onSubmit={handleActualizar}>
                         <div className="inputbox">
                             <small className="erroresCorreo">Error message</small>
                             <ion-icon name="mail-outline"></ion-icon>
@@ -82,22 +97,9 @@ const CompModiPer = () => {
                             <input placeholder="3187927635" type="text" id="Telefono" name="telefono"  />
                             <label for="">Telefono</label>
                         </div>
-                        <div className="inputbox">
-                            <small className="errores">Error message</small>
-                            <ion-icon name="star"></ion-icon>
-                            <input placeholder="pepe123" type="text" id="username" name="user_name" />
-                            <label for="">Username</label>
-                        </div>
-                
-                        <div className="inputbox">
-                            <small className="erroresContrasenia">Error message</small>
-                            <ion-icon name="lock-closed-outline"></ion-icon>
-                            <input placeholder="********" type="password" id="password" name="contraseña"/>
-                            <label for="">Contraseña</label>
-                        </div>
                         <br/>
                         <div className="enter">
-                            <button onclick="dataValidation()">Actualizar</button>
+                            <button type='submit'>Actualizar</button>
                         </div>
                 
                     </form>

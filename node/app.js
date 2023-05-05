@@ -20,6 +20,7 @@ import cates from './routes/categorias.routes.js';
 import busqcates from './routes/busquedaCate.routes.js';
 import cambiconEmp from './routes/cambiarConEm.routes.js';
 import cambiconPer from './routes/cambiarConPer.routes.js';
+import cambiardatPer from './routes/cambiardatosPer.routes.js'
 
 const app = express();
 
@@ -41,6 +42,7 @@ app.use('/Cate/gorias',cates);
 app.use('/Busq/cate',busqcates);
 app.use('/CambioCon/empresa',cambiconEmp);
 app.use('/CambioCon/persona',cambiconPer);
+app.use('/Cambiodat/Persona',cambiardatPer);
 
 
 // conexion

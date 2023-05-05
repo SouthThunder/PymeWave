@@ -24,7 +24,7 @@ export const getAllUsers = async (req,res) => {
 export const getUser = async (req,res) => {
 
     try {
-        const user = await UserModel.findAll({
+        const user = await UsusarioModel.findAll({
             where:{correo:req.params.correo}
 
         });
@@ -60,7 +60,7 @@ export const updateUser = async (req,res) =>{
         const { contraseña } = req.body;
         const updateObject = { contraseña };
         
-        await UserModel.update(updateObject, {
+        await UsusarioModel.update(updateObject, {
             where: {id_usuario: req.params.id_usuario}
 
         });
@@ -72,6 +72,21 @@ export const updateUser = async (req,res) =>{
         res.json( {message: error.message});
     }
 
+};
+
+export const updateUser2 = async (req, res) => {
+    try {
+        const { nombre, correo, telefono, apellidos } = req.body;
+        const updateObject = { nombre, correo, telefono, apellidos };
+        await UsusarioModel.update(updateObject, {
+            where: { id_usuario: req.params.id_usuario }
+        });
+        res.json({
+            message: "Registro actualizado correctamente"
+        });
+    } catch (error) {
+        res.json({ message: error.message });
+    }
 };
 
 //Eliminar un registro
