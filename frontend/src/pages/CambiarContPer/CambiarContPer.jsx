@@ -22,21 +22,21 @@ const CompCambiarconPer = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const [personas, setPersonas] = useState([]);
-  const [idPersona, setIdPersona] = useState(null); // variable para guardar el id_persona
+  // const [personas, setPersonas] = useState([]);
+  // const [idPersona, setIdPersona] = useState(null); // variable para guardar el id_persona
 
-  useEffect(() => {
-    getPersonas();
-  }, []);
+  // useEffect(() => {
+  //   getPersonas();
+  // }, []);
 
-  const getPersonas = async () => {
-    const res = await axios.get(URI+'usuario1@example.com');
-    setPersonas(res.data);
-    // Extraer el id_persona del primer objeto del array personas
-    if (res.data.length > 0) {
-      setIdPersona(res.data[0].id_usuario);
-    }
-  }
+  // const getPersonas = async () => {
+  //   const res = await axios.get(URI+'usuario1@example.com');
+  //   setPersonas(res.data);
+  //   // Extraer el id_persona del primer objeto del array personas
+  //   if (res.data.length > 0) {
+  //     setIdPersona(res.data[0].id_usuario);
+  //   }
+  // }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -48,7 +48,8 @@ const CompCambiarconPer = () => {
       alert('Las contraseñas no coinciden. Por favor, inténtalo de nuevo.');
       return;
     }
-    const url = idPersona ? URI + `${idPersona}` : URI;
+    const url = `${URI}${localStorage.getItem("user")}`;
+    const idPersona =localStorage.getItem("user");
     try {
       const res = await axios.put(url, { id_usuario: idPersona, contraseña: password });
       alert('La contraseña se actualizó correctamente.');

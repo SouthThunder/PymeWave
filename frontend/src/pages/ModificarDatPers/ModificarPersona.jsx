@@ -26,18 +26,18 @@ const CompModiPer = () => {
     const [personas, setPersonas] = useState([]);
     const [idPersona, setIdPersona] = useState(null);
 
-    useEffect(() => {
-        getPersonas();
-      }, []);
+    // useEffect(() => {
+    //     getPersonas();
+    //   }, []);
     
-      const getPersonas = async () => {
-        const res = await axios.get(URI+'usuario2@example.com');
-        setPersonas(res.data);
-        // Extraer el id_persona del primer objeto del array personas
-        if (res.data.length > 0) {
-          setIdPersona(res.data[0].id_usuario);
-        }
-      }
+    //   const getPersonas = async () => {
+    //     const res = await axios.get(URI+'usuario2@example.com');
+    //     setPersonas(res.data);
+    //     // Extraer el id_persona del primer objeto del array personas
+    //     if (res.data.length > 0) {
+    //       setIdPersona(res.data[0].id_usuario);
+    //     }
+    //   }
 
       const handleActualizar = async () => {
         try {
@@ -47,7 +47,7 @@ const CompModiPer = () => {
           const telefono = document.getElementById("Telefono").value;
           console.log(correo, nombre, apellidos, telefono);// <-- Agrega esto para verificar los valores\
           const persona = { correo, nombre, apellidos, telefono };
-          await axios.put(`${URI}${idPersona}`, persona);
+          await axios.put(`${URI}${localStorage.getItem("user")}`, persona);
           alert("Los datos se actualizaron correctamente");
           window.location.href = '/';
         } catch (error) {
