@@ -1,24 +1,12 @@
 import {Link} from 'react-router-dom';
 import './ModificarDatEmp.css';
+import {React, useEffect, useState} from 'react';
 import axios from 'axios';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
-const URI = 'http://localhost:8000/';
+const URI = 'http://localhost:8000/Cambiodat/Empresa/';
 
 
-/*
-export const otherComp = ()=>{
-    function testing(){
-        const number=5;
-        return(
-            number
-        )
-    }
-
-    return(
-        <h1>{testing}</h1>
-    )
-}*/
 
 const ModificarDatEmp = () =>{
     return (
@@ -29,17 +17,52 @@ const ModificarDatEmp = () =>{
          </div>
     )
 }
+
+
 const CompModiEmp = () => {
-    // const [empresas, setempresas] = useState([]);
 
-    // useEffect(() => {
-    //     getempresas();
-    // },[]);
+    const [empres, setempres] = useState([]);
+  const [idEmpresa, setIdEmpresa] = useState(null); // variable para guardar el id_empresa
+  
+  useEffect(() => {
+    getempres();
+  }, []);
+  
+  const getempres = async () => { 
+    const res = await axios.get(URI+'ArtMaker');
+    setempres(res.data);
+    // Extraer el id_empresa del primer objeto del array empres
+    if (res.data.length > 0) {
+      setIdEmpresa(res.data[0].id_empresa);
+    }
+  }
 
-    // const getempresas = async () => {
-    //     const res = await axios.get(URI);
-    //     setempresas(res.data);
-    // }
+  const actualizarDatos = async (event) => {
+    event.preventDefault(); // previene que se recargue la pagina
+    
+    // Obtiene los datos del formulario
+    const formData = new FormData(event.target);
+    
+    // Construye el objeto con los datos a actualizar
+    const data = {
+      nombre: formData.get('nombre'),
+      correo: formData.get('correo'),
+      telefono: formData.get('telefono'),
+      dir_fisica: formData.get('ubicacion')
+    };
+    
+    // Envía los datos al servidor
+    try {
+      const response = await axios.put(URI+idEmpresa, data);
+      console.log(response.data);
+      alert('Datos actualizados correctamente');
+      window.location.href = '/';
+    } catch (error) {
+      console.error(error);
+      alert('Error al actualizar los datos');
+    }
+  };
+
 
 
     return(
@@ -56,9 +79,10 @@ const CompModiEmp = () => {
                             <h4>Cambio Imagen</h4>
                             <h4>Subir catalogo</h4>
                             <h4>Actualizar certificados</h4>
+                            <h4><Link to={'/Empresa/CambiaContraseña'}>Actualizar contraseña</Link></h4>
                         </div>
                         <div className='derecha'>
-                            <form id="form" action="/signUp/empresa/add" method="post" >
+                            <form id="form" onSubmit={actualizarDatos}>
                                 <div className="inputbox">
                                     <small className="erroresNomE">Error message</small>
                                     <ion-icon name="person" ></ion-icon>
@@ -85,13 +109,7 @@ const CompModiEmp = () => {
                                     <label for="">Ubicación</label>
                             
                                 </div>
-                                <div className="inputbox">
-                                    <small className="erroresContrasenia">Error message</small>
-                                    <ion-icon name="lock-closed-outline"></ion-icon>
-                                    <input placeholder="********" type="password" id="password" name="contraseña"/>
-                                    <label for="">Contraseña</label>
-                                </div>
-                                <div className="inputbox">
+                                {/* <div className="inputbox">
                                     <h5>Categorias</h5>
                                     <select name="opciones[]" id="opciones" multiple size="3">
                                         <option value="opcion1">vehículos</option>
@@ -118,7 +136,7 @@ const CompModiEmp = () => {
                                         <option value="opcion22">joyería</option>
                                         <option value="opcion23">Servicios</option>
                                     </select>                    
-                                </div>
+                                </div> */}
                                 <br/>
                                 <div className="enter">
                                     <button onclick="dataValidation()">Actualizar</button>
@@ -135,13 +153,3 @@ const CompModiEmp = () => {
 
 export default ModificarDatEmp;
 
-/*
-class Perra extends React.Component{
-    render(){
-        return(
-            <div className="componenteModUser">
-                <otherComp/>
-            </div>
-        )
-    }
-}*/

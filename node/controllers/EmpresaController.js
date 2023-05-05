@@ -142,6 +142,20 @@ export const updateEmp = async (req,res) =>{
 
 };
 
+export const updateEmp2 = async (req, res) => {
+    try {
+        const { dir_fisica, telefono, correo, nombre_empresa } = req.body;
+        const updateObject = { dir_fisica, telefono, correo, nombre_empresa };
+        await EmpresaModel.update(updateObject, {
+            where: { id_empresa: req.params.id_empresa }
+        });
+        res.json({
+            "message": "Registro actualizado correctamente"
+        });
+    } catch (error) {
+        res.json({ message: error.message });
+    }
+};
 //Eliminar un registro
 
 export const deleteEmp = async (req,res) =>{
