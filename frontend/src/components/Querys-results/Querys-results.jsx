@@ -20,7 +20,6 @@ export const Testing = (props) =>{
 
         const res = await axios.get(`${URI}?nombre_empresa=${props.nombre_empresa}`);
         setempres(res.data);
-
     }
 
     const [categorias, setCategorias] = useState([]);

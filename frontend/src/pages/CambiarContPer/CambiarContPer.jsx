@@ -38,6 +38,12 @@ const CompCambiarconPer = () => {
   //   }
   // }
 
+  function shaAlgorithm (string ){
+    const CryptoJS = require('crypto-js');
+    const hash = CryptoJS.SHA256(string);
+     return hash.toString(CryptoJS.enc.HEX);
+}
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!password.trim() || !confirmPassword.trim()) {
@@ -51,7 +57,7 @@ const CompCambiarconPer = () => {
     const url = `${URI}${localStorage.getItem("user")}`;
     const idPersona =localStorage.getItem("user");
     try {
-      const res = await axios.put(url, { id_usuario: idPersona, contraseña: password });
+      const res = await axios.put(url, { id_usuario: idPersona, contraseña: shaAlgorithm(password) });
       alert('La contraseña se actualizó correctamente.');
       window.location.href = '/';
       // hacer algo con la respuesta

@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import './ModificarPersona.css';
 import axios from 'axios';
 import { Header } from '../../components/Header/Header';
@@ -23,8 +23,21 @@ const ModificarDatPer = () =>{
 
 const CompModiPer = () => {
 
-    const [personas, setPersonas] = useState([]);
+    const [user, setUser] = useState([]);
     const [idPersona, setIdPersona] = useState(null);
+
+    useEffect(() =>{
+        getUser();
+    }, []);
+
+    const getUser = async () =>{
+        try {
+            const res = await axios.get(`${URI}${localStorage.getItem('user')}`);
+            setUser(res.data);
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     // useEffect(() => {
     //     getPersonas();
@@ -39,6 +52,8 @@ const CompModiPer = () => {
     //     }
     //   }
 
+    const navigation = useNavigate();
+
       const handleActualizar = async () => {
         try {
           const correo = document.getElementById("Correo").value;
@@ -49,7 +64,7 @@ const CompModiPer = () => {
           const persona = { correo, nombre, apellidos, telefono };
           await axios.put(`${URI}${localStorage.getItem("user")}`, persona);
           alert("Los datos se actualizaron correctamente");
-          window.location.href = '/';
+          navigation('/')
         } catch (error) {
           console.error(error);
           alert("Error al actualizar los datos");
@@ -75,31 +90,31 @@ const CompModiPer = () => {
                         <div className="inputbox">
                             <small className="erroresCorreo">Error message</small>
                             <ion-icon name="mail-outline"></ion-icon>
-                            <input placeholder="pepe123@gmail.com" type="email" id="Correo" name="correo" />
+                            <input placeholder={user[0].correo} type="email" id="Correo" name="correo" />
                             <label for="">Correo Electronico</label>
                         </div>
                         <div className="inputbox">
                             <small className="errores">Error message</small>
                             <ion-icon name="person"></ion-icon>
-                            <input  placeholder="pepe" type="text" id="nombre" name="nombre" />                   
+                            <input  placeholder={user[0].nombre} type="text" id="nombre" name="nombre" />                   
                             <label for="">Nombre</label>
                         </div>
                         <div className="inputbox">
                             <small className="errores">Error message</small>
                             <ion-icon name="person"></ion-icon>
-                            <input placeholder="Gonzales" type="text" id="apellidos" name="apellidos" />
+                            <input placeholder={user[0].apellidos} type="text" id="apellidos" name="apellidos" />
                             <label for="">Apellidos</label>
                         </div>
 
                         <div className="inputbox">
                             <small className="errores">Error message</small>
                             <ion-icon name="notifications"></ion-icon>
-                            <input placeholder="3187927635" type="text" id="Telefono" name="telefono"  />
+                            <input placeholder={user[0].telefono} type="text" id="Telefono" name="telefono"  />
                             <label for="">Telefono</label>
                         </div>
                         <br/>
                         <div className="enter">
-                            <button type='submit'>Actualizar</button>
+                            <button>Actualizar</button>
                         </div>
                 
                     </form>

@@ -25,7 +25,7 @@ export const getUser = async (req,res) => {
 
     try {
         const user = await UsusarioModel.findAll({
-            where:{correo:req.params.correo}
+            where:{id_usuario:req.params.id_usuario}
 
         });
         res.json(user);

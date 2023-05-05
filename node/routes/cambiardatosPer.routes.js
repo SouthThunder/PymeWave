@@ -8,7 +8,7 @@ const router = express.Router();
 
 // ruta a la que va ha hacer referencia , metodo
 //router.get('/', getAllUsers);
-router.get('/:correo',getUser);
+router.get('/:id_usuario',getUser);
 router.put('/:id_usuario',updateUser2);
 
 
