@@ -202,10 +202,12 @@
     overflow-y: visible;
   }
   .signupempr-component main .container form .inputbox .errores{
+    background-color: red;
     padding-left: 4.7rem;
     padding-bottom: 2.2rem;
   }
   .signupempr-component main .container form .inputbox .erroresContrasenia{
+
     padding-left: 5.3rem;
     padding-bottom: 2.2rem;
   }

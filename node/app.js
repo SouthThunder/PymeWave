@@ -15,7 +15,7 @@ import singInEmpresa from './routes/singInEmpresa.routes.js';
 import singInPersona from './routes/singInPersona.routes.js';
 import singUp from './routes/singUp.routes.js';
 import singUpEmpresa from './routes/singUpeEmpresa.routes.js';
-import singUpPersona from './routes/singInPersona.routes.js';
+import singUpPersona from './routes/singUpPersona.routes.js';
 import cates from './routes/categorias.routes.js';
 import busqcates from './routes/busquedaCate.routes.js';
 import cambiconEmp from './routes/cambiarConEm.routes.js';

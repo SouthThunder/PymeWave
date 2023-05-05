@@ -40,13 +40,14 @@ export const getUser = async (req,res) => {
 export const createUser = async (req,res) => {
 
     try {
-        await UsusarioModel.create(req.body);
+        const usuario = await UsusarioModel.create(req.body);
         res.json({
-            "message":" !Registro creado correctamente"
+          message: '¡Registro creado correctamente!',
+          usuario: usuario,
         });
-    } catch (error) {
-        res.json( {message: error.message});
-    }
+      } catch (error) {
+        res.status(500).json({ message: error.message });
+      }
 
 }
 
