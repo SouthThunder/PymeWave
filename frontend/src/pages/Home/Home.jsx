@@ -7,22 +7,24 @@ import { useLocation } from 'react-router-dom';
 
 const Home =() =>{
 
+    const getUser = localStorage.getItem('user');
+
     const location = useLocation();
     const [datavis1, setDatavis1] =useState(true);
     const [datavis2, setDatavis2] =useState(false);
     const [user, setUser] = useState();
     useEffect(()=>{
-        getUser();
+        //getUser();
     }, [])
 
-    const getUser = () =>{
+    /*const getUser = () =>{
         if(location.state ===null){
             console.log('No user Defined');
         }else{
             const state = location.state;
             setUser(state.id_usuario);
         }
-    }
+    }*/
 
     const getVis1= (data)=>{
         setDatavis1(data); //set Disable of QueryResults comp to true
@@ -33,7 +35,7 @@ const Home =() =>{
 
     return(
         <div className='home'>
-            <Header data={user}/>
+            <Header/>
                 <Search disable={datavis1} changeVis={getVis1} />
                 <Feed disable={datavis2}/>
             <Footer/>

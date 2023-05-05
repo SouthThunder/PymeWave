@@ -3,21 +3,21 @@ import {Link} from 'react-router-dom';
 import './Header.css'
 
 
-export const Header = (props) =>{
-    const [state, setState] =useState(props.data);
-    const [header, setHeader] = useState([]);
+export const Header = () =>{
+
+    const getUser= localStorage.getItem('user');
+
+    const [state, setState] =useState();
+    const [header, setHeader] = useState(false);
     useEffect(()=>{
         checkUser();
-    }, [state])
+    }, [])
+
     const checkUser= ()=>{
-        if(props.data===undefined){
-            console.log('start not user')
-            console.log(state);
-            setHeader(falseUser);
+        if(getUser!=null){
+            setHeader(trueUser)
         }else{
-            console.log('User logged at the moment');
-            //console.log(props.data)
-            setHeader(trueUser);
+            setHeader(falseUser)
         }
     }
 
@@ -41,6 +41,11 @@ export const Header = (props) =>{
         )
     }
 
+    const logout = () =>{
+        localStorage.clear();
+        window.location.reload();
+    }
+
     const trueUser= () =>{
         return(
             <div className="header-component">  
@@ -55,6 +60,7 @@ export const Header = (props) =>{
                             <picture className="user_icon">
                                 <img src="https://cdn-icons-png.flaticon.com/512/552/552721.png" alt="user icon" />
                             </picture>
+                            <button onClick={logout}>Test</button>
                         </ul>
                     </div>
                 </nav>
@@ -64,6 +70,6 @@ export const Header = (props) =>{
          
         
         return(
-            header 
+            header       
         )
 }

@@ -29,7 +29,8 @@ const CompSignIn = () =>{
     }
 
     function post(data){
-        navigate('/', {state: data});
+        localStorage.setItem('user', data.id_usuario);
+        navigate('/');
     }
 
     const testing = async(e) => {
