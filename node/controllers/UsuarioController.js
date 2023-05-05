@@ -24,8 +24,9 @@ export const getAllUsers = async (req,res) => {
 export const getUser = async (req,res) => {
 
     try {
-        const user = await UsusarioModel.findAll({
-            where:{id:req.params.id}
+        const user = await UserModel.findAll({
+            where:{correo:req.params.correo}
+
         });
         res.json(user);
     } catch (error) {
@@ -54,9 +55,15 @@ export const createUser = async (req,res) => {
 export const updateUser = async (req,res) =>{
 
     try {
-        await UsusarioModel.update(req.body, {
-            where: {id: req.params.id}
+
+        const { contraseña } = req.body;
+        const updateObject = { contraseña };
+        
+        await UserModel.update(updateObject, {
+            where: {id_usuario: req.params.id_usuario}
+
         });
+        console.log(req.params.id_usuario);
         res.json({
             "message":" !Registro actualizado correctamente"
         });

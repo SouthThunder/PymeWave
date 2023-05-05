@@ -17,7 +17,9 @@ import singUp from './routes/singUp.routes.js';
 import singUpEmpresa from './routes/singUpeEmpresa.routes.js';
 import singUpPersona from './routes/singInPersona.routes.js';
 import cates from './routes/categorias.routes.js';
-import busqcates from './routes/busquedaCate.routes.js'
+import busqcates from './routes/busquedaCate.routes.js';
+import cambiconEmp from './routes/cambiarConEm.routes.js';
+import cambiconPer from './routes/cambiarConPer.routes.js';
 
 const app = express();
 
@@ -37,6 +39,8 @@ app.use('/SingUp/Empresa',singUpEmpresa);
 app.use('/SingUp/Persona',singUpPersona);
 app.use('/Cate/gorias',cates);
 app.use('/Busq/cate',busqcates);
+app.use('/CambioCon/empresa',cambiconEmp);
+app.use('/CambioCon/persona',cambiconPer);
 
 
 // conexion
