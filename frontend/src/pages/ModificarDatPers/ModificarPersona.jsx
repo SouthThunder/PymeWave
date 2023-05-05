@@ -33,7 +33,8 @@ const CompModiPer = () => {
     const getUser = async () =>{
         try {
             const res = await axios.get(`${URI}${localStorage.getItem('user')}`);
-            setUser(res.data);
+            setUser(res.data[0]);
+            // console.log(res.data.correo);
         } catch (error) {
             console.log(error)
         }
@@ -90,26 +91,26 @@ const CompModiPer = () => {
                         <div className="inputbox">
                             <small className="erroresCorreo">Error message</small>
                             <ion-icon name="mail-outline"></ion-icon>
-                            <input placeholder={user[0].correo} type="email" id="Correo" name="correo" />
+                            <input placeholder={user.correo} type="email" id="Correo" name="correo" />
                             <label for="">Correo Electronico</label>
                         </div>
                         <div className="inputbox">
                             <small className="errores">Error message</small>
                             <ion-icon name="person"></ion-icon>
-                            <input  placeholder={user[0].nombre} type="text" id="nombre" name="nombre" />                   
+                            <input  placeholder={user.nombre} type="text" id="nombre" name="nombre" />                   
                             <label for="">Nombre</label>
                         </div>
                         <div className="inputbox">
                             <small className="errores">Error message</small>
                             <ion-icon name="person"></ion-icon>
-                            <input placeholder={user[0].apellidos} type="text" id="apellidos" name="apellidos" />
+                            <input placeholder={user.apellidos} type="text" id="apellidos" name="apellidos" />
                             <label for="">Apellidos</label>
                         </div>
 
                         <div className="inputbox">
                             <small className="errores">Error message</small>
                             <ion-icon name="notifications"></ion-icon>
-                            <input placeholder={user[0].telefono} type="text" id="Telefono" name="telefono"  />
+                            <input placeholder={user.telefono} type="text" id="Telefono" name="telefono"  />
                             <label for="">Telefono</label>
                         </div>
                         <br/>
