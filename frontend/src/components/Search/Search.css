@@ -9,6 +9,7 @@
 .search-component > picture{
     height: 50vh;
     width: 100vw;
+    z-index: 1;
 }
 
 .search-component > picture >img{
@@ -17,6 +18,7 @@
     object-fit:cover;
     object-position: 0px 50%;
     overflow: hidden;
+    z-index: 1;
 }
 
 .search-component .center{

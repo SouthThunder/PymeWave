@@ -114,13 +114,19 @@ function setSuccesFor(input){
     formControl.className= 'inputbox sucess';
 }
 
+function shaAlgorithm (string ){
+    const CryptoJS = require('crypto-js');
+    const hash = CryptoJS.SHA256(string);
+     return hash.toString(CryptoJS.enc.HEX);
+}
+
 
 
     //procedimiento guardar
     const store = async (e)=>{
         e.preventDefault()
         console.log('SI')
-        await axios.post(URI,{correo: correo,nombre: nombre,apellidos: apellidos,telefono: telefono, contraseña: contraseña })
+        await axios.post(URI,{correo: correo,nombre: nombre,apellidos: apellidos,telefono: telefono, contraseña: shaAlgorithm(contraseña) })
         navigate('/')
     }
     return(

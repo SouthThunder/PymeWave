@@ -2,7 +2,6 @@
 .header-component{
     width: 100vw;
     height: 10vh;
-    overflow: auto;
     clear: both;
     background: var(--primaryColor);
     position:fixed;
@@ -90,10 +89,62 @@
 
 /*Logged in user*/
 
-.header-component ul picture{
+.header-component ul button{
     width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: none;
 }
 
-.header-component ul picture img{
+.header-component ul button picture{
+    width: 4rem; 
+} 
+ 
+.header-component ul button picture img{
     width: inherit;
+}
+
+.header-component ul .popup-header{
+    background-color: var(--primaryColor);
+    position: absolute;
+    right: 0;
+    top: 5.8rem;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+    border-radius: 15px;
+}
+
+.header-component ul .popup-header .popup-inner{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-component ul .popup-header .popup-inner:nth-child(1){
+    border-bottom: 1px solid var(--secondaryColor);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 50px;
+}
+
+.header-component ul .popup-header .popup-inner a,
+.header-component ul .popup-header .popup-inner button{
+    color: var(--tertiaryColor);
+    width: 100%;
+    height: 100%;
+}
+
+.header-component ul .popup-header .popup-inner a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.header-component ul .popup-header .popup-inner a:hover,
+.header-component ul .popup-header .popup-inner button:hover{
+    cursor: pointer;
+    background-color: var(--secondaryColor);
+    transition: 0.4s all ease-in;
 }

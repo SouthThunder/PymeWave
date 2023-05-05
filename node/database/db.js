@@ -8,7 +8,7 @@ const db = new Sequelize('PymeWave', 'root', '',{
         timestamps: false,
         freezeTableName: true
     },
-    port: '3307' // este es el puerto que utiliza mi base de datos, se configura aca
+    port: '3306' // este es el puerto que utiliza mi base de datos, se configura aca
 });
 
 export default db;

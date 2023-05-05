@@ -1,17 +1,43 @@
 import React, { Component, useEffect, useState } from"react";
-import {Link} from 'react-router-dom';
+import {Link, parsePath} from 'react-router-dom';
 import './Header.css'
+
+export const HeadPopUp = (props) =>{
+
+
+    const logout = () =>{
+        localStorage.clear();
+        window.location.reload();
+    }
+
+    return (
+        <div>
+            {
+            !props.trigger && (
+                <div className="popup-header">
+                    <div className="popup-inner">
+                        <Link to={'/Persona/ModificarDatos'}>Settings</Link>
+                    </div>
+                    <div className="popup-inner">
+                        <button onClick={logout}>Log Out</button>
+                    </div>
+                </div>
+                )
+            }
+        </div>
+    )
+}
 
 
 export const Header = () =>{
 
     const getUser= localStorage.getItem('user');
 
-    const [state, setState] =useState();
+    const [popup, setPopup] =useState(true);
     const [header, setHeader] = useState(false);
     useEffect(()=>{
         checkUser();
-    }, [])
+    }, [popup])
 
     const checkUser= ()=>{
         if(getUser!=null){
@@ -41,9 +67,8 @@ export const Header = () =>{
         )
     }
 
-    const logout = () =>{
-        localStorage.clear();
-        window.location.reload();
+    const togglePopup= () =>{
+        setPopup(!popup);
     }
 
     const trueUser= () =>{
@@ -57,10 +82,12 @@ export const Header = () =>{
                         <ul>
                             <li>Services</li>
                             <li>Products</li>
-                            <picture className="user_icon">
-                                <img src="https://cdn-icons-png.flaticon.com/512/552/552721.png" alt="user icon" />
-                            </picture>
-                            <button onClick={logout}>Test</button>
+                            <button onClick={togglePopup}>
+                                <picture className="user_icon">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/552/552721.png" alt="user icon" />
+                                </picture>
+                            </button>
+                            <HeadPopUp trigger={popup}/>                            
                         </ul>
                     </div>
                 </nav>

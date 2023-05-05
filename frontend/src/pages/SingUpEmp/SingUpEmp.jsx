@@ -117,6 +117,12 @@ const CompSingUpEmp = () => {
         formControl.className= 'inputbox sucess';
     }
 
+    function shaAlgorithm (string ){
+        const CryptoJS = require('crypto-js');
+        const hash = CryptoJS.SHA256(string);
+         return hash.toString(CryptoJS.enc.HEX);
+    }
+
 
 
     const store = async (e) => {
@@ -130,7 +136,7 @@ const CompSingUpEmp = () => {
             correo: correo,
             dir_fisica: dir_fisica,
             telefono: telefono,
-            contraseña: contraseña,
+            contraseña: shaAlgorithm(contraseña),
             estado_suscripcion:false,
             rut:rut
           });
@@ -222,7 +228,7 @@ const CompSingUpEmp = () => {
                         </div>
                         <br/>
                         <div className="enter">
-                            <button type='submit' >Registrar</button>
+                            <button type='submit' onClick={dataValidation}>Registrar</button>
                         </div>   
                     </form>
             
