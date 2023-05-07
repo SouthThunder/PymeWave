@@ -25,7 +25,7 @@ export const getProduct = async (req,res) => {
 
     try {
         const product = await ProductModel.findAll({
-            where:{id:req.params.id}
+            where:{id_catalogo:req.params.id_catalogo}
         });
         res.json(product);
     } catch (error) {

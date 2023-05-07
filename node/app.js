@@ -22,6 +22,7 @@ import cambiconEmp from './routes/cambiarConEm.routes.js';
 import cambiconPer from './routes/cambiarConPer.routes.js';
 import cambiardatPer from './routes/cambiardatosPer.routes.js'
 import cambiardatEmp from './routes/cambiardatosEmp.routes.js'
+import productos from './routes/productos.routes.js'
 
 const app = express();
 
@@ -45,6 +46,7 @@ app.use('/CambioCon/empresa',cambiconEmp);
 app.use('/CambioCon/persona',cambiconPer);
 app.use('/Cambiodat/Persona',cambiardatPer);
 app.use('/Cambiodat/Empresa',cambiardatEmp);
+app.use('/Productos',productos);
 
 
 // conexion
