@@ -5,10 +5,10 @@ import './Header.css'
 export const HeadPopUp = (props) =>{
 
 
-    const logout = () =>{
+    const logout = () => {
         localStorage.clear();
-        window.location.href('/');
-    }
+        window.location.href = '/';
+      }
 
     return (
         <div>
