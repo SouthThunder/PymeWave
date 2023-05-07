@@ -7,7 +7,7 @@ export const HeadPopUp = (props) =>{
 
     const logout = () =>{
         localStorage.clear();
-        window.location.reload();
+        window.location.href('/');
     }
 
     return (

@@ -31,11 +31,13 @@ export const Testing = (props) =>{
     }, [props.selectedCategories]);
 
     const getCategorias = async () => {
-        const URIUCAT = URI2 + props.selectedCategories[0];
+        const URIUCAT = URI2 + props.selectedCategories.join(",");
         const res = await axios.get(URIUCAT);
         setCategorias(res.data); 
     }
 
+    //console.log(props.selectedCategories);
+    
 
     function cardHolders (){
         const resultados = empres
@@ -120,6 +122,7 @@ export const Testing = (props) =>{
           </div>
         )
       }
+
     
     if(props.selectedCalificacion.length === 1){
         console.log("llenito")
@@ -132,7 +135,7 @@ export const Testing = (props) =>{
         return (
             cardHolders()
         );
-    }else if(props.selectedCategories.length === 1){
+    }else if(props.selectedCategories.length >=  1){
         //console.log("llenito");
         return (
             cardHolderCate()

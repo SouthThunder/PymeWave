@@ -7,7 +7,7 @@ import { obtenerEmpresasDeBelleza} from '../controllers/EmpresaController.js';
 const router = express.Router();
 
 // ruta a la que va ha hacer referencia , metodo
-router.get('/:categoria', obtenerEmpresasDeBelleza);
+router.get('/:categorias', obtenerEmpresasDeBelleza);
 
 
 export default router;

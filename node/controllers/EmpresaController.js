@@ -12,6 +12,7 @@ import Categoria_empresaModel from "../models/Categoria_empresaModel.js";
 
 export const obtenerEmpresasDeBelleza = async (req, res) =>{
     try {
+        const categorias = req.params.categorias.split(",");
         const empresas = await EmpresaModel.findAll({
             attributes: [
                 ['id_empresa', 'id_empresa'],
@@ -37,7 +38,7 @@ export const obtenerEmpresasDeBelleza = async (req, res) =>{
                             model: CategoriaModel,
                             attributes: [],
                             where: {
-                                nombre: req.params.categoria
+                                nombre: {[Op.in]: categorias}
                             }
                         }
                     ]
