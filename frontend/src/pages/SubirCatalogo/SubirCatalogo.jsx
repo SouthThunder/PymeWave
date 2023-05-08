@@ -6,6 +6,7 @@ import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 const URI = 'http://localhost:8000/Cambiodat/Empresa/';
 const URI2 = 'http://localhost:8000/productos/';
+const URI3 = 'http://localhost:8000/Actualizar/Catalogos/'
 
 
 const SubirCatalogo = () =>{
@@ -24,6 +25,8 @@ const CompSubirCata = () => {
     const [empres, setempres] = useState([]);
   const [idEmpresa, setIdEmpresa] = useState(null); // variable para guardar el id_empresa
   
+ 
+
   useEffect(() => {
     getempres();
   }, []);
@@ -36,33 +39,33 @@ const CompSubirCata = () => {
       setIdEmpresa(res.data[0].id_empresa);
     }
   }
+
   
 
-  const actualizarDatos = async (event) => {
+  const actualizarDescripcion = async (event) => {
+
     event.preventDefault(); // previene que se recargue la pagina
-    
-    // Obtiene los datos del formulario
+
     const formData = new FormData(event.target);
-    
-    // Construye el objeto con los datos a actualizar
+  
     const data = {
-      nombre: formData.get('nombre'),
-      correo: formData.get('correo'),
-      telefono: formData.get('telefono'),
-      dir_fisica: formData.get('ubicacion')
+      descripcion_empresa: formData.get('descripcion')
     };
+    console.log(formData.get('descripcion'))
     
     // Envía los datos al servidor
     try {
-      const response = await axios.put(URI+idEmpresa, data);
+      const response = await axios.put(URI3 + idEmpresa, data);
       console.log(response.data);
-      alert('Datos actualizados correctamente');
+      alert('Descripcion actualizada');
       window.location.href = '/';
     } catch (error) {
       console.error(error);
-      alert('Error al actualizar los datos');
+      alert('Error al actualizar de descripcion');
     }
   };
+
+
 
   const [producto, setProducto] = useState([]);
   useEffect(() => {
@@ -78,7 +81,6 @@ const CompSubirCata = () => {
     const res = await axios.get(URI2+idEmpresa);
     setProducto(res.data);
   }
-  console.log(producto);
 
   const deleteProducto = async (id) => {
     const confirmacion = window.confirm('¿Está seguro de que desea eliminar este producto?');
@@ -87,6 +89,7 @@ const CompSubirCata = () => {
       getProducto();
     }
   };
+
   
   
  
@@ -108,16 +111,17 @@ const CompSubirCata = () => {
                             <h4><Link to={'/Empresa/CambiaContraseña'}>Actualizar contraseña</Link></h4>
                         </div>
                         <div className='derecha'>
-                            <form id="form" onSubmit={actualizarDatos}>
+                            <form id="form" onSubmit={actualizarDescripcion}>
                                 <div className="inputbox">
                                 <label htmlFor="">Descripción de la empresa</label>
                                    
                                     <ion-icon name="archive" ></ion-icon>
-                                    <textarea placeholder="Somos una empresa..." type="text"  className='descripcion' id="nombre" name="nombre" />                   
+                                    <textarea placeholder="Somos una empresa..." type="text"  className='descripcion' id="descripcion" name="descripcion" />                   
                                 </div>
                                 <div className="enter">
                                     { <button type='submit'>Actualizar</button> }
                                 </div> 
+
                                 <label htmlFor="" className='titulo2'>Listado Productos</label>
                                
                                 <div className="productos">
