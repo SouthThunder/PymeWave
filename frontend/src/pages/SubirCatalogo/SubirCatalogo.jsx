@@ -69,7 +69,7 @@ const CompSubirCata = () => {
     if (idEmpresa) {
         getProducto();
     }
-}, [idEmpresa]);
+  }, [idEmpresa]);
   useEffect(() => {
     getProducto();
   }, []);
@@ -77,9 +77,16 @@ const CompSubirCata = () => {
   const getProducto = async () => { 
     const res = await axios.get(URI2+idEmpresa);
     setProducto(res.data);
-    // Extraer el id_empresa del primer objeto del array empres
   }
   console.log(producto);
+
+  const deleteProducto = async (id) => {
+    const confirmacion = window.confirm('¿Está seguro de que desea eliminar este producto?');
+    if (confirmacion) {
+      await axios.delete(`${URI2}${id}`);
+      getProducto();
+    }
+  };
   
   
  
@@ -109,7 +116,7 @@ const CompSubirCata = () => {
                                     <textarea placeholder="Somos una empresa..." type="text"  className='descripcion' id="nombre" name="nombre" />                   
                                 </div>
                                 <div className="enter">
-                                    { <button onclick="dataValidation()">Actualizar</button> }
+                                    { <button type='submit'>Actualizar</button> }
                                 </div> 
                                 <label htmlFor="" className='titulo2'>Listado Productos</label>
                                
@@ -129,7 +136,7 @@ const CompSubirCata = () => {
                                                     <td>{product.descripcion}</td>
                                                     <td>
                                                         <Link to={''} className='editar'>Editar</Link>
-                                                        <button className='btneliminar'>Eliminar</button>
+                                                        <button type='button' className='btneliminar' onClick={ ()=>deleteProducto(product.id_producto) }>Eliminar</button>
                                                     </td>
 
                                                 </tr>
@@ -141,7 +148,7 @@ const CompSubirCata = () => {
                                                       
                                 </div>
                                 <div className='agrega'>
-                                <Link to='' className='add'>Agregar Producto</Link>
+                                <Link to={'/Empresa/SubirCatalogo/AgregarProducto'} className='add'>Agregar Producto</Link>
                                 </div>
                                   
                             </form>

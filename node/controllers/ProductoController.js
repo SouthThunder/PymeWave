@@ -72,7 +72,7 @@ export const deleteProduct = async (req,res) =>{
 
     try {
         await ProductModel.destroy({
-            where: { id: req.params.id} 
+            where: { id_producto: req.params.id_producto} 
         });
         res.json({
             "message":" !Registro eliminado correctamente"
