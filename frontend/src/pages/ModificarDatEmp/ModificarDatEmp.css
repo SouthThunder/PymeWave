@@ -170,3 +170,74 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 
+
+/* pop up */
+
+.modificarDatosEmp .popupCategorias {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 10px;
+    z-index: 9999;
+    overflow-y: auto;
+    width: 80%;
+    max-width: 500px;
+    height: 80%;
+    max-height: 600px;
+    border-radius: 10px;
+    border: 2px solid #202C3F;
+  }
+  
+  .modificarDatosEmp .popupCategorias h2 {
+    color: #202C3F;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .modificarDatosEmp .popupCategorias label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .modificarDatosEmp .popupCategorias button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #202C3F;
+  }
+  
+.modificarDatosEmp .popupCategorias button:hover {
+    background: #7DA9DB; 
+    box-shadow: 1px 1px 1px 1px #202C3F;
+    transition: all 0.5s ease;
+    color: #202C3F;
+} 
+
+
+.modificarDatosEmp .checkbox {
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+.modificarDatosEmp .checkbox-container {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+.modificarDatosEmp .checkbox-container input {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  
+  
