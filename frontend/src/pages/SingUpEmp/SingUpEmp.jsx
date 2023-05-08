@@ -2,7 +2,8 @@ import {Link, useNavigate} from 'react-router-dom';
 import './SingUpEmp.css';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
-const URI ='http://localhost:8000/SingUp/Empresa'
+const URI ='http://localhost:8000/SingUp/Empresa/'
+const URI2 = 'http://localhost:8000/Cate/gorias/';
 
 const CompSingUpEmp = () => {
     const[nombre,setnombre] = useState('')
@@ -12,6 +13,26 @@ const CompSingUpEmp = () => {
     const[contraseña,setcontraseña] = useState('')
     const[rut,setrut] = useState('')
     const navigate= useNavigate()
+    const [popupAbierto, setPopupAbierto] = useState(false);
+    const [cates, setCates] = useState([]); 
+    useEffect(() => { 
+        getCates(); 
+    },[]); 
+
+    const getCates = async () => { 
+        const res = await axios.get(URI2); 
+        setCates(res.data); 
+    }
+    
+    const [categoriasSeleccionadas, setCategoriasSeleccionadas] = useState([]);
+    const actualizarCategoriasSeleccionadas = (event) => {
+      const categoria = event.target.value;
+      if (event.target.checked) {
+        setCategoriasSeleccionadas([...categoriasSeleccionadas, categoria]);
+      } else {
+        setCategoriasSeleccionadas(categoriasSeleccionadas.filter((cat) => cat !== categoria));
+      }
+    }; 
   
     function dataValidation() {
         var sePudo=true;
@@ -198,38 +219,40 @@ const CompSingUpEmp = () => {
                             <input placeholder="12345-1" type="text" id="rut" name="rut" value={rut} onChange={(e)=>setrut(e.target.value)} />
                             <label for="">Rut</label>
                         </div>
-                        <div className="inputbox">
-                            <h5>Categorias</h5>
-                            <select name="opciones[]" id="opciones" multiple size="3">
-                                <option value="opcion1">vehículos</option>
-                                <option value="opcion2">Celulares</option>
-                                <option value="opcion3">cámaras</option>
-                                <option value="opcion4">Videojuegos</option>
-                                <option value="opcion5">Consolas</option>
-                                <option value="opcion6">computación</option>
-                                <option value="opcion7">Dispositivos de audio</option>
-                                <option value="opcion8">Dispositivos de video</option>
-                                <option value="opcion9">electrodomésticos</option>
-                                <option value="opcion10">Hogar</option>
-                                <option value="opcion11">Deportes</option>
-                                <option value="opcion12">Belleza</option>
-                                <option value="opcion13">Herramientas</option>
-                                <option value="opcion14">Ropa</option>
-                                <option value="opcion15">Juguetes</option>
-                                <option value="opcion16">Salud</option>
-                                <option value="opcion17">Mascotas</option>
-                                <option value="opcion18">Arte</option>
-                                <option value="opcion19">Instrumentos musicales</option>
-                                <option value="opcion20">Libros</option>
-                                <option value="opcion21">Comics</option>
-                                <option value="opcion22">joyería</option>
-                                <option value="opcion23">Servicios</option>
-                            </select>                    
+                        <div>
+                            <button type="button" onClick={() => setPopupAbierto(true)}>Seleccionar categorías</button>
                         </div>
+                        {popupAbierto &&
+                            <div className="popupCategorias">
+                                <div>
+                                    <h2>Selecciona tus categorías:</h2>
+                                    {cates.map((cate) => (
+                                        <label className='checkbox-container' key={cate.id_categoria}>
+                                            <input
+                                                type="checkbox"
+                                                value={cate.nombre}
+                                                onChange={(e) => {
+                                                    if (e.target.checked) {
+                                                        setCategoriasSeleccionadas([...categoriasSeleccionadas, cate.nombre]);
+                                                    } else {
+                                                        setCategoriasSeleccionadas(categoriasSeleccionadas.filter((cat) => cat !== cate.nombre));
+                                                    }
+                                                }}
+                                            />
+                                                {cate.nombre}
+                                            <br />
+                                        </label>
+                                    ))}
+                                    <button onClick={() => setPopupAbierto(false)}>Cerrar</button>
+                                </div>
+                            </div>
+                        }
                         <br/>
-                        <div className="enter">
-                            <button type='submit' onClick={dataValidation}>Registrar</button>
-                        </div>   
+                        {cates.length > 0 &&     
+                            <div className="enter">
+                                <button type='submit' onClick={dataValidation}>Registrar</button>
+                            </div>
+                        }   
                     </form>
             
            
