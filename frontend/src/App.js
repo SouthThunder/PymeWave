@@ -11,6 +11,7 @@ import ModificarDatPers from "./pages/ModificarDatPers/ModificarPersona";
 import CompCambiarconEmp from './pages/CambiarContEmp/CambiarContEmp';
 import CompCambiarconPer from './pages/CambiarContPer/CambiarContPer'
 import SubirCatalogo from "./pages/SubirCatalogo/SubirCatalogo";
+import Agregarproducto from "./pages/AgregarProducto/AgregarProducto";
 import {QueryResults} from './components/Querys-results/Querys-results';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import "./App.css";
@@ -34,6 +35,7 @@ function App() {
             <Route path='/Empresa/CambiaContraseña' element={<CompCambiarconEmp/>}/>
             <Route path='/Persona/CambiaContraseña' element={<CompCambiarconPer/>}/>
             <Route path='/Empresa/SubirCatalogo' element={<SubirCatalogo/>}/>
+            <Route path='/Empresa/SubirCatalogo/AgregarProducto' element={<Agregarproducto/>}/>
             {/* <Route path='/resuls' element={<QueryResults/>}/> */}
             
 
