@@ -36,18 +36,17 @@ export const getProduct = async (req,res) => {
 
 //Crear un registro
 
-export const createProduct = async (req,res) => {
-
+export const createProduct = async (req, res) => {
     try {
-        await ProductModel.create(req.body);
-        res.json({
-            "message":" !Registro creado correctamente"
-        });
+      const newProduct = await ProductModel.create(req.body);
+      res.json({
+        message: "¡Registro creado correctamente!",
+        //data: newProduct
+      });
     } catch (error) {
-        res.json( {message: error.message});
+      res.json({ message: error.message });
     }
-
-}
+  };
 
 //Actualizar un registro
 
