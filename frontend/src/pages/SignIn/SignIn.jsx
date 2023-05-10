@@ -30,6 +30,7 @@ const CompSignIn = () =>{
 
     function post(data){
         localStorage.setItem('user', data.id_usuario);
+        localStorage.setItem('user_type', 0);
         navigate('/');
     }
 
@@ -75,7 +76,7 @@ const CompSignIn = () =>{
                         
                     </div>
                     <div>
-                        <p>¿Eres Empresa? <Link to={'/SignIn/Empresa'}>Registrate</Link></p>
+                        <p>¿Eres Empresa? <Link to={'/SignIn/Empresa'}>Inicia secion</Link></p>
                     </div>
                 </form>
             </div>

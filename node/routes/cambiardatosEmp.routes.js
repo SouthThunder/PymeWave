@@ -11,7 +11,7 @@ import {obtenerEmpresasDeBelleza} from '../controllers/EmpresaController.js';
 const router = express.Router();
 
 // ruta a la que va ha hacer referencia , metodo
-router.get('/:nombre_empresa', getEmp);
+router.get('/:id_empresa', getEmp);
 router.put('/:id_empresa',updateEmp2);
 
 

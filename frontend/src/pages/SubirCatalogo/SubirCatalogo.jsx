@@ -32,7 +32,7 @@ const CompSubirCata = () => {
   }, []);
   
   const getempres = async () => { 
-    const res = await axios.get(URI+'ArtMaker');
+    const res = await axios.get(URI+localStorage.getItem('user'));
     setempres(res.data);
     // Extraer el id_empresa del primer objeto del array empres
     if (res.data.length > 0) {
@@ -55,7 +55,7 @@ const CompSubirCata = () => {
     
     // Envía los datos al servidor
     try {
-      const response = await axios.put(URI3 + idEmpresa, data);
+      const response = await axios.put(URI3 + localStorage.getItem('user'), data);
       console.log(response.data);
       alert('Descripcion actualizada');
       window.location.href = '/';
@@ -69,16 +69,16 @@ const CompSubirCata = () => {
 
   const [producto, setProducto] = useState([]);
   useEffect(() => {
-    if (idEmpresa) {
+    if (localStorage.getItem('user')) {
         getProducto();
     }
-  }, [idEmpresa]);
+  }, [localStorage.getItem('user')]);
   useEffect(() => {
     getProducto();
   }, []);
   
   const getProducto = async () => { 
-    const res = await axios.get(URI2+idEmpresa);
+    const res = await axios.get(URI2+localStorage.getItem('user'));
     setProducto(res.data);
   }
 
