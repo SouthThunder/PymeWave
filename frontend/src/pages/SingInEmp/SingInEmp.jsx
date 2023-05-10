@@ -6,20 +6,20 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 
-const URI='http://localhost:8000/SignIn';
+const URI='http://localhost:8000/SignIn/empresas';
 
 const CompSignInEmp = () =>{
-    const [user, setUser] = useState(); //usuarios de la DB
+    const [empresa, setEmpresa] = useState(); //usuarios de la DB
     const [localuser, setLocaluser] = useState();
     const [localpassword, setLocalpassword] =useState();
     const navigate= useNavigate();
     useEffect(() =>{
-        getUsers()
+        getEmpresas()
     }, []);
 
-    const getUsers = async () =>{
+    const getEmpresas = async () =>{
         const res = await axios.get(URI);
-        setUser(res.data);
+        setEmpresa(res.data);
     }
 
     function shaAlgorithm (string ){
@@ -28,17 +28,17 @@ const CompSignInEmp = () =>{
          return hash.toString(CryptoJS.enc.HEX);
     }
 
-    const post = async(e) =>{
-        //e.preventDefault();
-        //await axios.get(URI, {localuser:localuser, localpassword: localpassword});
+    function post (data){
+        localStorage.setItem('user', data.id_empresa);
+        localStorage.setItem('user_type', 1);
         navigate('/');
     }
 
     const testing = async(e) => {
-        user?.map((enter) =>{
+        empresa?.map((enter) =>{
             if(enter.correo===localuser && enter.contraseña === shaAlgorithm(localpassword)){
                 alert('inicio de sesión verificado, bienvenido');
-                post();
+                post(enter);
             }else{
                 alert('Contraseña o usuario incorrectos');
             }

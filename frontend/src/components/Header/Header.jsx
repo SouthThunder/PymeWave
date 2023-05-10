@@ -4,7 +4,6 @@ import './Header.css'
 
 export const HeadPopUp = (props) =>{
 
-
     const logout = () => {
         localStorage.clear();
         window.location.href = '/';
@@ -16,7 +15,7 @@ export const HeadPopUp = (props) =>{
             !props.trigger && (
                 <div className="popup-header">
                     <div className="popup-inner">
-                        <Link to={'/Persona/ModificarDatos'}>Settings</Link>
+                        <Link to={props.follow}>Settings</Link>
                     </div>
                     <div className="popup-inner">
                         <button onClick={logout}>Log Out</button>
@@ -32,15 +31,22 @@ export const HeadPopUp = (props) =>{
 export const Header = () =>{
 
     const getUser= localStorage.getItem('user');
+    const getUserType=localStorage.getItem('user_type');
 
     const [popup, setPopup] =useState(true);
     const [header, setHeader] = useState(false);
+    const [link, setLink] =useState();
     useEffect(()=>{
         checkUser();
     }, [popup])
 
     const checkUser= ()=>{
-        if(getUser!=null){
+        if(getUser!==null){
+            if(getUserType==='1'){
+                setLink('/Empresa/ModificarDatos');
+            }else{
+                setLink('/Persona/ModificarDatos');
+            }
             setHeader(trueUser)
         }else{
             setHeader(falseUser)
@@ -87,7 +93,7 @@ export const Header = () =>{
                                     <img src="https://cdn-icons-png.flaticon.com/512/552/552721.png" alt="user icon" />
                                 </picture>
                             </button>
-                            <HeadPopUp trigger={popup}/>                            
+                            <HeadPopUp trigger={popup} follow={link}/>                            
                         </ul>
                     </div>
                 </nav>

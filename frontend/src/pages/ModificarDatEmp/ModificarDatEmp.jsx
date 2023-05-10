@@ -43,7 +43,7 @@ const [popupCategoriasAbierto, setPopupCategoriasAbierto] = useState(false);
   }, []);
   
   const getempres = async () => { 
-    const res = await axios.get(URI+'ArtMaker');
+    const res = await axios.get(`${URI}${localStorage.getItem('user')}`);
     setempres(res.data);
     // Extraer el id_empresa del primer objeto del array empres
     if (res.data.length > 0) {

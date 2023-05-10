@@ -74,13 +74,6 @@ export const getAllEmpres = async (req,res) => {
         const  empres = await EmpresaModel.findAll({
             attributes: { exclude: ['id'] }
         });
-
-        //forma de hacerlo con dos tablas
-        //const  users = await UserModel.findAll({ 
-        //    attributes: { exclude: ['id'] }
-        //});
-        //res.json({empres,users});
-        
         res.json(empres);
     } catch (error) {
         res.json( {message: error.message});
@@ -94,7 +87,7 @@ export const getEmp = async (req,res) => {
 
     try {
         const emp = await EmpresaModel.findAll({
-            where:{nombre_empresa:req.params.nombre_empresa}
+            where:{id_empresa:req.params.id_empresa}
         });
         res.json(emp);
     } catch (error) {
