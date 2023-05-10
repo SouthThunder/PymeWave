@@ -18,9 +18,9 @@ const ProductoModel = db.define('producto', {
         allowNull: false
     },
     id_producto: { 
-        type: DataTypes.INTEGER, 
+        type: DataTypes.INTEGER,
         primaryKey: true,
-        allowNull: false
+        autoIncrement: true
     },
 });
 

@@ -112,7 +112,7 @@ const [popupCategoriasAbierto, setPopupCategoriasAbierto] = useState(false);
                   <img  title="Logo sin fondo" src="../images/Logos/UsuarioLogo.jpg"/>
                 </picture>  
                 <h4>Cambio Imagen</h4>
-                <h4>Subir catalogo</h4>
+                <h4><Link to={'/Empresa/SubirCatalogo'}>Subir catalogo</Link></h4>
                 <h4>Actualizar certificados</h4>
                 <h4><Link to={'/Empresa/CambiaContraseña'}>Actualizar contraseña</Link></h4>
               </div>

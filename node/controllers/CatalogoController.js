@@ -57,7 +57,7 @@ export const updateCatal = async (req,res) =>{
 
     try {
         await CatalModel.update(req.body, {
-            where: {id: req.params.id}
+            where: {id_empresa_catalogo: req.params.id_empresa_catalogo}
         });
         res.json({
             "message":" !Registro actualizado correctamente"
