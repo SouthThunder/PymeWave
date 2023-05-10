@@ -27,7 +27,7 @@ const CompAgregarProducto = () => {
   }, []);
   
   const getempres = async () => { 
-    const res = await axios.get(URI+'ArtMaker');
+    const res = await axios.get(URI+localStorage.getItem('user'));
     setempres(res.data);
     // Extraer el id_empresa del primer objeto del array empres
     if (res.data.length > 0) {
@@ -42,11 +42,11 @@ const CompAgregarProducto = () => {
     //procedimiento para guardar
     const store = async (e) =>{
         e.preventDefault()
-        await axios.post(URI2,{nombre:nombre, descripcion:descripcion,id_catalogo:idEmpresa});
+        await axios.post(URI2,{nombre:nombre, descripcion:descripcion,id_catalogo:localStorage.getItem('user')});
         window.location.href = '/Empresa/SubirCatalogo';
     }
     
-    console.log(idEmpresa);
+    console.log(localStorage.getItem('user'));
 
   return (
     <div className="agregarproduct">

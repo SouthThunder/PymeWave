@@ -59,7 +59,7 @@ const [popupCategoriasAbierto, setPopupCategoriasAbierto] = useState(false);
     
     // Construye el objeto con los datos a actualizar
     const data = {
-      nombre: formData.get('nombre'),
+      nombre_empresa: formData.get('nombre'),
       correo: formData.get('correo'),
       telefono: formData.get('telefono'),
       dir_fisica: formData.get('ubicacion')
@@ -67,10 +67,10 @@ const [popupCategoriasAbierto, setPopupCategoriasAbierto] = useState(false);
     
     // Envía los datos al servidor
     try {
-      const response = await axios.put(URI + idEmpresa, data);
+      const response = await axios.put(URI + localStorage.getItem('user'), data);
+      console.log(URI + localStorage.getItem('user'));
       console.log(response.data);
       alert('Datos actualizados correctamente');
-      actualizarCategorias(); // Actualiza las categorías seleccionadas
       window.location.href = '/';
     } catch (error) {
       console.error(error);
@@ -78,27 +78,6 @@ const [popupCategoriasAbierto, setPopupCategoriasAbierto] = useState(false);
     }
   };
 
-  const actualizarCategorias = async () => {
-    try {
-      const response = await axios.put(URI2, {
-        categorias: categoriasSeleccionadas
-      });
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-      alert('Error al actualizar las categorías');
-    }
-  };
-
-  const [cates, setCates] = useState([]); 
-    useEffect(() => { 
-        getCates(); 
-    },[]); 
-
-    const getCates = async () => { 
-        const res = await axios.get(URI2); 
-        setCates(res.data); 
-    } 
 
 
 
@@ -122,25 +101,25 @@ const [popupCategoriasAbierto, setPopupCategoriasAbierto] = useState(false);
                     <small className="erroresNomE">Error message</small>
                     <ion-icon name="person" ></ion-icon>
                     <input placeholder="Pyme" type="text" id="nombre" name="nombre" />                   
-                    <label for="">Nombre de la empresa</label>
+                    <label >Nombre de la empresa</label>
                   </div>
                   <div className="inputbox">
                     <small className="erroresCorreo">Error message</small>
                     <ion-icon name="mail-outline"></ion-icon>
                     <input placeholder="pyme123@pyme.com" type="email" id="Correo" name="correo"/>
-                    <label for="">Correo Electronico</label>
+                    <label >Correo Electronico</label>
                   </div>
                   <div className="inputbox"> 
                     <small className="errores">Error message</small>
                     <ion-icon name="notifications"></ion-icon>
                     <input placeholder="3139368297" type="text" id="Telefono" name="telefono" />
-                    <label for="">Telefono:</label>
+                    <label >Telefono:</label>
                   </div>
                   <div className="inputbox">
                     <small className="errores">Error message</small>
                     <ion-icon name="home"></ion-icon>
                     <input placeholder="Bogota" type="text" id="Ubicacion" name="ubicacion" />
-                    <label for="">Ubicación</label>
+                    <label >Ubicación</label>
                   </div>
                     <div className="enter">
                       <button  className='botonactualizar' type="submit">Actualizar</button>

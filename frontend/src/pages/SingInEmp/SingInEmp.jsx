@@ -40,7 +40,8 @@ const CompSignInEmp = () =>{
                 alert('inicio de sesión verificado, bienvenido');
                 post(enter);
             }else{
-                alert('Contraseña o usuario incorrectos');
+                //alert('Contraseña o usuario incorrectos');
+                console.log('Contraseña o usuario incorrectos');
             }
         })
       };
@@ -75,7 +76,7 @@ const CompSignInEmp = () =>{
                         <p>¿No tienes una cuenta?  <Link to={'/SignUp/Empresa'}>Registrate</Link></p>
                     </div>
                     <div>
-                        <p>¿Eres Persona Natural? <Link to={'/SignIn'}>Registrate</Link></p>
+                        <p>¿Eres Persona Natural? <Link to={'/SignIn'}>Inicia secion</Link></p>
                     </div>
                 </form>
             </div>

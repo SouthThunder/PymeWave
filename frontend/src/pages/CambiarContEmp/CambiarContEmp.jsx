@@ -16,6 +16,13 @@ const cambiocontraemp = () =>{
     )
   }
 const CompCambiarconEmp = () => {
+
+    function shaAlgorithm (string ){
+        const CryptoJS = require('crypto-js');
+        const hash = CryptoJS.SHA256(string);
+         return hash.toString(CryptoJS.enc.HEX);
+    }
+
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -30,7 +37,7 @@ const CompCambiarconEmp = () => {
   }, []);
   
   const getempres = async () => {
-    const res = await axios.get(URI+'ArtMaker');
+    const res = await axios.get(URI+localStorage.getItem('user'));
     setempres(res.data);
     // Extraer el id_empresa del primer objeto del array empres
     if (res.data.length > 0) {
@@ -50,9 +57,9 @@ const CompCambiarconEmp = () => {
         alert('Las contraseñas no coinciden. Por favor, inténtalo de nuevo.');
         return;
     }
-    const url = idEmpresa ? URI + `${idEmpresa}` : URI;
+    const url = localStorage.getItem('user') ? URI + `${localStorage.getItem('user')}` : URI;
     try {
-        const res = await axios.put(url, { id: idEmpresa, contraseña: password });
+        const res = await axios.put(url, { id: localStorage.getItem('user'), contraseña: shaAlgorithm(password) });
         alert('La contraseña se actualizó correctamente.');
         window.location.href = '/';
         // hacer algo con la respuesta

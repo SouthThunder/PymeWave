@@ -76,7 +76,7 @@ const CompSignIn = () =>{
                         
                     </div>
                     <div>
-                        <p>¿Eres Empresa? <Link to={'/SignIn/Empresa'}>Registrate</Link></p>
+                        <p>¿Eres Empresa? <Link to={'/SignIn/Empresa'}>Inicia secion</Link></p>
                     </div>
                 </form>
             </div>
