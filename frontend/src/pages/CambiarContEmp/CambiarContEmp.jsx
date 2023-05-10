@@ -50,24 +50,42 @@ const CompCambiarconEmp = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!password.trim() || !confirmPassword.trim()) {
-        alert('Por favor, llena todos los campos.');
-        return;
+      alert('Por favor, llena todos los campos.');
+      return;
     }
     if (password !== confirmPassword) {
-        alert('Las contraseñas no coinciden. Por favor, inténtalo de nuevo.');
-        return;
+      alert('Las contraseñas no coinciden. Por favor, inténtalo de nuevo.');
+      return;
     }
-    const url = localStorage.getItem('user') ? URI + `${localStorage.getItem('user')}` : URI;
+    if (password.length < 8) {
+      alert('La contraseña debe tener al menos 8 caracteres.');
+      return;
+    }
+    if (!/\d/.test(password)) {
+      alert('La contraseña debe contener al menos un número.');
+      return;
+    }
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+      alert('La contraseña debe contener al menos un carácter especial.');
+      return;
+    }
+    if (!/[A-Z]/.test(password)) {
+      alert('La contraseña debe contener al menos una letra mayúscula.');
+      return;
+    }
+  
+    const url = `${URI}${localStorage.getItem("user")}`;
+    const idPersona = localStorage.getItem("user");
     try {
-        const res = await axios.put(url, { id: localStorage.getItem('user'), contraseña: shaAlgorithm(password) });
-        alert('La contraseña se actualizó correctamente.');
-        window.location.href = '/';
-        // hacer algo con la respuesta
+      const res = await axios.put(url, { id_usuario: idPersona, contraseña: shaAlgorithm(password) });
+      alert('La contraseña se actualizó correctamente.');
+      window.location.href = '/';
+      // hacer algo con la respuesta
     } catch (error) {
-        console.error(error);
-        // manejar el error
+      console.error(error);
+      // manejar el error
     }
-}
+  }
 
   return (
     <div className="cont-cambiocon">
