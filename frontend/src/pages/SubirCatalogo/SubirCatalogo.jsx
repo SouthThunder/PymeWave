@@ -139,7 +139,7 @@ const CompSubirCata = () => {
                                                     <td>{product.nombre}</td>
                                                     <td>{product.descripcion}</td>
                                                     <td>
-                                                        <Link to={''} className='editar'>Editar</Link>
+                                                        <Link to={`/Empresa/SubirCatalogo/EditarProducto?id=${product.id_producto}`} className='editar'>Editar</Link>
                                                         <button type='button' className='btneliminar' onClick={ ()=>deleteProducto(product.id_producto) }>Eliminar</button>
                                                     </td>
 

@@ -12,6 +12,7 @@ import CompCambiarconEmp from './pages/CambiarContEmp/CambiarContEmp';
 import CompCambiarconPer from './pages/CambiarContPer/CambiarContPer'
 import SubirCatalogo from "./pages/SubirCatalogo/SubirCatalogo";
 import Agregarproducto from "./pages/AgregarProducto/AgregarProducto";
+import Editarproducto from "./pages/EditarProducto/EditarProducto";
 import {QueryResults} from './components/Querys-results/Querys-results';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import "./App.css";
@@ -36,6 +37,7 @@ function App() {
             <Route path='/Persona/CambiaContraseña' element={<CompCambiarconPer/>}/>
             <Route path='/Empresa/SubirCatalogo' element={<SubirCatalogo/>}/>
             <Route path='/Empresa/SubirCatalogo/AgregarProducto' element={<Agregarproducto/>}/>
+            <Route path='/Empresa/SubirCatalogo/EditarProducto' element={<Editarproducto/>}/>
             {/* <Route path='/resuls' element={<QueryResults/>}/> */}
             
 

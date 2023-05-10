@@ -28,7 +28,7 @@ export const CompShowEnterprises = () =>{
             alert(enterprise[i].correo);
         }*/
         return(
-            enterprise?.map((enter)=>{
+            enterprise.map((enter)=>{
               return(
                 <div className="container" key={enter.id_empresa}>
                   <div className="holder">

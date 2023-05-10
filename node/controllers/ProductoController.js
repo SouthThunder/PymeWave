@@ -53,17 +53,21 @@ export const createProduct = async (req, res) => {
 export const updateProduct = async (req,res) =>{
 
     try {
-        await ProductModel.update(req.body, {
-            where: {id: req.params.id}
+        const { descripcion, nombre } = req.body;
+        const updateObject = { descripcion, nombre };
+        await ProductModel.update(updateObject, {
+            where: { id_producto: req.params.id_producto}
         });
         res.json({
-            "message":" !Registro actualizado correctamente"
+            "message": "Registro actualizado correctamente"
         });
     } catch (error) {
-        res.json( {message: error.message});
+        res.json({ message: error.message });
     }
 
 };
+
+
 
 //Eliminar un registro
 

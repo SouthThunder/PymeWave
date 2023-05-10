@@ -1,7 +1,7 @@
 import express from 'express';
 
 // importar el controlador que se va a utilizar en las ruta
-import { createProduct, deleteProduct, getAllProducts, getProduct} from '../controllers/ProductoController.js';
+import {updateProduct, createProduct, deleteProduct, getAllProducts, getProduct} from '../controllers/ProductoController.js';
 
 
 const router = express.Router();
@@ -11,6 +11,7 @@ router.get('/', getAllProducts);
 router.get('/:id_catalogo', getProduct);
 router.delete('/:id_producto',deleteProduct);
 router.post('/',createProduct);
+router.put('/:id_producto',updateProduct);
 
 
 export default router;
