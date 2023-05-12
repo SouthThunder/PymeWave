@@ -38,12 +38,15 @@ export const Testing = (props) =>{
 
     //metodo para asociar un sinonimo con una categoria
     const buscarCategoria = (nombre) => {
-        const nombreNormalizado = nombre.toLowerCase().replace(/,/g, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        //console.log(nombreNormalizado);
-        for (const categoria in sinonimos) {
-            if (sinonimos[categoria].includes(nombreNormalizado)) {
-                return categoria;
-            }
+
+        if (nombre){
+           const nombreNormalizado = nombre.toLowerCase().replace(/,/g, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            //console.log(nombreNormalizado);
+            for (const categoria in sinonimos) {
+                if (sinonimos[categoria].includes(nombreNormalizado)) {
+                    return categoria;
+                }
+            } 
         }
         return null;
     }

@@ -7,15 +7,19 @@
     text-align: left;
     padding-bottom: 3rem;
 }
+
 .modificarDatosEmp .container .dividor .izquierda {
     width: 25%;
     text-align: center;
-    
+    margin-top: 13rem;
+    border-right: 1px solid var(--primaryColor);
+    height: 450px;
 }
 .modificarDatosEmp .container .dividor .derecha {
-    border-left: 1px solid var(--primaryColor);
     width: 100%;
     text-align: center;
+    margin: auto 0;
+    padding-top: 5rem;
 }
 .modificarDatosEmp .container .dividor .derecha form{
     margin-top: 1rem;
@@ -78,6 +82,13 @@
     padding: 15px 5px 0 5px;
 }
 
+.modificarDatosEmp .container .title{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+
 .modificarDatosEmp .container .dividor .derecha form .inputbox small{
     color: #FFA500;
     position: absolute;
@@ -102,6 +113,7 @@
 
 
 .modificarDatosEmp .container .dividor .derecha form .enter{
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
 }

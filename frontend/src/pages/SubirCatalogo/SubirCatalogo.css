@@ -133,9 +133,31 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .subircatalogo .productos{
     padding-top:1rem ;
-    
-    
 }
+
+.subircatalogo .productos .editar{
+    color: var(--primaryColor);
+}
+
+.subircatalogo .productos .editar:hover{
+    color: var(--secondaryColor);
+    transition: all 0.4s ease-out;
+}
+
+.subircatalogo .productos .btneliminar{
+    color: var(--tertiaryColor);
+    background-color: var(--primaryColor);
+    border-radius: 50px;
+    height: 30px;
+    width: 80px;    
+}
+
+.subircatalogo .productos .btneliminar:hover{
+    background-color: var(--secondaryColor);
+    transition: all 0.4s ease-out;
+    border: 1px solid var(--primaryColor);
+}
+
 .subircatalogo  .agrega .add{
     background-color:var(--primaryColor);
     color: var(--tertiaryColor);
