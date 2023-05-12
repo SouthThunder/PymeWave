@@ -110,7 +110,6 @@ const CompModiEmp = () => {
                 <ion-icon name="person"></ion-icon>
                 <input
                   placeholder={empres[0]?.nombre_empresa}
-                  value={empres[0]?.nombre_empresa}
                   type="text"
                   id="nombre"
                   name="nombre"
@@ -122,7 +121,6 @@ const CompModiEmp = () => {
                 <ion-icon name="mail-outline"></ion-icon>
                 <input
                   placeholder={empres[0]?.correo}
-                  value={empres[0]?.correo}
                   type="email"
                   id="Correo"
                   name="correo"
@@ -134,7 +132,6 @@ const CompModiEmp = () => {
                 <ion-icon name="notifications"></ion-icon>
                 <input
                   placeholder={empres[0]?.telefono}
-                  value={empres[0]?.telefono}
                   type="text"
                   id="Telefono"
                   name="telefono"
@@ -146,7 +143,6 @@ const CompModiEmp = () => {
                 <ion-icon name="home"></ion-icon>
                 <input
                   placeholder={empres[0]?.dir_fisica}
-                  value={empres[0]?.dir_fisica}
                   type="text"
                   id="Ubicacion"
                   name="ubicacion"
