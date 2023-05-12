@@ -1,37 +1,10 @@
 import {React, useEffect, useState} from 'react';
 import axios from 'axios';
 import './Querys-results.css';
-//import {useNavigate, useParams} from 'react-router-dom'; 
+import { sinonimos } from '../sinonimos';
 
 const URI = 'http://localhost:8000/'; 
 const URI2 = 'http://localhost:8000/Busq/cate/';
-
-const sinonimos = {
-    "Arte": ["bellas artes","dibujo","pintura","pintor","pinturas","lienzos","pinceles","pincel","papeleria"],
-    "Belleza": ["atractivo","estetica","maquillaje","cosmeticos","peluqueria","barberia","perfumes","cuidado personal"],
-    "Cámaras": ["fotografia","foto","objetivos","tripode"],
-    "Cómics": ["historietas","novelas graficas","manga"],
-    "Computación": ["informatica","ordenadores","torres","cpu","tarjeta de video","portátil","pc para juegos","programas","tablets","memoria ram","disco duro","usb"],
-    "Consolas": ["mandos","protectores para mandos","consolas viejas","consolas portatiles"],
-    "Deportes": ["actividades fisicas","ejercicio"],
-    "Dispositivos de audio": ["altavoces","auriculares","parlantes"],
-    "Dispositivos de video": ["pantallas","monitores","televisores"],
-    "Electrodomésticos": ["aparatos electricos","electrodomesticos"],
-    "Herramientas": ["utensilios","instrumentos","equipos"],
-    "Hogar": ["casa","vivienda","domicilio"],
-    "Instrumentos musicales": ["musica","instrumentos","guitarra","piano","bateria"],
-    "Joyería": ["bisuteria","joyas","accesorios"],
-    "Juguetes": ["juegos","diversiones","jugueteria"],
-    "Libros": ["literatura","lectura","publicaciones","impresos"],
-    "Mascotas": ["animales de compañia","perros","gatos","mascoteria"],
-    "Ropa": ["vestimenta","indumentaria","prendas de vestir"],
-    "Salud": ["bienestar","sanidad","medicina","saludable"],
-    "Servicios": ["asistencia","atencion","servicios"],
-    "Televisores": ["tv","television","pantalla"],
-    "Vehículos": ["automoviles","coches","motos","transporte"],
-    "Videojuegos": ["juegos de video","entretenimiento digital"],
-    }
-
 
 
 export const Testing = (props) =>{
@@ -40,13 +13,13 @@ export const Testing = (props) =>{
     const buscarCategoria = (nombre) => {
 
         if (nombre){
-           const nombreNormalizado = nombre.toLowerCase().replace(/,/g, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-            //console.log(nombreNormalizado);
+            const nombreNormalizado = nombre.toLowerCase().replace(/,/g, '').normalize('NFD').replace(/[\u0300-\u036fñÑ]/g, '').replace(/ñ/g, 'n~');
+            console.log(nombreNormalizado);
             for (const categoria in sinonimos) {
                 if (sinonimos[categoria].includes(nombreNormalizado)) {
                     return categoria;
                 }
-            } 
+            }
         }
         return null;
     }
