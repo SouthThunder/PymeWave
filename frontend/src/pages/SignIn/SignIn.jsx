@@ -1,6 +1,5 @@
 import {Link} from 'react-router-dom';
 import './SignIn.css';
-import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -80,6 +79,7 @@ const CompSignIn = () =>{
                     </div>
                 </form>
             </div>
+            <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         </div>
     )
 }

@@ -211,8 +211,6 @@
     color: #202C3F;
 } 
 
-
-
 #promt{
     Width: 80%;
     font-weight: 600;
@@ -221,51 +219,26 @@
 }
 
 .feed-component{
-    width: 100%;
+    width: 80%;
     height: 100%;
     margin: 0 auto;
     overflow: hidden;
     margin-top: 3rem;
-    margin-bottom: -7rem;
-}
-
-.feed-component .arrow_left{
-    position: absolute;
-    margin-top: 22rem;
-    margin-left: 10rem;
-}
-
-.feed-component .arrow_left button{
-    background:transparent;
-    border: none;
-}
-
-.feed-component .arrow_left img{
-    width: 10rem;
-}
-
-.feed-component .arrow_right{
-    position: absolute;
-    margin-top: 22.5rem;
-    margin-left: 90%;
-}
-
-.feed-component .arrow_right button{
-    background: transparent;
-    border: none;
-}
-
-.feed-component .arrow_right img{
-    width: 9rem;
+    border-radius: 50px;
+    border: 1px solid var(--primaryColor);
+    padding: 2rem 0;
 }
 
 .feed-component .scrollport{
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
-    overflow-x: auto;
+    margin-bottom: -7rem;
+    overflow-x: visible;
     overflow-y: hidden;
     white-space: nowrap;
     scroll-snap-type: x mandatory;
+    padding-left: 8rem;
+    -webkit-mask: linear-gradient(90deg,#0000,#000 10% 90%,#0000);
 }
 
 .feed-component .scrollport .indicators{

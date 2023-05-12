@@ -14,7 +14,7 @@ export const getAllCatals = async (req,res) => {
         const  catals = await CatalModel.findAll({
             attributes: { exclude: ['id'] }
         });
-        res.json(catals);
+        res.json(catals);   
     } catch (error) {
         res.json( {message: error.message});
     }
@@ -27,7 +27,7 @@ export const getAllCatal = async (req,res) => {
 
     try {
         const catal = await CatalModel.findAll({
-            where:{id:req.params.id}
+            where:{id_empresa_catalogo:req.params.id_empresa_catalogo}
         });
         res.json(catal);
     } catch (error) {
@@ -39,7 +39,6 @@ export const getAllCatal = async (req,res) => {
 //Crear un registro
 
 export const createCatal = async (req,res) => {
-
     try {
         await CatalModel.create(req.body);
         res.json({

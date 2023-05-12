@@ -22,7 +22,7 @@ const SubirCatalogo = () =>{
 
 const CompSubirCata = () => {
 
-    const [empres, setempres] = useState([]);
+  const [empres, setempres] = useState([]);
   const [idEmpresa, setIdEmpresa] = useState(null); // variable para guardar el id_empresa
   
  
@@ -30,6 +30,8 @@ const CompSubirCata = () => {
   useEffect(() => {
     getempres();
   }, []);
+
+
   
   const getempres = async () => { 
     const res = await axios.get(URI+localStorage.getItem('user'));
@@ -52,7 +54,26 @@ const CompSubirCata = () => {
       descripcion_empresa: formData.get('descripcion')
     };
     console.log(formData.get('descripcion'))
-    
+
+      const idk= await axios.get(URI3 + localStorage.getItem('user'));
+      if(idk.data[0]?.id_empresa_catalogo){
+        sendData(data);
+      }else{
+        createData();
+      }    
+  };
+
+  const createData= async() =>{
+    try {
+      const response= await axios.post(URI3, {id_empresa_catalogo: localStorage.getItem('user'), descripcion_empresa:' '});
+      console.log(response.data);
+    } catch (error) {
+      console.error(error)
+      alert('Error al actualizar la descripción')
+    }
+  }
+
+  const sendData= async(data) =>{
     // Envía los datos al servidor
     try {
       const response = await axios.put(URI3 + localStorage.getItem('user'), data);
@@ -63,7 +84,7 @@ const CompSubirCata = () => {
       console.error(error);
       alert('Error al actualizar de descripcion');
     }
-  };
+  }
 
 
 

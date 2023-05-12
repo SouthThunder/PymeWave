@@ -62,12 +62,6 @@ export const Feed = (props) =>{
             {
                 !props.disable && (
                     <div className="feed-component">
-                            <div className="arrow_left">
-                            <button><img src="https://cdn-icons-png.flaticon.com/512/4028/4028550.png" alt=""/></button>
-                        </div>
-                        <div className="arrow_right">
-                            <button><img src="https://cdn-icons-png.flaticon.com/512/1549/1549612.png" alt=""/></button>
-                        </div>
                         <div className="scrollport">
                             <div className="indicators">
                                 <h1>¿No estás seguro de lo que buscas?</h1>

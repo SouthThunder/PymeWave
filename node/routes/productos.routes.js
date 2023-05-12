@@ -5,7 +5,7 @@ import {updateProduct, createProduct, deleteProduct, getAllProducts, getProduct}
 
 
 const router = express.Router();
-
+    
 // ruta a la que va ha hacer referencia , metodo
 router.get('/', getAllProducts);
 router.get('/:id_catalogo', getProduct);

@@ -108,7 +108,7 @@ export const Testing = (props) =>{
                 <div className='container' key={empre.id_empresa}>
                 <div className="dataHolder">
                     <picture>
-                        <img src="//placehold.it/300x400"/>
+                        <img src="https://www.psifoundation.org/wp-content/uploads/2018/03/placeholder-300x400.png" alt='img'/>
                     </picture>
                     <div className="dataoutput">
                         <h1>{empre.nombre_empresa}</h1>
@@ -169,10 +169,10 @@ export const Testing = (props) =>{
                     const calif = parseFloat(empre.calificacion);
                     return calif >= califInicio && calif <= califFin;
                 }).map((empre) => (
-                    <div className='container' key={empre.id_empresa}>
+                    <div className='container'>
                         <div className="dataHolder">
                             <picture>
-                                <img src="//placehold.it/300x400" alt='' />
+                                <img src="//placehold.it/300x400"/>
                             </picture>
                             <div className="dataoutput">
                                 <h1>{empre.nombre_empresa}</h1>
