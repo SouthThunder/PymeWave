@@ -31,11 +31,10 @@ export const CompShowEnterprises = () =>{
         return(
             enterprise.map((enter)=>{
               return(
-                <Link       to={`/EmpresaSeleccionada?id=${enter.id_empresa}`} >
                 <div className="container" key={enter.id_empresa}>
                   <div className="holder">
                     <picture>
-                      <img alt="" src="//placehold.it/300x200"/>
+                    <Link to={`/EmpresaSeleccionada?id=${enter.id_empresa}`} ><img alt="" src="//placehold.it/300x200"/></Link>
                     </picture>
                     <div className="data">
                       <div className="title">
@@ -47,7 +46,7 @@ export const CompShowEnterprises = () =>{
                     </div>
                   </div>
                 </div>
-                </Link>
+                 
               )
             })
           )
