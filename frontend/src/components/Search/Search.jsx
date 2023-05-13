@@ -1,4 +1,5 @@
 import './Search.css'
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 import './Search.css';
@@ -30,6 +31,7 @@ export const CompShowEnterprises = () =>{
         return(
             enterprise.map((enter)=>{
               return(
+                <Link       to={`/EmpresaSeleccionada?id=${enter.id_empresa}`} >
                 <div className="container" key={enter.id_empresa}>
                   <div className="holder">
                     <picture>
@@ -45,6 +47,7 @@ export const CompShowEnterprises = () =>{
                     </div>
                   </div>
                 </div>
+                </Link>
               )
             })
           )

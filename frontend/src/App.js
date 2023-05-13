@@ -14,6 +14,7 @@ import SubirCatalogo from "./pages/SubirCatalogo/SubirCatalogo";
 import Agregarproducto from "./pages/AgregarProducto/AgregarProducto";
 import Editarproducto from "./pages/EditarProducto/EditarProducto";
 import {QueryResults} from './components/Querys-results/Querys-results';
+import Seleccion from "./pages/Seleccion/Seleccion";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import "./App.css";
 
@@ -38,6 +39,7 @@ function App() {
             <Route path='/Empresa/SubirCatalogo' element={<SubirCatalogo/>}/>
             <Route path='/Empresa/SubirCatalogo/AgregarProducto' element={<Agregarproducto/>}/>
             <Route path='/Empresa/SubirCatalogo/EditarProducto' element={<Editarproducto/>}/>
+            <Route path='/EmpresaSeleccionada' element={<Seleccion/>}/>
             {/* <Route path='/resuls' element={<QueryResults/>}/> */}
             
 
