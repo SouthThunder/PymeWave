@@ -41,7 +41,9 @@ export const Testing = (props) =>{
             const res = await axios.get(`${URI}?nombre_empresa=${props.nombre_empresa}`);
             setempres(res.data);
         }
+        
     }
+    console.log(empres);
 
     const [categorias, setCategorias] = useState([]);
 
@@ -79,7 +81,7 @@ export const Testing = (props) =>{
         const resultados = empres
         .filter((empre) => empre.nombre_empresa === props.nombre_empresa)
         .map((empre) => {
-            
+            console.log(empre);
             return (
                 <div className='container' key={empre.id_empresa}>
                 <div className="dataHolder">
@@ -134,33 +136,46 @@ export const Testing = (props) =>{
         return resultados;
     }
 
-    function cardHolderCalificacion (){
-        const [califInicio, califFin] = props.selectedCalificacion[0].split('-').map(parseFloat);
-        console.log(califInicio);
-        console.log(califFin);
-        
-        return (
-            <div>
-                {empres.filter((empre) => {
-                    const calif = parseFloat(empre.calificacion);
-                    return calif >= califInicio && calif <= califFin;
-                }).map((empre) => (
-                    <div className='container'>
-                        <div className="dataHolder">
-                            <picture>
-                                <img src="//placehold.it/300x400"/>
-                            </picture>
-                            <div className="dataoutput">
-                                <h1>{empre.nombre_empresa}</h1>
-                                <p>{empre.catalogo?.descripcion_empresa}</p>
-                                <button>Leer mas</button>
-                            </div>
-                        </div>
-                    </div>
-                ))}
+    function cardHolderCalificacion() {
+        const [califInicio, califFin] = props.selectedCalificacion[0]
+          .split("-")
+          .map(parseFloat);
+      
+        const filteredEmpres = empres.filter((empre) => {
+          const calif = parseFloat(empre.calificacion);
+          return calif >= califInicio && calif <= califFin;
+        });
+      
+        if (filteredEmpres.length === 0) {
+          return (
+            <div className="noresult">
+              <picture picture="true" className="sinresultados">
+                <img src="/images/Logos/6134065.png" alt="" />
+              </picture>
+              <h1>No se han encontrado resultados</h1>
             </div>
+          );
+        }
+      
+        return (
+          <div>
+            {filteredEmpres.map((empre) => (
+              <div className="container" key={empre.id_empresa}>
+                <div className="dataHolder">
+                  <picture>
+                    <img src="//placehold.it/300x400" />
+                  </picture>
+                  <div className="dataoutput">
+                    <h1>{empre.nombre_empresa}</h1>
+                    <p>{empre.catalogo?.descripcion_empresa}</p>
+                    <button>Leer mas</button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         );
-    }
+      }
 
     function cardHolderCate (){
         return(
