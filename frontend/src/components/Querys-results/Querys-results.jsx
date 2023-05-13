@@ -2,6 +2,8 @@ import {React, useEffect, useState} from 'react';
 import axios from 'axios';
 import './Querys-results.css';
 import { sinonimos } from '../sinonimos';
+import { Link } from 'react-router-dom';
+
 
 const URI = 'http://localhost:8000/'; 
 const URI2 = 'http://localhost:8000/Busq/cate/';
@@ -83,6 +85,7 @@ export const Testing = (props) =>{
         .map((empre) => {
             console.log(empre);
             return (
+              <Link   to={`/EmpresaSeleccionada?id=${empre.id_empresa}`} >
                 <div className='container' key={empre.id_empresa}>
                 <div className="dataHolder">
                     <picture>
@@ -95,6 +98,7 @@ export const Testing = (props) =>{
                     </div>
                 </div>
                 </div>
+                </Link>
             );
         });
     
@@ -103,6 +107,7 @@ export const Testing = (props) =>{
             const resultados2 = categorias2
             .map((cates) => {
                 return (
+                  <Link       to={`/EmpresaSeleccionada?id=${cates.id_empresa}`} >
                     <div className='container' key={cates.id_empresa}>
                       <div className="dataHolder">
                         <picture>
@@ -115,6 +120,7 @@ export const Testing = (props) =>{
                         </div>
                       </div>
                     </div>
+                    </Link>
                 );
             });
     
@@ -160,6 +166,7 @@ export const Testing = (props) =>{
         return (
           <div>
             {filteredEmpres.map((empre) => (
+              <Link       to={`/EmpresaSeleccionada?id=${empre.id_empresa}`} >
               <div className="container" key={empre.id_empresa}>
                 <div className="dataHolder">
                   <picture>
@@ -172,6 +179,7 @@ export const Testing = (props) =>{
                   </div>
                 </div>
               </div>
+              </Link>
             ))}
           </div>
         );
@@ -181,6 +189,7 @@ export const Testing = (props) =>{
         return(
           <div>
             {categorias.map((cates) => (
+              <Link       to={`/EmpresaSeleccionada?id=${cates.id_empresa}`} >
               <div className='container' key={cates.id_empresa}>
                 <div className="dataHolder">
                   <picture>
@@ -193,6 +202,7 @@ export const Testing = (props) =>{
                   </div>
                 </div>
               </div>
+              </Link>
             ))}
           </div>
         )
