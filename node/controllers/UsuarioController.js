@@ -25,6 +25,20 @@ export const getUser = async (req,res) => {
 
     try {
         const user = await UsusarioModel.findAll({
+            where:{correo:req.params.correo}
+
+        });
+        res.json(user);
+    } catch (error) {
+        res.json( {message: error.message});
+    }
+
+};
+
+export const getUserById = async (req,res) => {
+
+    try {
+        const user = await UsusarioModel.findAll({
             where:{id_usuario:req.params.id_usuario}
 
         });

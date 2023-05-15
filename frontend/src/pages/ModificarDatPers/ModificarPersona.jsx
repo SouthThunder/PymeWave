@@ -24,7 +24,6 @@ const ModificarDatPer = () =>{
 const CompModiPer = () => {
 
     const [user, setUser] = useState([]);
-    const [idPersona, setIdPersona] = useState(null);
 
     useEffect(() =>{
         getUser();
@@ -40,32 +39,30 @@ const CompModiPer = () => {
         }
     }
 
-    // useEffect(() => {
-    //     getPersonas();
-    //   }, []);
-    
-    //   const getPersonas = async () => {
-    //     const res = await axios.get(URI+'usuario2@example.com');
-    //     setPersonas(res.data);
-    //     // Extraer el id_persona del primer objeto del array personas
-    //     if (res.data.length > 0) {
-    //       setIdPersona(res.data[0].id_usuario);
-    //     }
-    //   }
-
     const navigation = useNavigate();
 
       const handleActualizar = async () => {
         try {
-          const correo = document.getElementById("Correo").value;
-          const nombre = document.getElementById("nombre").value;
-          const apellidos = document.getElementById("apellidos").value;
-          const telefono = document.getElementById("Telefono").value;
+          var correo = document.getElementById("Correo").value;
+          var nombre = document.getElementById("nombre").value;
+          var apellidos = document.getElementById("apellidos").value;
+          var telefono = document.getElementById("Telefono").value;
+          if(correo===''){
+            correo=user.correo;
+          }
+          if(nombre===''){
+            nombre=user.nombre;
+          }
+          if(apellidos===''){
+            apellidos=user.apellidos;
+          }
+          if(telefono===''){
+            telefono=user.telefono;
+          }
           console.log(correo, nombre, apellidos, telefono);// <-- Agrega esto para verificar los valores\
           const persona = { correo, nombre, apellidos, telefono };
           await axios.put(`${URI}${localStorage.getItem("user")}`, persona);
           alert("Los datos se actualizaron correctamente");
-          navigation('/')
         } catch (error) {
           console.error(error);
           alert("Error al actualizar los datos");

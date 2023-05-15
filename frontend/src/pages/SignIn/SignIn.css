@@ -7,18 +7,14 @@
 
 .signin-component > .holder{
     background-color: var(--tertiaryColor);
-    height: 60vh;
-    width: 25vw;
+    min-height: 35rem;
+    width: 25rem;
     margin: auto;
     border-radius: 30px;
     justify-content: center;
 }
 
 .signin-component > .holder > .logo{
-    width: max-content;
-    display: flex;
-    position: relative;
-    justify-content: center;
     width: 100%;
 }
 
@@ -40,6 +36,7 @@
     display: flex;
     justify-content: center;
     width: inherit;
+    color: var(--primaryColor);
 }
 
 .signin-component > .holder > .logo + form .inputbox{
@@ -108,7 +105,9 @@
 
 .signin-component > .holder > .logo + form .inputbox + .enter + .not-account{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    height: 4rem;
     margin-right: 2rem;
     margin-top: 2.5rem;
+    align-items: center;
 }

@@ -1,53 +1,61 @@
-/* texto modificar datos
-position: absolute;
-width: 1056px;
-height: 80px;
-left: 29px;
-top: 149px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 50px;
-line-height: 61px;
-
-color: #000000;
-
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-*/
-
-/*Imagen rectangulo 
-box-sizing: border-box;
-
-position: absolute;
-width: 363px;
-height: 281px;
-left: 29px;
-top: 267px;
-
-background: url(image.png);
-border: 2px solid #000000;
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-*/
-.subircatalogo .container .dividor  {
-    padding-top: 2rem;
-    Width: 90% ;
-    margin: 0 auto;
+.subircatalogo{
+    width: 100vw;
+    height: 95vh;
+    margin-bottom: -7rem;
     display: flex;
-    text-align: left;
-    padding-bottom: 3rem;
+    align-items: center;
 }
-.subircatalogo .container .dividor .izquierda {
-    width: 25%;
-    text-align: center;
-    
-}
-.subircatalogo .titulo{
-    margin-left: 21rem;
 
+.subircatalogo .container   {
+    display: inherit;
+    width: inherit;
+    height: 80vh;
+    align-items: center;
+    margin-top: 10vh;
 }
+
+.subircatalogo .container .derecha .title h1{
+    color: var(--primaryColor);
+}
+
+
+.subircatalogo .container .izquierda {
+    width: 25%;
+    border-right: 1px solid var(--primaryColor);
+    height: 60vh;
+    margin: auto 0;
+}
+
+.subircatalogo .container .izquierda .image{
+    width: 100%;
+    height: 225px;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.subircatalogo .container .izquierda .image picture{
+    width: 225px;
+}
+
+.subircatalogo .container .izquierda picture img{
+    width: inherit;
+}
+
+
+.subircatalogo .container .options{
+    display: block;
+    text-align: center;
+    margin: 0;
+}
+
+.subircatalogo .container .options h4{
+    margin-bottom: 1.5rem;
+}
+
 .subircatalogo .titulo2{
     font-size: 1.5rem;
+    color: var(--primaryColor);
     }
 .subircatalogo .descripcion{
     height: auto;
@@ -57,35 +65,24 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     font-size: 1rem;
     
 }
-.subircatalogo .container .dividor .derecha {
-    border-left: 1px solid var(--primaryColor);
-    width: 100%;
+.subircatalogo .container  .derecha {
+    width: 80%;
     text-align: center;
 }
-.subircatalogo .container .dividor .derecha form{
-    margin-top: 1rem;
-    margin-left: 2rem;
-    
-}
-.subircatalogo .container .dividor .izquierda picture{
-    padding-right: 10rem;
-}
-.subircatalogo .container .dividor .izquierda h4{
-    margin-right: 8rem;
-    margin-top: 2rem;
-}
 
-.texto{
-    Color:whitesmoke;
-}
-.subircatalogo .container .dividor .derecha form .inputbox ion-icon{
+.subircatalogo .container .derecha form{
+    margin: auto;
+    width: 85%;}
+
+
+.subircatalogo .container  .derecha form .inputbox ion-icon{
     position: absolute;
     right: 8px;
     top: 20px;
     color:var(--primaryColor);
    
 }
-.subircatalogo .container .dividor .derecha form .inputbox{
+.subircatalogo .container  .derecha form .inputbox{
     position: relative;
     display: flex;
     justify-content: center;
@@ -96,7 +93,7 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     
 }
 
-.subircatalogo .container .dividor .derecha form .inputbox label{
+.subircatalogo .container  .derecha form .inputbox label{
     position:initial;
     top: 30%;
     left: 5px;
@@ -105,7 +102,7 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     pointer-events: none;
     transition: 0.5s;
 }
-.subircatalogo .container .dividor .derecha form .inputbox h5{
+.subircatalogo .container  .derecha form .inputbox h5{
     position: absolute;
     top: -5%;
     left: 5px;
@@ -116,14 +113,14 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     transition: 0.5s;
 }
 
-.subircatalogo .container .dividor .derecha form .inputbox input{
+.subircatalogo .container  .derecha form .inputbox input{
     width: 100%;
     height: 50px;
    
     padding: 15px 5px 0 5px;
 }
 
-.subircatalogo .container .dividor .derecha form .inputbox small{
+.subircatalogo .container  .derecha form .inputbox small{
     color: #FFA500;
     position: absolute;
     bottom: 0;
@@ -191,27 +188,27 @@ border-collapse: collapse;
   }
 
 
-.subircatalogo .container .dividor .derecha form .inputbox .error small{
+.subircatalogo .container  .derecha form .inputbox .error small{
     visibility: visible;
 }
-.subircatalogo .container .dividor .derecha form .inputbox .sucess small{
+.subircatalogo .container  .derecha form .inputbox .sucess small{
     visibility: hidden;
 }
 
-.subircatalogo .container .dividor .derecha form .inputbox input:focus ~ label,
-.subircatalogo .container .dividor .derecha form .inputbox input:valid ~ label,
-.subircatalogo .container .dividor .derecha form .inputbox input:invalid ~ label{
+.subircatalogo .container  .derecha form .inputbox input:focus ~ label,
+.subircatalogo .container  .derecha form .inputbox input:valid ~ label,
+.subircatalogo .container  .derecha form .inputbox input:invalid ~ label{
     top: -4px;
 }
 
 
-.subircatalogo .container .dividor .derecha form .enter{
+.subircatalogo .container  .derecha form .enter{
     display: flex;
     justify-content: center;
     margin-bottom: 0.5rem;
 }
 
-.subircatalogo .container .dividor .derecha form .enter > button{
+.subircatalogo .container  .derecha form .enter > button{
     margin-right: 2rem;
     background-color: var(--primaryColor);
     color: var(--tertiaryColor);
@@ -222,24 +219,17 @@ border-collapse: collapse;
     font-size: 1rem;
 }
 
-.subircatalogo .container .dividor .derecha form .enter > button:hover{
+.subircatalogo .container  .derecha form .enter > button:hover{
     border: 1px solid #202C3F;
     background-color: #7DA9DB;
     cursor: pointer;
     transition: all 0.4s ease-out;
 }
-.subircatalogo .container .dividor .derecha form .options{
+.subircatalogo .container  .derecha form .options{
     margin-top: 6rem;
     width: 100%;
     height: 230px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-}
-
-
-.subircatalogo .container h1{
-    
-    padding-top: 8rem;
-    text-align: center;
 }

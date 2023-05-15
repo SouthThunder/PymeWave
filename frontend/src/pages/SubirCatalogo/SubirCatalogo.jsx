@@ -4,6 +4,8 @@ import { React, useEffect, useState } from "react";
 import axios from "axios";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
+import { OpcGenerales } from "../ModificarDatEmp/ModificarDatEmp";
+
 const URI = "http://localhost:8000/Cambiodat/Empresa/";
 const URI2 = "http://localhost:8000/productos/";
 const URI3 = "http://localhost:8000/Actualizar/Catalogos/";
@@ -110,95 +112,78 @@ const CompSubirCata = () => {
   return (
     <div className="subircatalogo">
       <div className="container">
-        <h1 className="titulo">Catalogo</h1>
-        <div className="dividor">
-          <div className="izquierda">
-            <picture>
-              <img
-                title="Logo sin fondo"
-                src="../images/Logos/UsuarioLogo.jpg"
+        <OpcGenerales/>
+        <div className="derecha">
+          <div className="title">
+            <h1>Catalogo</h1>
+          </div>
+          <form id="form" onSubmit={actualizarDescripcion}>
+            <div className="inputbox">
+              <label htmlFor="">Descripción de la empresa</label>
+
+              <ion-icon name="archive"></ion-icon>
+              <textarea
+                placeholder="Somos una empresa..."
+                type="text"
+                className="descripcion"
+                id="descripcion"
+                name="descripcion"
               />
-            </picture>
-            <h4>Cambio Imagen</h4>
-            <h4>
-              <Link to={"/Empresa/ModificarDatos"}>Modificar Datos</Link>
-            </h4>
-            <h4>Actualizar certificados</h4>
-            <h4>
-              <Link to={"/Empresa/CambiaContraseña"}>
-                Actualizar contraseña
-              </Link>
-            </h4>
-          </div>
-          <div className="derecha">
-            <form id="form" onSubmit={actualizarDescripcion}>
-              <div className="inputbox">
-                <label htmlFor="">Descripción de la empresa</label>
+            </div>
+            <div className="enter">
+              {<button type="submit">Actualizar</button>}
+            </div>
 
-                <ion-icon name="archive"></ion-icon>
-                <textarea
-                  placeholder="Somos una empresa..."
-                  type="text"
-                  className="descripcion"
-                  id="descripcion"
-                  name="descripcion"
-                />
-              </div>
-              <div className="enter">
-                {<button type="submit">Actualizar</button>}
-              </div>
+            <label htmlFor="" className="titulo2">
+              Listado Productos
+            </label>
 
-              <label htmlFor="" className="titulo2">
-                Listado Productos
-              </label>
-
-              <div className="productos">
-                <table className="table">
-                  <thead className="table-primary">
-                    <tr>
-                      <th> Producto</th>
-                      <th>Descripcion</th>
-                      <th>Modificar</th>
-                      <th>Eliminar</th>
+            <div className="productos">
+              <table className="table">
+                <thead className="table-primary">
+                  <tr>
+                    <th> Producto</th>
+                    <th>Descripcion</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {producto.map((product) => (
+                    <tr key={product.id_producto}>
+                      <td>{product.nombre}</td>
+                      <td>{product.descripcion}</td>
+                      <td>
+                        <Link
+                          to={`/Empresa/SubirCatalogo/EditarProducto?id=${product.id_producto}`}
+                          className="editar"
+                        >
+                          Editar
+                        </Link>
+                      </td>
+                      <td>
+                        <button
+                          type="button"
+                          className="btneliminar"
+                          onClick={() => deleteProducto(product.id_producto)}
+                        >
+                          Eliminar
+                        </button>
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {producto.map((product) => (
-                      <tr key={product.id_producto}>
-                        <td>{product.nombre}</td>
-                        <td>{product.descripcion}</td>
-                        <td>
-                          <Link
-                            to={`/Empresa/SubirCatalogo/EditarProducto?id=${product.id_producto}`}
-                            className="editar"
-                          >
-                            Editar
-                          </Link>
-                        </td>
-                        <td>
-                          <button
-                            type="button"
-                            className="btneliminar"
-                            onClick={() => deleteProducto(product.id_producto)}
-                          >
-                            Eliminar
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <div className="agrega">
-                <Link
-                  to={"/Empresa/SubirCatalogo/AgregarProducto"}
-                  className="add"
-                >
-                  Agregar Producto
-                </Link>
-              </div>
-            </form>
-          </div>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="agrega">
+              <Link
+                to={"/Empresa/SubirCatalogo/AgregarProducto"}
+                className="add"
+              >
+                Agregar Producto
+              </Link>
+            </div>
+          </form>
         </div>
       </div>
     </div>

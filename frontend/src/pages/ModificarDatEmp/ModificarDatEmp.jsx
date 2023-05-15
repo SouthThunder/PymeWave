@@ -17,6 +17,28 @@ const ModificarDatEmp = () => {
   );
 };
 
+export const OpcGenerales = () => {
+  return (
+    <div className="izquierda">
+      <div className="image">
+        <picture>
+          <img title="Logo sin fondo" src="../images/Logos/UsuarioLogo.jpg" />
+        </picture>
+      </div>
+      <div className="options">
+        <h4>Cambio Imagen</h4>
+        <h4>
+          <Link to={"/Empresa/SubirCatalogo"}>Subir catalogo</Link>
+        </h4>
+        <h4>Actualizar certificados</h4>
+        <h4>
+          <Link to={"/Empresa/CambiaContraseña"}>Actualizar contraseña</Link>
+        </h4>
+      </div>
+    </div>
+  );
+};
+
 const CompModiEmp = () => {
   const [popupCategoriasAbierto, setPopupCategoriasAbierto] = useState(false);
   const [empres, setempres] = useState([]);
@@ -81,26 +103,8 @@ const CompModiEmp = () => {
   return (
     <div className="modificarDatosEmp">
       <div className="container">
-        <div className="dividor">
-          <div className="izquierda">
-            <picture>
-              <img
-                title="Logo sin fondo"
-                src="../images/Logos/UsuarioLogo.jpg"
-              />
-            </picture>
-            <h4>Cambio Imagen</h4>
-            <h4>
-              <Link to={"/Empresa/SubirCatalogo"}>Subir catalogo</Link>
-            </h4>
-            <h4>Actualizar certificados</h4>
-            <h4>
-              <Link to={"/Empresa/CambiaContraseña"}>
-                Actualizar contraseña
-              </Link>
-            </h4>
-          </div>
-          <div className="derecha">
+        <OpcGenerales />
+        <div className="derecha">
             <div className="title">
               <h1>Modificar Datos</h1>
             </div>
@@ -156,10 +160,12 @@ const CompModiEmp = () => {
               </div>
             </form>
           </div>
-        </div>
       </div>
     </div>
   );
 };
 
 export default ModificarDatEmp;
+
+//mock -> simulación, no de pantallas, sino que una integracioón y que simule cómo funcionará esa integración
+//mock up -> son las pantallas que se hacen a mano, o con herramientas que simulan cómo quedaran la aplicación
