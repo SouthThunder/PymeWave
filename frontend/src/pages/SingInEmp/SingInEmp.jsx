@@ -1,5 +1,4 @@
 import {Link} from 'react-router-dom';
-import './SingInEmp.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -73,8 +72,6 @@ const CompSignInEmp = () =>{
                     </div>
                     <div className="not-account">
                         <p>¿No tienes una cuenta?  <Link to={'/SignUp/Empresa'}>Registrate</Link></p>
-                    </div>
-                    <div>
                         <p>¿Eres Persona Natural? <Link to={'/SignIn'}>Inicia secion</Link></p>
                     </div>
                 </form>

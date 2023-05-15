@@ -16,6 +16,8 @@
 
 .signin-component > .holder > .logo{
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .signin-component > .holder > .logo > picture{
