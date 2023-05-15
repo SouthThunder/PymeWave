@@ -1,53 +1,52 @@
-.seleccionemp{
-    padding-top: 10rem;
-    
-    height: 100vh;
-    object-position: center;
-    text-align: center;
-    
-    
+.seleccionemp {
+  padding-top: 10rem;
+  min-height: 80vh;
+  object-position: center;
+  text-align: center;
 }
-.seleccionemp .imagenEmp{
-    display:flex;
-    margin:0;
-    justify-content: center;
-    align-items: center;
+.seleccionemp .imagenEmp {
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
 }
-.seleccionemp .titulo{
-    padding-bottom: 1rem;
+.seleccionemp .titulo {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
 }
 .seleccionemp .productos {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .seleccionemp .table {
-    width: 90%;
-    border-collapse: collapse;
-  }
-  
-  .seleccionemp .table th,
-  .seleccionemp .table td {
-    padding: 15px;
-    border: 2px solid #ddd;
-  }
-  
-  .seleccionemp .table thead {
-    background-color: #f1f1f1;
-  }
-  
-  .seleccionemp .table-primary th {
-    background-color: var(--primaryColor);
-    color: #fff;
-  }
-  
-  .seleccionemp .table-primary td {
-    color: var(--primaryColor);
-  
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
-  .seleccionemp .descripcion{
-    margin-bottom: 2rem;
 
-  }
-  
+.seleccionemp .table {
+  width: 90%;
+  border-collapse: collapse;
+}
+
+.seleccionemp .table th,
+.seleccionemp .table td {
+  padding: 15px;
+  border: 2px solid #ddd;
+}
+
+.seleccionemp .table thead {
+  background-color: #f1f1f1;
+}
+
+.seleccionemp .table-primary th {
+  background-color: var(--primaryColor);
+  color: #fff;
+  width: 450px;
+}
+
+.seleccionemp .descripcion {
+  margin-bottom: 2rem;
+}
+
+.seleccionemp a{
+  position: relative;
+  top: 3rem;
+  color: var(--secondaryColor);
+}

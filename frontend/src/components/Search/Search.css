@@ -3,7 +3,7 @@
 .search-component{
     position: relative;
     overflow-x: hidden;
-    height: 100%;
+    min-height: 70vh;
 }
 
 .search-component > picture{
@@ -233,8 +233,6 @@
     padding: 2rem 0;
 }
 
-
-
 .feed-component .scrollport{
     width: 85%;
     margin: 0 auto;
@@ -242,8 +240,9 @@
     overflow-x: visible;
     overflow-y: hidden;
     white-space: nowrap;
-    scroll-snap-type: x mandatory;
 }
+
+
 
 /*Start Arrow*/
 
