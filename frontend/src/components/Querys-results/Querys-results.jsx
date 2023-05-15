@@ -2,6 +2,8 @@ import {React, useEffect, useState} from 'react';
 import axios from 'axios';
 import './Querys-results.css';
 import { sinonimos } from '../sinonimos';
+import { Link } from 'react-router-dom';
+
 
 const URI = 'http://localhost:8000/'; 
 const URI2 = 'http://localhost:8000/Busq/cate/';
@@ -41,7 +43,18 @@ export const Testing = (props) =>{
             const res = await axios.get(`${URI}?nombre_empresa=${props.nombre_empresa}`);
             setempres(res.data);
         }
+        
     }
+
+    const [empres2, setempres2] = useState([]);
+    useEffect(() => {
+        getempres2();
+    }, []);
+    const getempres2 = async () => {
+        const res = await axios.get(`${URI}?nombre_empresa=${props.nombre_empresa}`);
+        setempres2(res.data);
+    }
+    
 
     const [categorias, setCategorias] = useState([]);
 
@@ -79,17 +92,16 @@ export const Testing = (props) =>{
         const resultados = empres
         .filter((empre) => empre.nombre_empresa === props.nombre_empresa)
         .map((empre) => {
-            
+            console.log(empre);
             return (
                 <div className='container' key={empre.id_empresa}>
                 <div className="dataHolder">
-                    <picture>
-                        <img src="https://www.psifoundation.org/wp-content/uploads/2018/03/placeholder-300x400.png" alt='img'/>
+                    <picture><Link   to={`/EmpresaSeleccionada?id=${empre.id_empresa}`} ><img src="https://www.psifoundation.org/wp-content/uploads/2018/03/placeholder-300x400.png" alt='img'/></Link>             
                     </picture>
                     <div className="dataoutput">
                         <h1>{empre.nombre_empresa}</h1>
                         <p>{empre.catalogo?.descripcion_empresa}</p>
-                        <button>Leer mas</button>
+                        <button><Link   to={`/EmpresaSeleccionada?id=${empre.id_empresa}`} >Leer mas</Link></button>
                     </div>
                 </div>
                 </div>
@@ -104,12 +116,12 @@ export const Testing = (props) =>{
                     <div className='container' key={cates.id_empresa}>
                       <div className="dataHolder">
                         <picture>
-                          <img src="//placehold.it/300x400" alt='' />
+                        <Link to={`/EmpresaSeleccionada?id=${cates.id_empresa}`} ><img src="//placehold.it/300x400" alt='' /></Link>     
                         </picture>
                         <div className="dataoutput">
                           <h1>{cates.nombre_empresa}</h1>
                           <p>{cates.descripcion_empresa}</p>
-                          <button>Leer mas</button>
+                          <button><Link to={`/EmpresaSeleccionada?id=${cates.id_empresa}`} >Leer mas</Link></button>
                         </div>
                       </div>
                     </div>
@@ -138,29 +150,30 @@ export const Testing = (props) =>{
         const [califInicio, califFin] = props.selectedCalificacion[0].split('-').map(parseFloat);
         console.log(califInicio);
         console.log(califFin);
-        
+
         return (
             <div>
-                {empres.filter((empre) => {
+                {empres2.filter((empre) => {
                     const calif = parseFloat(empre.calificacion);
                     return calif >= califInicio && calif <= califFin;
                 }).map((empre) => (
-                    <div className='container'>
+                    <div className='container' key={empre.id_empresa}>
                         <div className="dataHolder">
                             <picture>
-                                <img src="//placehold.it/300x400"/>
+                            <Link to={`/EmpresaSeleccionada?id=${empre.id_empresa}`} ><img src="//placehold.it/300x400" alt='' /></Link>
                             </picture>
                             <div className="dataoutput">
                                 <h1>{empre.nombre_empresa}</h1>
                                 <p>{empre.catalogo?.descripcion_empresa}</p>
-                                <button>Leer mas</button>
+                                <button><Link to={`/EmpresaSeleccionada?id=${empre.id_empresa}`} >Leer mas</Link></button>
                             </div>
-                        </div>
+                            </div>
                     </div>
                 ))}
             </div>
         );
     }
+
 
     function cardHolderCate (){
         return(
@@ -169,12 +182,12 @@ export const Testing = (props) =>{
               <div className='container' key={cates.id_empresa}>
                 <div className="dataHolder">
                   <picture>
-                    <img src="//placehold.it/300x400" alt='' />
+                  <Link to={`/EmpresaSeleccionada?id=${cates.id_empresa}`} ><img src="//placehold.it/300x400" alt='' /></Link>
                   </picture>
                   <div className="dataoutput">
                     <h1>{cates.nombre_empresa}</h1>
                     <p>{cates.descripcion_empresa}</p>
-                    <button>Leer mas</button>
+                    <button><Link to={`/EmpresaSeleccionada?id=${cates.id_empresa}`} >Leer mas</Link></button>
                   </div>
                 </div>
               </div>

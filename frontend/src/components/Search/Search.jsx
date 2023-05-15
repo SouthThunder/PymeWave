@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import "./Search.css";
 import { QueryResults } from "../Querys-results/Querys-results";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const URI = "http://localhost:8000/";
 const URI2 = "http://localhost:8000/Cate/gorias";
@@ -41,7 +41,7 @@ export const CompShowEnterprises = () => {
             <div className="container">
               <div className="holder">
                 <picture>
-                  <img alt="" src="//placehold.it/300x200" />
+                    <Link to={`/EmpresaSeleccionada?id=${enter.id_empresa}`} ><img alt="" src="//placehold.it/300x200"/></Link>
                 </picture>
                 <div className="data">
                   <div className="title">
@@ -64,7 +64,7 @@ export const CompShowEnterprises = () => {
           <div className="container">
             <div className="holder">
               <picture>
-                <img alt="" src="//placehold.it/300x200" />
+                  <Link to={`/EmpresaSeleccionada?id=${enter.id_empresa}`} ><img alt="" src="//placehold.it/300x200"/></Link>
               </picture>
               <div className="data">
                 <div className="title">
