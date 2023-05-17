@@ -12,7 +12,7 @@ import aboutUs from './routes/aboutUs.routes.js';
 import busqueda from './routes/busqueda.routes.js';
 import singIn from './routes/singIn.routes.js';
 import singInEmpresa from './routes/singInEmpresa.routes.js';
-import singInPersona from './routes/singInPersona.routes.js';
+
 import singUp from './routes/singUp.routes.js';
 import singUpEmpresa from './routes/singUpeEmpresa.routes.js';
 import singUpPersona from './routes/singUpPersona.routes.js';
@@ -27,7 +27,6 @@ import actualizarCatalogos from './routes/actualizarCatalogo.routes.js'
 
 const app = express();
 
-
 app.use( cors() );
 app.use(express.json());
 
@@ -35,9 +34,9 @@ app.use(express.json());
 app.use('/', homeRoutes);// utiliza la ruta /home como base a los controladores de ruta de Home.routes.js
 app.use('/AboutUs',aboutUs);
 app.use('/Busqueda',busqueda);
-app.use('/SignIn',singIn);
-//app.use('/SingIn/Empresa',singInEmpresa);
-//app.use('/SingIn/Persona',singInPersona);
+app.use('/SignIn/persona',singIn);
+app.use('/SignIn/empresa',singInEmpresa);
+
 app.use('/SingUp',singUp);
 app.use('/SingUp/Empresa',singUpEmpresa);
 app.use('/SingUp/Persona',singUpPersona);

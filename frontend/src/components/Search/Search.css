@@ -240,6 +240,7 @@
     overflow-x: visible;
     overflow-y: hidden;
     white-space: nowrap;
+    scroll-snap-type:x mandatory ;
 }
 
 

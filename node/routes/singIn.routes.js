@@ -8,7 +8,6 @@ import { getAllEmpres } from '../controllers/EmpresaController.js';
 const router = express.Router();
 
 // ruta a la que va ha hacer referencia , metodo
-router.get('/', getAllUsers);
 router.get('/:correo', getUser);
 
 

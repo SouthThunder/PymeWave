@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const URI = "http://localhost:8000/SignIn/";
+const URI = "http://localhost:8000/SignIn/persona";
 
 const CompSignIn = () => {
   const [user, setUser] = useState([]); //usuarios de la DB

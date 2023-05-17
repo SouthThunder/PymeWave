@@ -86,16 +86,13 @@ export const CompShowEnterprises = () => {
 
 export const Feed = (props) => {
 
-  const [scrollleftPOS, setScrollleftPOS] = useState(0);
-  const [scrolrighttPOS, setScrollrightPOS] = useState(0);
   const [absolutePOS, setAbsolutePOS] = useState(0);
 
   const scrollingright = () => {
     const content = document.getElementById("scrollingPort");
-    if(absolutePOS<6600){
+    if(absolutePOS<6400){
       setAbsolutePOS(absolutePOS+800);
     }
-//11
 
 content.scroll({
   behavior: "smooth",

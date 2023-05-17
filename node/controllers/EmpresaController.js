@@ -84,6 +84,19 @@ export const getAllEmpres = async (req,res) => {
 //Mostrar un registro
 
 export const getEmp = async (req,res) => {
+    try {
+        const emp = await EmpresaModel.findAll({
+            where:{correo:req.params.correo}
+        });
+        res.json(emp);
+    } catch (error) {
+        res.json( {message: error.message});
+    }
+
+};
+
+
+export const getEmpById = async (req,res) => {
 
     try {
         const emp = await EmpresaModel.findAll({
@@ -95,7 +108,6 @@ export const getEmp = async (req,res) => {
     }
 
 };
-
 
 
 

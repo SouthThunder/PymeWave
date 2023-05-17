@@ -1,9 +1,7 @@
 import express from 'express';
 
 // importar el controlador que se va a utilizar en las ruta
-import { getAllEmpres, getEmp, updateEmp} from '../controllers/EmpresaController.js';
 import { joinCatalsEmpre } from '../controllers/EmpresaController.js';
-import {obtenerEmpresasDeBelleza} from '../controllers/EmpresaController.js';
 
 
 

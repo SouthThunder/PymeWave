@@ -42,8 +42,12 @@ const CompAgregarProducto = () => {
     //procedimiento para guardar
     const store = async (e) =>{
         e.preventDefault()
-        await axios.post(URI2,{nombre:nombre, descripcion:descripcion,id_catalogo:localStorage.getItem('user')});
-        window.location.href = '/Empresa/SubirCatalogo';
+        if(nombre!=='' && descripcion!==''){
+          await axios.post(URI2,{nombre:nombre, descripcion:descripcion,id_catalogo:localStorage.getItem('user')});
+          window.location.href = '/Empresa/SubirCatalogo';
+        }else{
+          alert('Porfavor asegurese de completar todos los campos');
+        }
     }
     
     console.log(localStorage.getItem('user'));

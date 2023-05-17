@@ -31,6 +31,7 @@ const CompSubirCata = () => {
   const getempres = async () => {
     const res = await axios.get(URI + localStorage.getItem("user"));
     setempres(res.data);
+    console.log(empres)
     // Extraer el id_empresa del primer objeto del array empres
     if (res.data.length > 0) {
       setIdEmpresa(res.data[0].id_empresa);
@@ -45,6 +46,9 @@ const CompSubirCata = () => {
     const data = {
       descripcion_empresa: formData.get("descripcion"),
     };
+    if(data.descripcion_empresa===''){
+      data.descripcion_empresa=empres[0].descripcion_empresa;
+    }
     console.log(formData.get("descripcion"));
 
     const idk = await axios.get(URI3 + localStorage.getItem("user"));

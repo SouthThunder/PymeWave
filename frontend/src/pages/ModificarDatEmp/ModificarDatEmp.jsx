@@ -62,7 +62,7 @@ const CompModiEmp = () => {
   }, []);
 
   const getempres = async () => {
-    const res = await axios.get(`${URI}${localStorage.getItem("user")}`);
+    const res = await axios.get(URI+localStorage.getItem("user"));
     setempres(res.data);
     // Extraer el id_empresa del primer objeto del array empres
     if (res.data.length > 0) {
@@ -84,6 +84,18 @@ const CompModiEmp = () => {
       dir_fisica: formData.get("ubicacion"),
     };
 
+    if(data.correo===''){
+      data.correo=empres[0].correo;
+    }
+    if(data.nombre_empresa===''){
+      data.nombre_empresa=empres[0].nombre_empresa;
+    }
+    if(data.dir_fisica===''){
+      data.dir_fisica=empres[0].dir_fisica;
+    }
+    if(data.telefono===''){
+      data.telefono=empres[0].telefono;
+    }
     // Envía los datos al servidor
     try {
       const response = await axios.put(
