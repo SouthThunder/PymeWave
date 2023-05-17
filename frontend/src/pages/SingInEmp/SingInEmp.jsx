@@ -87,7 +87,7 @@ const CompSignInEmp = () => {
               <Link to={"/SignUp/Empresa"}>Registrate</Link>
             </p>
             <p>
-              ¿Eres Persona Natural? <Link to={"/SignIn"}>Inicia secion</Link>
+              ¿Eres Persona Natural? <Link to={"/SignIn"}>Inicia sesión</Link>
             </p>
           </div>
         </form>
