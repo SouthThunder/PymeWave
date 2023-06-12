@@ -10,61 +10,84 @@ const URI2 = "http://localhost:8000/Cate/gorias";
 
 export const CompShowEnterprises = () => {
   const [enterprise, setEnterprise] = useState([]);
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
     getEnterprises();
   }, []);
 
   const getEnterprises = async () => {
-    const res = await axios.get(URI);
-    setEnterprise(res.data);
+    try {
+      const res = await axios.get(URI);
+      setEnterprise(res.data);
+    } catch (error) {
+      console.error("ERROR: " + { error });
+    }
   };
 
-  const checkUser = () =>{
-    if(localStorage.getItem('user')===null){
-      navigate('/SignIn');
+  const checkUser = () => {
+    if (localStorage.getItem("user") === null) {
+      navigate("/SignIn");
     }
-  }
+  };
 
   function cardHolders() {
-    const deployEnter= [];
-    if(enterprise.length>12){
-      for(let i=0;i<12;i++){
-        deployEnter.push(enterprise[i])
+    const deployEnter = [];
+    if (enterprise.length > 12) {
+      for (let i = 0; i < 12; i++) {
+        deployEnter.push(enterprise[i]);
       }
       deployEnter.push(
-      <button className="see-more-btn" onClick={checkUser}>Ver más</button>
-      )
-      return deployEnter.map((enter)=>{
-        if(enter.catalogo?.descripcion_empresa){
+        <div className="seeMoreButton">
+          <button className="see-more-btn" onClick={checkUser}>
+            Ver más
+          </button>
+        </div>
+      );
+      return deployEnter.map((enter) => {
+        if (enter.catalogo?.descripcion_empresa) {
           return (
-            <div className="container">
-              <div className="holder">
-                <picture>
-                    <Link to={`/EmpresaSeleccionada?id=${enter.id_empresa}`} ><img alt="" src="//placehold.it/300x200"/></Link>
-                </picture>
-                <div className="data">
-                  <div className="title">
-                    <h1>{enter.nombre_empresa}</h1>
+            <div className="fatherContainer">
+              <div className="container">
+                <div className="holder">
+                  <div className="data">
+                    <div className="logo">
+                      <picture>
+                        <img src="/images/Logos/Brand-Logo.avif" alt="Logo" />
+                      </picture>
+                    </div>
+                    <div className="title">
+                      <h1>{enter.nombre_empresa}</h1>
+                    </div>
+                    <div className="text">
+                      <p>{enter.catalogo?.descripcion_empresa}</p>
+                    </div>
                   </div>
-                  <div className="text">
-                    <p>{enter.catalogo?.descripcion_empresa}</p>
-                  </div>
+                </div>
+              </div>
+              <div className="container">
+                <div className="holder">
+                  <picture>
+                    <Link to={`/EmpresaSeleccionada?id=${enter.id_empresa}`}>
+                      <img alt="" src="//placehold.it/300x450" />
+                    </Link>
+                  </picture>
                 </div>
               </div>
             </div>
           );
-        }else{
-          return enter
+        } else {
+          return enter;
         }
-      })
-    }else{
-      return enterprise.map((enter) =>{
+      });
+    } else {
+      return enterprise.map((enter) => {
         return (
           <div className="container">
             <div className="holder">
               <picture>
-                  <Link to={`/EmpresaSeleccionada?id=${enter.id_empresa}`} ><img alt="" src="//placehold.it/300x200"/></Link>
+                <Link to={`/EmpresaSeleccionada?id=${enter.id_empresa}`}>
+                  <img alt="" src="//placehold.it/300x200" />
+                </Link>
               </picture>
               <div className="data">
                 <div className="title">
@@ -77,7 +100,7 @@ export const CompShowEnterprises = () => {
             </div>
           </div>
         );
-      })
+      });
     }
   }
 
@@ -85,31 +108,29 @@ export const CompShowEnterprises = () => {
 };
 
 export const Feed = (props) => {
-
   const [absolutePOS, setAbsolutePOS] = useState(0);
 
   const scrollingright = () => {
     const content = document.getElementById("scrollingPort");
-    if(absolutePOS<6400){
-      setAbsolutePOS(absolutePOS+800);
+    if (absolutePOS < 6400) {
+      setAbsolutePOS(absolutePOS + 800);
     }
 
-content.scroll({
-  behavior: "smooth",
-  left: (absolutePOS+800)
-})
-
+    content.scroll({
+      behavior: "smooth",
+      left: absolutePOS + 800,
+    });
   };
 
   const scrollingleft = () => {
     const content = document.getElementById("scrollingPort");
-    if(absolutePOS>0){
-      setAbsolutePOS(absolutePOS-800);
+    if (absolutePOS > 0) {
+      setAbsolutePOS(absolutePOS - 800);
     }
     content.scroll({
       behavior: "smooth",
-      left: (absolutePOS-800)
-    })
+      left: absolutePOS - 800,
+    });
   };
 
   return (
@@ -157,19 +178,18 @@ export const Search = (props) => {
 
   const [showPopup, setShowPopup] = useState(false); // state para controlar el popup
   const [filterBy, setFilterBy] = useState("category");
-  const navigate= useNavigate();
-
+  const navigate = useNavigate();
 
   const togglePopup = () => {
     setShowPopup(!showPopup); // función para alternar el estado del popup
   };
 
   const handleSearch = (event) => {
-    if(localStorage.getItem('user')!==null){
+    if (localStorage.getItem("user") !== null) {
       event.preventDefault();
       props.changeVis(false);
-    }else{
-      navigate('/SignIn');
+    } else {
+      navigate("/SignIn");
     }
   };
 

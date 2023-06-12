@@ -231,16 +231,17 @@
     overflow: hidden;
     margin-top: 3rem;
     padding: 2rem 0;
+    overflow: hidden;
 }
 
 .feed-component .scrollport{
     width: 85%;
     margin: 0 auto;
     margin-bottom: -7rem;
-    overflow-x: visible;
-    overflow-y: hidden;
+    overflow: hidden;
     white-space: nowrap;
     scroll-snap-type:x mandatory ;
+    display: flex;
 }
 
 
@@ -265,7 +266,7 @@
 .feed-component .arrow_right{
     position: absolute;
     margin-top: 18.5rem;
-    margin-left: 90rem;
+    margin-left: 100rem;
 
 }
 
@@ -302,20 +303,50 @@
     position: sticky;
 }
 
-.feed-component .container{
-    display:inline-flex;
-    border-radius: 15px;
-    border: 1px solid #202C3F;
-}
-.feed-component .container:nth-child(n){
-    margin: 0;
-    padding: 0;
+.feed-component .fatherContainer{
+    display:flex;
+    position: relative;
     width: 300px;
     height: 450px;
     margin: 8rem 10rem;
 }
 
-.feed-component .holder{
+
+
+.feed-component .fatherContainer .container{
+    border-radius: 15px;
+    position: relative;
+    border: 1px solid #202C3F;
+    margin: 0;
+    padding: 0;
+    width: inherit;
+    height: inherit;
+}
+
+.feed-component .fatherContainer .container:nth-child(1){
+    z-index: 1;
+    box-shadow: 10px 0 10px -2px #888;
+    background-color: var(--tertiaryColor);
+}
+
+.feed-component .fatherContainer .container:nth-child(2){
+    z-index: 0;
+    transform: translateX(-90%) translateY(-5%);
+}
+
+.feed-component .fatherContainer:hover .container:nth-child(1){
+    transition: 0.75s cubic-bezier(.11,.69,.42,.95);
+    transform: translateX(-35%) rotate(-5deg);
+    box-shadow: none;
+}
+
+.feed-component .fatherContainer:hover .container:nth-child(2){
+    transition: 0.75s cubic-bezier(.11,.69,.42,.95);
+    transform: translateX(-65%) translateY(-5%) rotate(5deg);
+    box-shadow: none;
+}
+
+.feed-component .fatherContainer .container .holder{
     width: inherit;
     height: inherit;
     padding: 0;
@@ -323,44 +354,59 @@
     position: relative;
 }
 
-.feed-component .container picture{
-    width:298px;
-    height: 200px;
-}
-
-.feed-component .container picture img{
-    width: inherit;
+.feed-component .fatherContainer .container .holder picture img{
+    --fatherWidth: 300px;
+    width: calc(var(--fatherWidth) - 2px);
     height: inherit;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
-.feed-component .data{
+.feed-component .fatherContainer .container .holder .data{
     width: 298px;
-    height: 238px;
+    height: auto;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     word-wrap: break-word;
 }
 
-.feed-component .data .title{
-    margin-top: 0.5rem;
+.feed-component .fatherContainer .container .holder .data .logo{
+    --logoSize:70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
     display: flex;
     justify-content: center;
 }
 
-.feed-component .data .text{
+.feed-component .fatherContainer .container .holder .data .logo img{
+    width: var(--logoSize);
+    height: var(--logoSize);
+    border-radius: 50%;
+}
+
+.feed-component .fatherContainer .container .holder .data .title{
+    display: flex;
+    justify-content: center;
+    word-wrap: break-word;
+    white-space: normal;
+    text-align: center;
+}
+
+.feed-component .fatherContainer .container .holder .data .text{
     width: 90%;
     margin: 0 auto;
     margin-top: 8px;
-    height: 180px;
+    height: 300px;
     white-space: normal;
     word-wrap: break-word; 
     text-align: justify;
     overflow-x: hidden;
 }
 
-.feed-component .text p{
+.feed-component .fatherContainer .container .holder .text p{
     font-size: 1.3rem;
 }
 
@@ -368,19 +414,21 @@
     scroll-snap-align: center;
 }
 
+.feed-component .seeMoreButton{
+    display: flex;
+    align-items: center;
+}
 
-.feed-component .see-more-btn{
+.feed-component  .see-more-btn{
     border: 1px solid var(--primaryColor);
     border-radius: 40px;
     width: 6rem;
     height: 3rem;
-    position: relative;
-    top: 1rem;
     background-color: var(--primaryColor);
     color: var(--tertiaryColor);
 }
 
-.feed-component .see-more-btn:hover{
+.feed-component  .see-more-btn:hover{
     background-color: var(--secondaryColor); 
     transition: all 0.4s ease-out;   
 }
