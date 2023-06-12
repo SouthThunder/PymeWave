@@ -109,6 +109,17 @@ export const CompShowEnterprises = () => {
 
 export const Feed = (props) => {
   const [absolutePOS, setAbsolutePOS] = useState(0);
+  const [arrowPOS, setArrowPOS] = useState([]);
+
+  useEffect(()=>{
+    calcArrPOS();
+  }, []);
+
+
+  const calcArrPOS = () =>{
+    const scrollingPortWidth = document.getElementById('scrollingPort').offsetWidth;
+    setArrowPOS(scrollingPortWidth+200);
+  }
 
   const scrollingright = () => {
     const content = document.getElementById("scrollingPort");
@@ -142,7 +153,7 @@ export const Feed = (props) => {
               <img src="/images/logos/leftArrow.png" alt="" />
             </button>
           </div>
-          <div className="arrow_right">
+          <div className="arrow_right" style={{marginLeft: `${arrowPOS}px`}}>
             <button onClick={scrollingright}>
               <img src="/images/logos/rightArrow.png" alt="" />
             </button>
