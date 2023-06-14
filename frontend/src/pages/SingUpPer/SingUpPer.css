@@ -3,14 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    overflow: hidden;   
-    color: whitesmoke;
+    overflow: hidden;
 }
 
 .singUpPer-component body{
     background-image: url("../../../public/images/Backgrounds/Fondo_signUp.jpg");
-    height: 100%;
-    background-repeat: no-repeat;
+    height: 100vh;
+    background-repeat:no-repeat;
     background-size: cover;
     background-position: 0 15%;
 }
@@ -30,62 +29,83 @@
     width: inherit;
 }
 
-.singUpPer-component main{
-    height: 80vh;
-    width: 100vw;
-}
-
 .singUpPer-component .container{
     margin: 0 auto;
-    width: 40%;
-    height: 90%;
+    width: 800px;
+    height: 600px;
     background-color: #202C3F;
-    opacity: 0.9;
     border-radius: 3rem;
 }
-.singUpPer-component .container h1{
-    color: whitesmoke;  
+.singUpPer-component .container > .title{
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
+.singUpPer-component .container > .title > h1{
+    color: var(--tertiaryColor);
+}
 
+.singUpPer-component .container .data{
+    display: flex;
+    align-items: center;
+}
+
+.singUpPer-component .image{
+    height: 550px;
+    width:550px;
+    display: flex;
+    align-items: center;
+}
+
+.singUpPer-component .image img{
+    transform: scaleX(-1);
+}
+
+.singUpPer-component .image picture{
+    width: 450px;
+    height: 500px;
+    margin-left: -4rem;
+}
+
+.singUpPer-component .container .image > picture > img{
+    width: inherit;
+    height: 500px;
+} 
  
 .singUpPer-component form{
     margin-top: 1rem;
     margin-left: 2rem;
-    
 }
 
-.texto{
-    Color:whitesmoke;
+.singUpPer-component .container form{
+    width: 100%;
 }
-.inputbox ion-icon{
-    position: absolute;
-    right: 8px;
-    top: 20px;
-    color:whitesmoke;
-   
-}
-.inputbox{
+
+.singUpPer-component .container form .inputbox{
     position: relative;
     width: 85%;
     margin-top: 1rem;
     margin-left: 1rem;
-    border-bottom: 2px solid whitesmoke;
+    border-bottom: 2px solid var(--tertiaryColor);
 }
 
-.inputbox label{
+.singUpPer-component .container form .inputbox ion-icon{
     position: absolute;
-    top: 30%;
+    right: 8px;
+    top: 20px;
+    color:var(--tertiaryColor);  
+}
+
+.singUpPer-component .container form .inputbox label{
+    position: absolute;
     left: 5px;
     color: whitesmoke;
     font-size: 1rem;
     pointer-events: none;
-    transition: 0.5s;
 }
 
-.inputbox input{
+.singUpPer-component .container form .inputbox input{
     width: 100%;
     height: 50px;
     background: transparent;
@@ -93,8 +113,9 @@
     outline: none;
     font-size: 1rem;
     padding: 15px 5px 0 5px;
+    color: var(--tertiaryColor);
 }
-.inputbox small{
+.singUpPer-component .container form .inputbox small{
     color: #FFA500;
     position: absolute;
     top: 5;
@@ -103,10 +124,10 @@
     visibility: hidden;
 }
 
-.inputbox.error small{
+.singUpPer-component .container form .inputbox.error small{
     visibility: visible;
 }
-.inputbox.sucess small{
+.singUpPer-component .container form .inputbox.sucess small{
     visibility: hidden;
 }
 input:focus ~ label,
@@ -133,8 +154,8 @@ input:invalid ~ label{
 }
 
 .enter > button:hover{
-    border: 1px solid #202C3F;
-    background-color: #7DA9DB;
+    background-color: var(--secondaryColor);
+    color: var(--tertiaryColor);
     cursor: pointer;
     transition: all 0.4s ease-out;
 }

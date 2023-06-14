@@ -26,7 +26,7 @@ export const CompShowEnterprises = () => {
 
   const checkUser = () => {
     if (localStorage.getItem("user") === null) {
-      navigate("/SignIn");
+      navigate('/SignIn')
     }
   };
 
@@ -59,7 +59,7 @@ export const CompShowEnterprises = () => {
                       <h1>{enter.nombre_empresa}</h1>
                     </div>
                     <div className="text">
-                      <p>{enter.catalogo?.descripcion_empresa}</p>
+                      <p>{enter.catalogo.descripcion_empresa}</p>
                     </div>
                   </div>
                 </div>
@@ -82,23 +82,34 @@ export const CompShowEnterprises = () => {
     } else {
       return enterprise.map((enter) => {
         return (
-          <div className="container">
-            <div className="holder">
-              <picture>
-                <Link to={`/EmpresaSeleccionada?id=${enter.id_empresa}`}>
-                  <img alt="" src="//placehold.it/300x200" />
-                </Link>
-              </picture>
-              <div className="data">
-                <div className="title">
-                  <h1>{enter.nombre_empresa}</h1>
+          <div className="fatherContainer">
+              <div className="container">
+                <div className="holder">
+                  <div className="data">
+                    <div className="logo">
+                      <picture>
+                        <img src="/images/Logos/Brand-Logo.avif" alt="Logo" />
+                      </picture>
+                    </div>
+                    <div className="title">
+                      <h1>{enter.nombre_empresa}</h1>
+                    </div>
+                    <div className="text">
+                      <p>{enter.catalogo.descripcion_empresa}</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="text">
-                  <p>{enter.catalogo?.descripcion_empresa}</p>
+              </div>
+              <div className="container">
+                <div className="holder">
+                  <picture>
+                    <Link to={`/EmpresaSeleccionada?id=${enter.id_empresa}`}>
+                      <img alt="" src="//placehold.it/300x450" />
+                    </Link>
+                  </picture>
                 </div>
               </div>
             </div>
-          </div>
         );
       });
     }
