@@ -1,0 +1,127 @@
+
+
+.aboutus-component{
+    position: relative;
+    height: 100%;
+    /* background-color: white; */
+    overflow-x: hidden;
+}
+
+/*Fin header*/
+
+.main-aboutus > picture{
+    height: 50vh;
+    width: 100vw;
+}
+
+.main-aboutus > picture > img{
+    width: inherit;
+    height: inherit;
+    object-fit:cover;
+    object-position: 0px 50%;
+    overflow: hidden;
+}
+
+.aboutus-component .center{
+    Width: 60%;
+    Margin: 2rem auto;
+    text-align: center;
+}
+
+.aboutus-component .center > h1{
+    font-weight: 600;
+    font-size: 3rem;
+    color: var(--primaryColor);
+}
+
+.aboutus-component .center > h1 + p{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+
+/*Start Mision && vision*/
+
+.aboutus-component .objetivos{
+   padding-top: 2rem;
+    Width: 90% ;
+    margin: 0 auto;
+    display: flex;
+    text-align: left;
+    padding-bottom: 3rem;
+}
+
+.aboutus-component .objetivos div:nth-child(1){
+    width: 100%;
+    text-align: center;
+    border-right: 1px solid var(--primaryColor);
+}
+
+.aboutus-component .objetivos div h1{
+    padding: 1rem;
+    color: var(--primaryColor);
+    font-size: 3rem;
+}
+
+.aboutus-component .objetivos div p{
+    color: var(--primaryColor);
+    font-size: 1.5rem;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.aboutus-component .objetivos div:nth-child(2){
+    border-left: 1px solid var(--primaryColor);
+    width: 100%;
+    text-align: center;
+}
+
+.aboutus-component .objetivos div:nth-child(2) > p{
+    color: var(--primaryColor);
+}
+
+/*End Mision && Vision*/
+
+
+#global-info{
+    border-top: 2px solid var(--primaryColor);
+    height: 100%;
+    width: 60%;
+    margin: 2rem auto;
+    padding-bottom: 4rem;
+}
+
+#global-info >h1{
+    margin-top: 2rem;
+    font-size: 3rem;
+    color: var(--primaryColor);
+}
+
+#global-info picture{
+    width: 70rem;
+    margin: 1rem auto;
+}
+
+#global-info picture > img{
+    width: inherit;
+    height: inherit;
+}
+
+#global-info ol{
+    list-style:disc;
+    margin-left: 4rem;
+    color: var(--primaryColor);
+}
+
+ol li{
+    font-size: 1.5rem;
+    padding: 1rem 0 1rem 0;
+}
+
+#global-info p{
+    line-height: 3rem;
+    text-align: justify;
+    color: var(--primaryColor);
+    font-size: 1.5rem;
+    margin: 2rem 0 2rem 0;
+}
+
+

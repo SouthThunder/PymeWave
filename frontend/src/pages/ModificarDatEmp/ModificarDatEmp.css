@@ -1,0 +1,251 @@
+.modificarDatosEmp{
+    width: 100vw;
+    height: 95vh;
+    margin-bottom: -7rem;
+    display: flex;
+    align-items: center;
+}
+
+.modificarDatosEmp .container{
+    display: inherit;
+    width: inherit;
+    height: 80vh;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+.modificarDatosEmp .container .izquierda {
+    width: 25%;
+    border-right: 1px solid var(--primaryColor);
+    height: 60vh;
+    margin: auto 0;
+}
+
+.modificarDatosEmp .container .izquierda .image{
+    width: 100%;
+    height: 225px;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.modificarDatosEmp .container .izquierda .image picture{
+    width: 225px;
+}
+
+.modificarDatosEmp .container .izquierda picture img{
+    width: inherit;
+}
+
+.modificarDatosEmp .container .options{
+    display: block;
+    text-align: center;
+    margin: 0;
+}
+
+.modificarDatosEmp .container .options h4{
+    margin-bottom: 1.5rem;
+}
+
+
+/*Inicio CSS*/
+
+.modificarDatosEmp .container .derecha {
+    width: 80%;
+    margin: 0;
+}
+.modificarDatosEmp .container  .derecha form{
+    margin: auto;
+    width: 85%;
+}
+
+.modificarDatosEmp .container  .derecha form .inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    top: 20px;
+    color:var(--primaryColor);
+   
+}
+.modificarDatosEmp .container  .derecha form .inputbox{
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
+    border-bottom: 2px solid var(--primaryColor);
+}
+
+.modificarDatosEmp .container  .derecha form .inputbox label{
+    position: absolute;
+    top: 30%;
+    left: 5px;
+    color: var(--primaryColor);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.modificarDatosEmp .container  .derecha form .inputbox h5{
+    position: absolute;
+    top: -5%;
+    left: 5px;
+    color: var(--primaryColor);
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.modificarDatosEmp .container  .derecha form .inputbox input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 15px 5px 0 5px;
+}
+
+.modificarDatosEmp .container .title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+
+.modificarDatosEmp .container .title h1{
+    margin: 0;
+    padding: 0;
+    color: var(--primaryColor);
+}
+
+.modificarDatosEmp .container  .derecha form .inputbox small{
+    color: #FFA500;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+}
+
+.modificarDatosEmp .container  .derecha form .inputbox .error small{
+    visibility: visible;
+}
+.modificarDatosEmp .container  .derecha form .inputbox .sucess small{
+    visibility: hidden;
+}
+
+.modificarDatosEmp .container  .derecha form .inputbox input:focus ~ label,
+.modificarDatosEmp .container  .derecha form .inputbox input:valid ~ label,
+.modificarDatosEmp .container  .derecha form .inputbox input:invalid ~ label{
+    top: -4px;
+}
+
+
+.modificarDatosEmp .container  .derecha form .enter{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.modificarDatosEmp .container  .derecha form .enter > button{
+    margin-right: 2rem;
+    background-color: var(--primaryColor);
+    color: var(--tertiaryColor);
+    border-radius: 50px;
+    border: 0px;
+    width: 10rem;
+    height: 2.5rem;
+    font-size: 1rem;
+}
+
+.modificarDatosEmp .container  .derecha form .enter > button:hover{
+    border: 1px solid #202C3F;
+    background-color: #7DA9DB;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+}
+.modificarDatosEmp .container  .derecha form .options{
+    margin-top: 6rem;
+    width: 100%;
+    height: 230px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.modificarDatosEmp .container h1{
+    
+    padding-top: 8rem;
+    text-align: center;
+}
+
+
+
+/* pop up */
+
+.modificarDatosEmp .popupCategorias {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 10px;
+    z-index: 9999;
+    overflow-y: auto;
+    width: 80%;
+    max-width: 500px;
+    height: 80%;
+    max-height: 600px;
+    border-radius: 10px;
+    border: 2px solid #202C3F;
+  }
+  
+  .modificarDatosEmp .popupCategorias h2 {
+    color: #202C3F;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .modificarDatosEmp .popupCategorias label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .modificarDatosEmp .popupCategorias button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #202C3F;
+  }
+  
+.modificarDatosEmp .popupCategorias button:hover {
+    background: #7DA9DB; 
+    box-shadow: 1px 1px 1px 1px #202C3F;
+    transition: all 0.5s ease;
+    color: #202C3F;
+} 
+
+
+.modificarDatosEmp .checkbox {
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+.modificarDatosEmp .checkbox-container {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+.modificarDatosEmp .checkbox-container input {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  
+  

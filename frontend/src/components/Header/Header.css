@@ -1,0 +1,152 @@
+
+.header-component{
+    width: 100vw;
+    height: 10vh;
+    clear: both;
+    background: var(--primaryColor);
+    position:fixed;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50rem;
+    z-index: 1;
+}
+
+.header-component >picture{
+    margin-left: 5rem;
+    display: flex;
+    justify-content: center;
+    float: left;
+    width: 15rem;
+    height: inherit;
+}
+
+.header-component picture > a{
+    height: inherit;
+    margin-right: 60%;
+}
+
+.header-component >picture img{
+    overflow: visible;
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+}
+
+.header-component >picture img:hover{
+    cursor: pointer;
+}
+
+.header-component > nav{
+    float: right;
+    height: 100%;
+}
+.header-component .nav_box{
+    margin-right: 1rem;
+    height: 100%;
+    width: 100%;
+}
+
+.header-component .nav_box ul{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header-component ul >li{
+    display: inline-block;
+    padding: 0 1rem 0 1rem;
+    color: var(--tertiaryColor);
+    list-style: none;
+    font-size: 1.4rem;
+}
+
+.header-component ul >li a{
+    text-decoration: none;
+    color: var(--tertiaryColor);
+}
+
+.header-component ul >li a:hover{
+    transition: all 0.4s ease;
+    color: var(--secondaryColor);
+}
+
+.header-component ul >li:hover{
+    cursor: pointer;
+    transition: all 0.4s ease-in;
+    color: var(--secondaryColor);
+}
+
+.header-component ul > li:nth-child(4){
+    border: 1px solid var(--tertiaryColor);
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.header-component ul > li:nth-child(4):hover{
+    border: 1px solid var(--secondaryColor);
+}
+
+
+/*Logged in user*/
+
+.header-component ul button{
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: none;
+}
+
+.header-component ul button picture{
+    width: 4rem; 
+} 
+ 
+.header-component ul button picture img{
+    width: inherit;
+}
+
+.header-component ul .popup-header{
+    background-color: var(--primaryColor);
+    position: absolute;
+    right: 0;
+    top: 5.8rem;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+    border-radius: 15px;
+}
+
+.header-component ul .popup-header .popup-inner{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-component ul .popup-header .popup-inner:nth-child(1){
+    border-bottom: 1px solid var(--secondaryColor);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 50px;
+}
+
+.header-component ul .popup-header .popup-inner a,
+.header-component ul .popup-header .popup-inner button{
+    color: var(--tertiaryColor);
+    width: 100%;
+    height: 100%;
+}
+
+.header-component ul .popup-header .popup-inner a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.header-component ul .popup-header .popup-inner a:hover,
+.header-component ul .popup-header .popup-inner button:hover{
+    cursor: pointer;
+    background-color: var(--secondaryColor);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: 0.4s all ease-in;
+}

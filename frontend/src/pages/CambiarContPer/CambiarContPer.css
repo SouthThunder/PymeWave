@@ -1,0 +1,85 @@
+.cont-cambiocon-per .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    
+  }
+  .cont-cambiocon-per{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-bottom: -10rem;
+  }
+  .cambioclavepr{
+    height: 100vh;
+    
+    
+    padding-top: 0.01rem;
+    position: relative;
+  }
+  .cont-cambiocon-per .toggle-password{
+    margin-left: 0.8rem;
+  }
+ 
+  
+  .cont-cambiocon-per .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cont-cambiocon-per .lb {
+   margin-right: 3rem;
+  }
+  .cont-cambiocon-per .input-container1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-left: 4.6rem;
+  }
+  .cont-cambiocon-per .input-container2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .cont-cambiocon-per .label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .cont-cambiocon-per .input-field {
+    border: 1px solid #202C3F;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: #202C3F;
+    width: 300px;
+  }
+  
+  .cont-cambiocon-per .toggle-password {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .cont-cambiocon-per .submit-button {
+    background-color: #202C3F;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.cont-cambiocon-per .submit-button:hover {
+    background-color: #7DA9DB;
+    color: #202C3F;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}

@@ -1,0 +1,216 @@
+.singUpPer-component *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    overflow: hidden;
+}
+
+.singUpPer-component body{
+    background-image: url("../../../public/images/Backgrounds/Fondo_signUp.jpg");
+    height: 100vh;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: 0 15%;
+}
+
+.singUpPer-component header > picture{
+    height: 150px;
+    width: 350px;
+}
+
+.singUpPer-component header > picture > a{
+    height: inherit;
+    width: inherit;
+}
+
+.singUpPer-component header > picture > a > img{
+    height: inherit;
+    width: inherit;
+}
+
+.singUpPer-component .container{
+    margin: 0 auto;
+    width: 800px;
+    height: 600px;
+    background-color: #202C3F;
+    border-radius: 3rem;
+}
+.singUpPer-component .container > .title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.singUpPer-component .container > .title > h1{
+    color: var(--tertiaryColor);
+}
+
+.singUpPer-component .container .data{
+    display: flex;
+    align-items: center;
+}
+
+.singUpPer-component .image{
+    height: 550px;
+    width:550px;
+    display: flex;
+    align-items: center;
+}
+
+.singUpPer-component .image img{
+    transform: scaleX(-1);
+}
+
+.singUpPer-component .image picture{
+    width: 450px;
+    height: 500px;
+    margin-left: -4rem;
+}
+
+.singUpPer-component .container .image > picture > img{
+    width: inherit;
+    height: 500px;
+} 
+ 
+.singUpPer-component form{
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.singUpPer-component .container form{
+    width: 100%;
+}
+
+.singUpPer-component .container form .inputbox{
+    position: relative;
+    width: 85%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    border-bottom: 2px solid var(--tertiaryColor);
+}
+
+.singUpPer-component .container form .inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    top: 20px;
+    color:var(--tertiaryColor);  
+}
+
+.singUpPer-component .container form .inputbox label{
+    position: absolute;
+    left: 5px;
+    color: whitesmoke;
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.singUpPer-component .container form .inputbox input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 15px 5px 0 5px;
+    color: var(--tertiaryColor);
+}
+.singUpPer-component .container form .inputbox small{
+    color: #FFA500;
+    position: absolute;
+    top: 5;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.singUpPer-component .container form .inputbox.error small{
+    visibility: visible;
+}
+.singUpPer-component .container form .inputbox.sucess small{
+    visibility: hidden;
+}
+input:focus ~ label,
+input:valid ~ label,
+input:invalid ~ label{
+    top: -4px;
+}
+
+
+.enter{
+    display: flex;
+    justify-content: center;
+}
+
+.enter > button{
+    margin-right: 2rem;
+    background-color: whitesmoke;
+    color: #202C3F;
+    border-radius: 50px;
+    border: 0px;
+    width: 10rem;
+    height: 2.5rem;
+    font-size: 1rem;
+}
+
+.enter > button:hover{
+    background-color: var(--secondaryColor);
+    color: var(--tertiaryColor);
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+}
+.options{
+    margin-top: 6rem;
+    width: 100%;
+    height: 230px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+
+.txt{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    clear: both;
+    font-size: 1.3rem;
+}
+
+.left{
+    float: left;
+    display:flex;
+    width: 50%;
+    justify-content: center;
+}
+
+.left p{
+    margin-left: 8%;
+}
+
+.right{
+    float: right;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+
+.right p{
+    margin-right: 8%;
+}
+.errores{
+    margin-left: 4.7rem;
+   
+    margin-bottom: 2.2rem;
+  }
+  .erroresContrasenia{
+    
+    margin-left: 5.3rem;
+    margin-bottom: 2.2rem;
+  }
+  .erroresCorreo{
+    margin-left: 8.5rem;
+    margin-bottom: 2.2rem;
+  }

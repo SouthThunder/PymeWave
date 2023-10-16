@@ -1,0 +1,84 @@
+.editarproduct .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    
+  }
+  .editarproduct{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-bottom: -10rem;
+  }
+  .editar{
+    height: 100vh;
+    padding-top: 0.01rem;
+    position: relative;
+  }
+  .editarproduct .toggle-password{
+    margin-left: 0.8rem;
+  }
+  
+  
+  .editarproduct .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .editarproduct .lb {
+   margin-right: 3rem;
+  }
+  .editarproduct .input-container1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-left: 4.6rem;
+  }
+  .editarproduct .input-container2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .editarproduct .label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .editarproduct .input-field {
+    border: 1px solid #202C3F;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: #202C3F;
+    width: 300px;
+  }
+  
+  .editarproduct .toggle-password {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .editarproduct .submit-button {
+    background-color: #202C3F;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+  }
+  
+  .editarproduct .submit-button:hover {
+    background-color: #7DA9DB;
+    color: #202C3F;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  

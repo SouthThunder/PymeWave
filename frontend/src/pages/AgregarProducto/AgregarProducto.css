@@ -1,0 +1,84 @@
+.agregarproduct .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    
+  }
+  .agregarproduct{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-bottom: -10rem;
+  }
+  .agregar{
+    height: 100vh;
+    padding-top: 0.01rem;
+    position: relative;
+  }
+  .agregarproduct .toggle-password{
+    margin-left: 0.8rem;
+  }
+  
+  
+  .agregarproduct .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .agregarproduct .lb {
+   margin-right: 3rem;
+  }
+  .agregarproduct .input-container1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-left: 4.6rem;
+  }
+  .agregarproduct .input-container2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .agregarproduct .label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .agregarproduct .input-field {
+    border: 1px solid #202C3F;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: #202C3F;
+    width: 300px;
+  }
+  
+  .agregarproduct .toggle-password {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .agregarproduct .submit-button {
+    background-color: #202C3F;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+  }
+  
+  .agregarproduct .submit-button:hover {
+    background-color: #7DA9DB;
+    color: #202C3F;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  

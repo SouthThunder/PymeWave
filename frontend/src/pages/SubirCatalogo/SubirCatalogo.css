@@ -1,0 +1,235 @@
+.subircatalogo{
+    width: 100vw;
+    height: 95vh;
+    margin-bottom: -7rem;
+    display: flex;
+    align-items: center;
+}
+
+.subircatalogo .container   {
+    display: inherit;
+    width: inherit;
+    height: 80vh;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+.subircatalogo .container .derecha .title h1{
+    color: var(--primaryColor);
+}
+
+
+.subircatalogo .container .izquierda {
+    width: 25%;
+    border-right: 1px solid var(--primaryColor);
+    height: 60vh;
+    margin: auto 0;
+}
+
+.subircatalogo .container .izquierda .image{
+    width: 100%;
+    height: 225px;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.subircatalogo .container .izquierda .image picture{
+    width: 225px;
+}
+
+.subircatalogo .container .izquierda picture img{
+    width: inherit;
+}
+
+
+.subircatalogo .container .options{
+    display: block;
+    text-align: center;
+    margin: 0;
+}
+
+.subircatalogo .container .options h4{
+    margin-bottom: 1.5rem;
+}
+
+.subircatalogo .titulo2{
+    font-size: 1.5rem;
+    color: var(--primaryColor);
+    }
+.subircatalogo .descripcion{
+    height: auto;
+    width: 100%;
+    background: transparent;
+    outline: none;
+    font-size: 1rem;
+    
+}
+.subircatalogo .container  .derecha {
+    width: 80%;
+    text-align: center;
+}
+
+.subircatalogo .container .derecha form{
+    margin: auto;
+    width: 85%;}
+
+
+.subircatalogo .container  .derecha form .inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    top: 20px;
+    color:var(--primaryColor);
+   
+}
+.subircatalogo .container  .derecha form .inputbox{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 85%;
+    height: 25vh;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    
+}
+
+.subircatalogo .container  .derecha form .inputbox label{
+    position:initial;
+    top: 30%;
+    left: 5px;
+    color: var(--primaryColor);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.subircatalogo .container  .derecha form .inputbox h5{
+    position: absolute;
+    top: -5%;
+    left: 5px;
+    
+    color: var(--primaryColor);
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.subircatalogo .container  .derecha form .inputbox input{
+    width: 100%;
+    height: 50px;
+   
+    padding: 15px 5px 0 5px;
+}
+
+.subircatalogo .container  .derecha form .inputbox small{
+    color: #FFA500;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+}
+.subircatalogo .productos{
+    padding-top:1rem ;
+}
+
+.subircatalogo .productos .editar{
+    color: var(--primaryColor);
+}
+
+.subircatalogo .productos .editar:hover{
+    color: var(--secondaryColor);
+    transition: all 0.4s ease-out;
+}
+
+.subircatalogo .productos .btneliminar{
+    color: var(--tertiaryColor);
+    background-color: var(--primaryColor);
+    border-radius: 50px;
+    height: 30px;
+    width: 80px;    
+}
+
+.subircatalogo .productos .btneliminar:hover{
+    background-color: var(--secondaryColor);
+    transition: all 0.4s ease-out;
+    border: 1px solid var(--primaryColor);
+}
+
+.subircatalogo  .agrega .add{
+    background-color:var(--primaryColor);
+    color: var(--tertiaryColor);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-left: 2rem;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;  
+}
+.subircatalogo  .agrega .add:hover {
+    cursor: pointer;  
+    border: 1px solid #202C3F;
+    background-color: #7DA9DB;
+}
+.subircatalogo  .agrega {
+ padding-top: 1rem;
+ padding-right: 4rem;
+}
+
+.subircatalogo .productos .table{
+border-collapse: collapse;
+  width: 100%;
+  padding-top: 2rem;
+}
+.subircatalogo th, td {
+    border: 1px solid var(--primaryColor);
+    padding: 8px;
+    text-align: left;
+  }
+
+
+.subircatalogo .container  .derecha form .inputbox .error small{
+    visibility: visible;
+}
+.subircatalogo .container  .derecha form .inputbox .sucess small{
+    visibility: hidden;
+}
+
+.subircatalogo .container  .derecha form .inputbox input:focus ~ label,
+.subircatalogo .container  .derecha form .inputbox input:valid ~ label,
+.subircatalogo .container  .derecha form .inputbox input:invalid ~ label{
+    top: -4px;
+}
+
+
+.subircatalogo .container  .derecha form .enter{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.subircatalogo .container  .derecha form .enter > button{
+    margin-right: 2rem;
+    background-color: var(--primaryColor);
+    color: var(--tertiaryColor);
+    border-radius: 50px;
+    border: 0px;
+    width: 10rem;
+    height: 2.5rem;
+    font-size: 1rem;
+}
+
+.subircatalogo .container  .derecha form .enter > button:hover{
+    border: 1px solid #202C3F;
+    background-color: #7DA9DB;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+}
+.subircatalogo .container  .derecha form .options{
+    margin-top: 6rem;
+    width: 100%;
+    height: 230px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
